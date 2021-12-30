@@ -4,11 +4,7 @@ var Layer = function Layer(_ref) {
   return React.createElement(
     "div",
     { className: "layer-container", style: { zIndex: zIndex } },
-    React.createElement(
-      "div",
-      { className: "layer" },
-      "hello"
-    )
+    React.createElement("div", { className: "layer" })
   );
 };
 

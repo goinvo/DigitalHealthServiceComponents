@@ -1,10 +1,14 @@
 html {
-  --color-gray: #999;
+  --color-gray: #333;
   --stack-size: 90px;
 }
 
 .stack-container {
   background-color: pink;
+}
+
+.layer-group {
+  margin-bottom: 70px;
 }
 
 .layer {

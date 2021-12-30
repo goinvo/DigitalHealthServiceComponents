@@ -1,11 +1,11 @@
-import Layer from "./components/Layer.js";
+import LayerGroup from "./components/LayerGroup.js";
 
 const RootElement = () => {
   return (
     <div className="dhsc-container">
       <div className="stack-container">
-        <Layer zIndex={4} />
-        <Layer zIndex={3} />
+        <LayerGroup />
+        <LayerGroup />
       </div>
     </div>
   );

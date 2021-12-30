@@ -1,7 +1,7 @@
 const Layer = ({ zIndex }) => {
   return (
     <div className="layer-container" style={{ zIndex }}>
-      <div className="layer">hello</div>
+      <div className="layer" />
     </div>
   );
 };

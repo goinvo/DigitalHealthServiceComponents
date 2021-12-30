@@ -1,4 +1,4 @@
-import Layer from "./components/Layer.js";
+import LayerGroup from "./components/LayerGroup.js";
 
 var RootElement = function RootElement() {
   return React.createElement(
@@ -7,8 +7,8 @@ var RootElement = function RootElement() {
     React.createElement(
       "div",
       { className: "stack-container" },
-      React.createElement(Layer, { zIndex: 4 }),
-      React.createElement(Layer, { zIndex: 3 })
+      React.createElement(LayerGroup, null),
+      React.createElement(LayerGroup, null)
     )
   );
 };
