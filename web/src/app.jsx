@@ -1,3 +1,14 @@
-const rootElement = <h1>Hello!</h1>;
+import Layer from "./components/Layer.js";
 
-ReactDOM.render(rootElement, document.getElementById('root'));
+const RootElement = () => {
+  return (
+    <div className="dhsc-container">
+      <div className="stack-container">
+        <Layer zIndex={4} />
+        <Layer zIndex={3} />
+      </div>
+    </div>
+  );
+};
+
+ReactDOM.render(<RootElement />, document.getElementById("root"));

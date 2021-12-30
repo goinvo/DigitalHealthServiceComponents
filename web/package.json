@@ -1,10 +1,11 @@
 {
-  "name": "Digital Health Service Components Web Viewer",
+  "name": "digital-health-service-components-web-viewer",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "dev": "npx babel --watch src --out-dir . --presets react-app/prod",
+    "dev": "npx babel --watch src --out-dir js/ --presets react-app/prod",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,6 +13,8 @@
   "license": "ISC",
   "dependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-react-app": "^3.1.2"
-  }
+    "babel-preset-react-app": "^3.1.2",
+    "react": "^17.0.2"
+  },
+  "devDependencies": {}
 }

@@ -1,0 +1,23 @@
+html {
+  --color-gray: #999;
+  --stack-size: 90px;
+}
+
+.stack-container {
+  background-color: pink;
+}
+
+.layer {
+  background: #fff;
+  border: 3px solid var(--color-gray);
+  height: var(--stack-size);
+  border-radius: 7px;
+  width: var(--stack-size);
+  box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.1);
+  transform: rotate(-22.5deg) skewX(45deg) scaleY(0.7071) translate(30px, 20px);
+}
+
+.layer-container {
+  height: 30px;
+  position: relative;
+}
