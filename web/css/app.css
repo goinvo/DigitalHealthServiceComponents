@@ -1,5 +1,6 @@
 html {
   --primary: rgb(0, 183, 196);
+  --primary-light: rgb(237, 249, 250);
   --primary-shadow: rgba(0, 183, 196, 0.2);
   --color-gray1: #222;
   --color-gray2: #555;
@@ -95,10 +96,12 @@ strong {
 }
 
 .layer-container:hover .layer, .layer-container.highlighted .layer {
+  background-color: var(--primary-light);
   border-color: var(--primary);
   box-shadow: -10px 10px 10px var(--primary-shadow);
 }
 .layer-container:hover .layer-text-container .main, .layer-container.highlighted .layer-text-container .main {
+  font-weight: 400;
   color: var(--primary);
 }
 
