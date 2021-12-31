@@ -7,17 +7,21 @@ Hello! This is a work in progress.
 _NOTE:_ The instructions below are written primarily for UNIX based operating systems.
 
 1. Make sure you have Node.js >14 installed. If you have different projects with different node requirements, a tool like [nvm](https://github.com/nvm-sh/nvm) can help you switch between versions.
-2. This project uses [yarn](https://yarnpkg.com/), a package manager. You can install yarn on your system with NPM, with the terminal command:
+2. This project uses [yarn](https://yarnpkg.com/), a package manager. You can install yarn globally on your system with `npm`, with the terminal command:
 
 ```
-npm install yarn
+npm install -g yarn
 ```
+
+(If the command does not work, you may need to run `sudo` infront of it, followed by your password as prompted. This is because `yarn` is being installed globally on your system.)
 
 3. To install dependencies, navigate into the `web` folder, and enter:
 
 ```
 yarn
 ```
+
+(If running this does not immediately work, close your terminal window and re-open it, so that the `yarn` command is added to the command line.)
 
 4. Now, whenever you want to run the project and develop, run:
 
