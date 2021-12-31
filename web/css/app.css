@@ -1,7 +1,9 @@
 html {
-  --color-gray2: #333;
+  --color-gray1: #222;
+  --color-gray2: #555;
   --color-gray3: #aaa;
   --stack-size: 90px;
+  --distance-labels-away: 50px;
   font-family: sans-serif;
 }
 
@@ -31,7 +33,7 @@ html {
 
 .layer-text-container {
   position: absolute;
-  left: 200px;
+  left: calc(200px + var(--distance-labels-away));
   top: 11px;
   height: 70px;
   display: flex;
@@ -42,8 +44,8 @@ html {
 
 .layer-text-container:before {
   content: "";
-  left: -30px;
-  width: 25px;
+  left: calc(-20px - var(--distance-labels-away));
+  width: var(--distance-labels-away);
   height: 2px;
   background-color: var(--color-gray3);
   top: 32px;
@@ -57,6 +59,7 @@ html {
 }
 
 .layer-text-container .subtext {
-  font-size: 13px;
+  font-size: 12px;
   margin-bottom: 5px;
+  color: var(--color-gray2);
 }
