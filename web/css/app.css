@@ -1,16 +1,53 @@
 html {
+  --primary: rgb(0, 183, 196);
+  --primary-shadow: rgba(0, 183, 196, 0.2);
   --color-gray1: #222;
   --color-gray2: #555;
   --color-gray3: #aaa;
+  --link: var(--primary);
+  
   --stack-size: 90px;
+
   --distance-layers-apart: 70px;
-  --inbetween-line-offset: 10px;
-  --distance-labels-away: 50px;
-  font-family: sans-serif;
+  --inbetween-line-offset: 34px;
+  --distance-labels-away: 40px;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+p {
+  line-height: normal;
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+a {
+  color: var(--link);
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--color-gray2);
+  margin-bottom: 5px;
+}
+
+strong {
+  font-weight: 600;
+}
+
+.dhsc-container {
+  max-width: 1000px;
+  display: flex;
+  margin: 100px auto;
 }
 
 .stack-container {
-  background-color: #eee;
+  flex: 1 0 480px;
 }
 
 .layer-group {
@@ -29,12 +66,25 @@ html {
   width: 3px;
   z-index: 10;
   /* https://kovart.github.io/dashed-border-generator/ */
-  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%237D7D7DFF' stroke-width='6' stroke-dasharray='0%2c10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23CCCCCCFF' stroke-width='6' stroke-dasharray='0%2c10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
 }
 
 .layer-container {
   height: 40px;
   position: relative;
+}
+
+.layer-container:hover {
+  cursor: pointer;
+}
+
+.layer-container:hover .layer {
+  border-color: var(--primary);
+  box-shadow: -10px 10px 10px var(--primary-shadow);
+}
+
+.layer-container:hover .layer-text-container .main {
+  color: var(--primary);
 }
 
 .layer {
@@ -47,13 +97,14 @@ html {
   display: inline-block;
   box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.1);
   transform: rotate(-22.5deg) skewX(45deg) scaleY(0.7071) translate(30px, 20px);
+  transition: 0.2s all;
 }
 
 .layer-text-container {
   position: absolute;
   left: calc(200px + var(--distance-labels-away));
-  top: 11px;
-  height: 70px;
+  top: 21px;
+  height: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -66,7 +117,7 @@ html {
   width: var(--distance-labels-away);
   height: 2px;
   background-color: var(--color-gray3);
-  top: 32px;
+  top: 22px;
   position: absolute;
   z-index: -1;
 }
@@ -74,10 +125,26 @@ html {
 .layer-text-container .main {
   font-size: 16px;
   margin-bottom: 4px;
+  transition: 0.2s color;
 }
 
 .layer-text-container .subtext {
   font-size: 12px;
   margin-bottom: 5px;
   color: var(--color-gray2);
+}
+
+.layer-description {
+  position: relative;
+}
+
+.layer-description:before {
+  content: "";
+  width: 5px;
+  height: 100%;
+  position: absolute;
+  left: -20px;
+  top: 0;
+  background-color: var(--primary);
+}
 }
