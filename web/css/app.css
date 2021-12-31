@@ -23,7 +23,6 @@ p {
   margin-bottom: 20px;
   font-weight: 300;
 }
-
 p:last-child {
   margin-bottom: 0;
 }
@@ -60,7 +59,6 @@ strong {
   width: var(--stack-container-width);
   position: absolute;
 }
-
 .stack-container.fixed {
   position: fixed;
   top: 30px;
@@ -74,11 +72,9 @@ strong {
   margin-bottom: var(--distance-layers-apart);
   position: relative;
 }
-
 .layer-group:hover .layer-container .layer-title {
   color: var(--primary);
 }
-
 .layer-group.has-line-to-next:after {
   content: "";
   position: absolute;
@@ -90,26 +86,23 @@ strong {
   /* https://kovart.github.io/dashed-border-generator/ */
   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23CCCCCCFF' stroke-width='6' stroke-dasharray='0%2c10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
 }
-
-.layer-container {
+.layer-group .layer-container {
   height: 40px;
   position: relative;
 }
-.layer-container:hover {
+.layer-group .layer-container:hover {
   cursor: pointer;
 }
 
-.layer-container.highlighted .layer,
-.layer-container:hover .layer {
+.layer-container:hover .layer, .layer-container.highlighted .layer {
   border-color: var(--primary);
   box-shadow: -10px 10px 10px var(--primary-shadow);
 }
-
-.layer-container:hover .layer-text-container .main {
+.layer-container:hover .layer-text-container .main, .layer-container.highlighted .layer-text-container .main {
   color: var(--primary);
 }
 
-.layer {
+.layer-container .layer {
   background: #fff;
   border: 3px solid var(--color-gray2);
   height: var(--stack-size);
@@ -152,12 +145,12 @@ strong {
   position: absolute;
   z-index: -1;
 }
-.layer-text-container.main {
+.layer-text-container .main {
   font-size: 16px;
   margin-bottom: 4px;
   transition: 0.2s color;
 }
-.layer-text-container.subtext {
+.layer-text-container .subtext {
   font-size: 12px;
   margin-bottom: 5px;
   color: var(--color-gray2);
