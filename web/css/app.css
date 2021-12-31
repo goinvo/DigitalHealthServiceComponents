@@ -22,9 +22,10 @@ html {
   left: 94px;
   height: 50px;
   bottom: -90px;
-  width: 1px;
+  width: 3px;
   z-index: 10;
-  border-left: 4px dashed var(--color-gray3);
+  /* https://kovart.github.io/dashed-border-generator/ */
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%237D7D7DFF' stroke-width='6' stroke-dasharray='0%2c10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
 }
 
 .layer-container {
