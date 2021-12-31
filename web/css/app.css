@@ -4,8 +4,9 @@ html {
   --color-gray1: #222;
   --color-gray2: #555;
   --color-gray3: #aaa;
+  --color-gray4: #eee;
   --link: var(--primary);
-  
+
   --stack-size: 90px;
 
   --distance-layers-apart: 70px;
@@ -22,6 +23,10 @@ p {
   font-size: 16px;
   margin-bottom: 20px;
   font-weight: 300;
+}
+
+p:last-child {
+  margin-bottom: 0;
 }
 
 a {
@@ -53,6 +58,10 @@ strong {
 .layer-group {
   margin-bottom: var(--distance-layers-apart);
   position: relative;
+}
+
+.layer-group:hover .layer-container .layer-title {
+  color: var(--primary);
 }
 
 .layer-group.has-line-to-next:after {
@@ -146,6 +155,8 @@ strong {
 
 .layer-description {
   position: relative;
+  transition: 0.2s all;
+  margin-bottom: 40px;
 }
 
 .layer-description:before {
@@ -156,5 +167,4 @@ strong {
   left: -20px;
   top: 0;
   background-color: var(--primary);
-}
 }
