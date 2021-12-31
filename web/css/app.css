@@ -12,6 +12,8 @@ html {
   --distance-layers-apart: 70px;
   --inbetween-line-offset: 34px;
   --distance-labels-away: 40px;
+
+  --stack-container-width: 480px;
 }
 
 body {
@@ -45,6 +47,12 @@ strong {
   font-weight: 600;
 }
 
+.blue-bar {
+  background-color: var(--primary);
+  height: 300px;
+  padding: 30px;
+}
+
 .dhsc-container {
   max-width: 1000px;
   display: flex;
@@ -52,7 +60,17 @@ strong {
 }
 
 .stack-container {
-  flex: 1 0 480px;
+  width: var(--stack-container-width);
+  position: absolute;
+}
+
+.stack-container.fixed {
+  position: fixed;
+  top: 30px;
+}
+
+.description-container {
+  margin-left: calc(var(--stack-container-width) + 30px);
 }
 
 .layer-group {
@@ -159,6 +177,10 @@ strong {
   margin-bottom: 40px;
 }
 
+.layer-description.highlighted:before {
+  background-color: var(--primary);
+}
+
 .layer-description:before {
   content: "";
   width: 5px;
@@ -166,5 +188,5 @@ strong {
   position: absolute;
   left: -20px;
   top: 0;
-  background-color: var(--primary);
+  background-color: var(--color-gray4);
 }
