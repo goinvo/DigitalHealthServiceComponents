@@ -1,27 +1,62 @@
 html {
-  --color-gray: #333;
+  --color-gray2: #333;
+  --color-gray3: #aaa;
   --stack-size: 90px;
+  font-family: sans-serif;
 }
 
 .stack-container {
-  background-color: pink;
+  background-color: lightgray;
 }
 
 .layer-group {
   margin-bottom: 70px;
 }
 
+.layer-container {
+  height: 40px;
+  position: relative;
+}
+
 .layer {
   background: #fff;
-  border: 3px solid var(--color-gray);
+  border: 3px solid var(--color-gray2);
   height: var(--stack-size);
   border-radius: 7px;
   width: var(--stack-size);
+  position: relative;
   box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.1);
   transform: rotate(-22.5deg) skewX(45deg) scaleY(0.7071) translate(30px, 20px);
 }
 
-.layer-container {
-  height: 30px;
-  position: relative;
+.layer-text-container {
+  position: absolute;
+  left: 200px;
+  top: 11px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: 300;
+}
+
+.layer-text-container:before {
+  content: "";
+  left: -30px;
+  width: 25px;
+  height: 2px;
+  background-color: var(--color-gray3);
+  top: 32px;
+  position: absolute;
+  z-index: -1;
+}
+
+.layer-text-container .main {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.layer-text-container .subtext {
+  font-size: 13px;
+  margin-bottom: 5px;
 }
