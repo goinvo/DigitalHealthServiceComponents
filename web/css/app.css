@@ -100,6 +100,16 @@ strong {
   transition: 0.2s all;
 }
 
+.layer-title {
+  position: absolute;
+  top: 15px;
+  left: -60px;
+  transform: rotate(-22.5deg) skewX(-22.5deg);
+  color: var(--color-gray3);
+  width: 150px;
+  text-align: right;
+}
+
 .layer-text-container {
   position: absolute;
   left: calc(200px + var(--distance-labels-away));

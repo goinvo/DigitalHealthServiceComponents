@@ -9,6 +9,7 @@ const RootElement = () => {
           return (
             <LayerGroup
               layers={content.layers}
+              titleLayer={content.title && { title: content.title }}
               isLastChild={key === data.stack.length - 1}
             />
           );

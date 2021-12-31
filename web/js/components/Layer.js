@@ -6,7 +6,12 @@ var Layer = function Layer(_ref) {
     "div",
     { className: "layer-container", style: { zIndex: zIndex } },
     React.createElement("div", { className: "layer" }),
-    React.createElement(
+    content.title && React.createElement(
+      "div",
+      { className: "layer-title" },
+      content.title
+    ),
+    content.main && React.createElement(
       "div",
       { className: "layer-text-container" },
       React.createElement(

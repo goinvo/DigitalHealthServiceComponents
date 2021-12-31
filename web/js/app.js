@@ -11,6 +11,7 @@ var RootElement = function RootElement() {
       data.stack.map(function (content, key) {
         return React.createElement(LayerGroup, {
           layers: content.layers,
+          titleLayer: content.title && { title: content.title },
           isLastChild: key === data.stack.length - 1
         });
       })

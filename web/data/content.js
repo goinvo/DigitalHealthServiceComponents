@@ -1,7 +1,7 @@
 const data = {
   stack: [
     {
-      name: "BioMetric/results",
+      title: "BioMetric/results",
       layers: [
         {
           main: "Result Summary",
@@ -13,7 +13,20 @@ const data = {
       ],
     },
     {
-      name: "Actionable Step",
+      layers: [
+        {
+          main: "Financial Trade-offs",
+        },
+        {
+          main: "Insurance Coverage",
+        },
+        {
+          main: "Costs",
+        },
+      ],
+    },
+    {
+      title: "Actionable Step",
       layers: [
         {
           main: "Careplanning",
@@ -27,7 +40,7 @@ const data = {
       ],
     },
     {
-      name: "Health Literacy",
+      title: "Health Literacy",
       layers: [
         {
           main: "Bioassay explained",
