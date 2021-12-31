@@ -6,10 +6,13 @@ html {
   --color-gray3: #aaa;
   --color-gray4: #eee;
   --link: var(--primary);
+
   --stack-size: 90px;
+
   --distance-layers-apart: 70px;
   --inbetween-line-offset: 34px;
   --distance-labels-away: 40px;
+
   --stack-container-width: 480px;
 }
 
@@ -84,7 +87,9 @@ strong {
   position: absolute;
   left: 94px;
   height: calc(var(--distance-layers-apart) - var(--inbetween-line-offset));
-  bottom: calc(-40px - var(--distance-layers-apart) + var(--inbetween-line-offset));
+  bottom: calc(
+    -40px - var(--distance-layers-apart) + var(--inbetween-line-offset)
+  );
   width: 3px;
   z-index: 10;
   /* https://kovart.github.io/dashed-border-generator/ */
@@ -94,9 +99,10 @@ strong {
 .layer-container {
   height: 40px;
   position: relative;
-}
-.layer-container:hover {
-  cursor: pointer;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .layer-container.highlighted .layer,
@@ -141,45 +147,48 @@ strong {
   flex-direction: column;
   justify-content: center;
   font-weight: 300;
-}
-.layer-text-container:before {
-  content: "";
-  left: calc(-20px - var(--distance-labels-away));
-  width: var(--distance-labels-away);
-  height: 2px;
-  background-color: var(--color-gray3);
-  top: 22px;
-  position: absolute;
-  z-index: -1;
-}
-.layer-text-container.main {
-  font-size: 16px;
-  margin-bottom: 4px;
-  transition: 0.2s color;
-}
-.layer-text-container.subtext {
-  font-size: 12px;
-  margin-bottom: 5px;
-  color: var(--color-gray2);
+
+  &:before {
+    content: "";
+    left: calc(-20px - var(--distance-labels-away));
+    width: var(--distance-labels-away);
+    height: 2px;
+    background-color: var(--color-gray3);
+    top: 22px;
+    position: absolute;
+    z-index: -1;
+  }
+
+  &.main {
+    font-size: 16px;
+    margin-bottom: 4px;
+    transition: 0.2s color;
+  }
+
+  &.subtext {
+    font-size: 12px;
+    margin-bottom: 5px;
+    color: var(--color-gray2);
+  }
 }
 
 .layer-description {
   position: relative;
   transition: 0.2s all;
   margin-bottom: 40px;
-}
-.layer-description.highlighted:before {
-  background-color: var(--primary);
-}
-.layer-description:before {
-  content: "";
-  width: 5px;
-  height: 100%;
-  position: absolute;
-  left: -20px;
-  top: 0;
-  background-color: var(--color-gray4);
-  transition: 0.2s all;
-}
 
-/*# sourceMappingURL=app.css.map */
+  &.highlighted:before {
+    background-color: var(--primary);
+  }
+
+  &:before {
+    content: "";
+    width: 5px;
+    height: 100%;
+    position: absolute;
+    left: -20px;
+    top: 0;
+    background-color: var(--color-gray4);
+    transition: 0.2s all;
+  }
+}

@@ -1,6 +1,15 @@
-const Layer = ({ content, zIndex }) => {
+const Layer = ({ highlighted, content, zIndex }) => {
   return (
-    <div className="layer-container" style={{ zIndex }}>
+    <div
+      className={`layer-container ${
+        highlighted &&
+        JSON.stringify(content.description) ===
+          JSON.stringify(highlighted.element)
+          ? "highlighted"
+          : ""
+      }`}
+      style={{ zIndex }}
+    >
       <div className="layer" />
       {content.title && <div className="layer-title">{content.title}</div>}
       {content.main && (

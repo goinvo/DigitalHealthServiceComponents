@@ -1,10 +1,14 @@
 var Layer = function Layer(_ref) {
-  var content = _ref.content,
+  var highlighted = _ref.highlighted,
+      content = _ref.content,
       zIndex = _ref.zIndex;
 
   return React.createElement(
     "div",
-    { className: "layer-container", style: { zIndex: zIndex } },
+    {
+      className: "layer-container " + (highlighted && JSON.stringify(content.description) === JSON.stringify(highlighted.element) ? "highlighted" : ""),
+      style: { zIndex: zIndex }
+    },
     React.createElement("div", { className: "layer" }),
     content.title && React.createElement(
       "div",

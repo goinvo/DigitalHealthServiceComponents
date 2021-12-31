@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "npx babel --watch src --out-dir js/ --presets react-app/prod & npm run dev-server",
+    "dev": "npx babel --watch src --out-dir js/ --presets react-app/prod & npm run dev-server & sass --watch src:./css",
     "dev-server": "http-server -c-1 -p 8080",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

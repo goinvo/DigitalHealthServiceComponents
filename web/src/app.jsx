@@ -51,14 +51,12 @@ const RootElement = () => {
     <div>
       <div className="blue-bar">Placeholder box</div>
       <div className="dhsc-container" ref={stackRef}>
-        <div
-          className={`stack-container ${fixed ? "fixed" : ""}`}
-          // style={{ top: `${scroll}px` }}
-        >
+        <div className={`stack-container ${fixed ? "fixed" : ""}`}>
           {data.stack.map((content, key) => {
             return (
               <LayerGroup
                 layers={content.layers}
+                highlighted={highlighted}
                 titleLayer={content.title && { title: content.title }}
                 isLastChild={key === data.stack.length - 1}
               />

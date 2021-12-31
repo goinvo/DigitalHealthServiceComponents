@@ -71,13 +71,11 @@ var RootElement = function RootElement() {
       { className: "dhsc-container", ref: stackRef },
       React.createElement(
         "div",
-        {
-          className: "stack-container " + (fixed ? "fixed" : "")
-          // style={{ top: `${scroll}px` }}
-        },
+        { className: "stack-container " + (fixed ? "fixed" : "") },
         data.stack.map(function (content, key) {
           return React.createElement(LayerGroup, {
             layers: content.layers,
+            highlighted: highlighted,
             titleLayer: content.title && { title: content.title },
             isLastChild: key === data.stack.length - 1
           });
