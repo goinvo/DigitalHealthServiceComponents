@@ -5,7 +5,7 @@ const RootElement = () => {
     <div className="dhsc-container">
       <div className="stack-container">
         <LayerGroup />
-        <LayerGroup />
+        <LayerGroup isLastChild={true} />
       </div>
     </div>
   );

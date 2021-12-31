@@ -8,7 +8,7 @@ var RootElement = function RootElement() {
       "div",
       { className: "stack-container" },
       React.createElement(LayerGroup, null),
-      React.createElement(LayerGroup, null)
+      React.createElement(LayerGroup, { isLastChild: true })
     )
   );
 };

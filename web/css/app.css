@@ -8,11 +8,23 @@ html {
 }
 
 .stack-container {
-  background-color: lightgray;
+  background-color: #eee;
 }
 
 .layer-group {
   margin-bottom: 70px;
+  position: relative;
+}
+
+.layer-group.has-line-to-next:after {
+  content: "";
+  position: absolute;
+  left: 94px;
+  height: 50px;
+  bottom: -90px;
+  width: 1px;
+  z-index: 10;
+  border-left: 4px dashed var(--color-gray3);
 }
 
 .layer-container {
@@ -27,6 +39,7 @@ html {
   border-radius: 7px;
   width: var(--stack-size);
   position: relative;
+  display: inline-block;
   box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.1);
   transform: rotate(-22.5deg) skewX(45deg) scaleY(0.7071) translate(30px, 20px);
 }
