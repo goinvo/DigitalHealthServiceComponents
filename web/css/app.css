@@ -3,6 +3,8 @@ html {
   --color-gray2: #555;
   --color-gray3: #aaa;
   --stack-size: 90px;
+  --distance-layers-apart: 70px;
+  --inbetween-line-offset: 10px;
   --distance-labels-away: 50px;
   font-family: sans-serif;
 }
@@ -12,7 +14,7 @@ html {
 }
 
 .layer-group {
-  margin-bottom: 70px;
+  margin-bottom: var(--distance-layers-apart);
   position: relative;
 }
 
@@ -20,8 +22,10 @@ html {
   content: "";
   position: absolute;
   left: 94px;
-  height: 50px;
-  bottom: -90px;
+  height: calc(var(--distance-layers-apart) - var(--inbetween-line-offset));
+  bottom: calc(
+    -40px - var(--distance-layers-apart) + var(--inbetween-line-offset)
+  );
   width: 3px;
   z-index: 10;
   /* https://kovart.github.io/dashed-border-generator/ */

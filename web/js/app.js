@@ -1,4 +1,5 @@
 import LayerGroup from "./components/LayerGroup.js";
+import data from "../data/content.js";
 
 var RootElement = function RootElement() {
   return React.createElement(
@@ -7,8 +8,12 @@ var RootElement = function RootElement() {
     React.createElement(
       "div",
       { className: "stack-container" },
-      React.createElement(LayerGroup, null),
-      React.createElement(LayerGroup, { isLastChild: true })
+      data.stack.map(function (content, key) {
+        return React.createElement(LayerGroup, {
+          layers: content.layers,
+          isLastChild: key === data.stack.length - 1
+        });
+      })
     )
   );
 };

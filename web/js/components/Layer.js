@@ -1,5 +1,6 @@
 var Layer = function Layer(_ref) {
-  var zIndex = _ref.zIndex;
+  var content = _ref.content,
+      zIndex = _ref.zIndex;
 
   return React.createElement(
     "div",
@@ -11,12 +12,12 @@ var Layer = function Layer(_ref) {
       React.createElement(
         "div",
         { className: "main" },
-        "Bioassay Explained"
+        content.main
       ),
       React.createElement(
         "div",
         { className: "subtext" },
-        "5th grade level, labs explanation"
+        content.subtext
       )
     )
   );

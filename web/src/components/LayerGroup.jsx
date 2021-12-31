@@ -1,10 +1,11 @@
 import Layer from "./Layer.js";
 
-const LayerGroup = ({ isLastChild = false }) => {
+const LayerGroup = ({ layers, isLastChild = false }) => {
   return (
     <div className={`layer-group ${!isLastChild ? "has-line-to-next" : ""}`}>
-      <Layer zIndex={4} />
-      <Layer zIndex={3} />
+      {layers.map((content, key) => {
+        return <Layer content={content} zIndex={layers.length - key} />;
+      })}
     </div>
   );
 };
