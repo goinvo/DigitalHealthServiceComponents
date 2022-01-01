@@ -76,8 +76,6 @@ var RootElement = function RootElement() {
     };
   }, []);
 
-  console.log(stackOffsetTop);
-
   return React.createElement(
     "div",
     null,

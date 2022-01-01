@@ -67,8 +67,6 @@ const RootElement = () => {
     };
   }, []);
 
-  console.log(stackOffsetTop);
-
   return (
     <div>
       <div className="blue-bar" />
