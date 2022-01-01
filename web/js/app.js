@@ -68,11 +68,14 @@ var RootElement = function RootElement() {
       if (findHighlighted) {
         setHighlighted(findHighlighted);
       }
+
+      window.requestAnimationFrame(handleScroll);
     };
-    document.addEventListener("scroll", handleScroll);
+
+    window.addEventListener("scroll", handleScroll);
 
     return function () {
-      document.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 

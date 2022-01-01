@@ -59,11 +59,14 @@ const RootElement = () => {
       if (findHighlighted) {
         setHighlighted(findHighlighted);
       }
+
+      window.requestAnimationFrame(handleScroll);
     };
-    document.addEventListener("scroll", handleScroll);
+
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      document.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
