@@ -81,16 +81,7 @@ var data = {
         )
       )
     }, {
-      main: "Insurance Coverage",
-      description: React.createElement(
-        "div",
-        null,
-        React.createElement(
-          "p",
-          null,
-          "Some content here."
-        )
-      )
+      main: "Insurance Coverage"
     }, {
       main: "Costs",
       description: React.createElement(
@@ -129,7 +120,21 @@ var data = {
     }, {
       main: "Advice"
     }, {
-      main: "Treatment Agent"
+      main: "Treatment Agent",
+      description: React.createElement(
+        "div",
+        null,
+        React.createElement(
+          "p",
+          null,
+          React.createElement(
+            "strong",
+            null,
+            "Treatment Agent"
+          ),
+          " provides evidence-driven, standards of care for conditions (based on each diagnosis)."
+        )
+      )
     }, {
       main: "Diagnosis Agent",
       description: React.createElement(
@@ -143,7 +148,7 @@ var data = {
             null,
             "Diagnosis Agent"
           ),
-          " is a contract between the patient and a service provider that states in clear, simple language or graphics, how data will be used and accessed. The pDUA is evidence for patients of how the service provider's will use, or not use, their information."
+          " looks at health data, symptoms, and patterns to identify specific conditions and diagnosis. Working independently of the patient, or with the patient, or with the entire care team, ratchets up the quality and accuracy of the diagnosis."
         )
       )
     }]
@@ -173,7 +178,21 @@ var data = {
   }, {
     title: "RoS Service",
     layers: [{
-      main: "Review of Systems"
+      main: "Review of Systems",
+      description: React.createElement(
+        "div",
+        null,
+        React.createElement(
+          "p",
+          null,
+          React.createElement(
+            "strong",
+            null,
+            "Review of Systems (RoS)"
+          ),
+          " is a checklist and catalog of a patient's body systems, collected by a series of questions.A goal in healthcare is to have an accurate, up-to-date, and in-depth personal and family history. An always-evolving RoS aids in identifying signs and symptoms, creating care plans, and learning about a patient. Seeing a person's entire system information and dynamics help to provide the right care, at the right time, at the right dose, in the right setting."
+        )
+      )
     }, {
       main: "PRO Pump"
     }]
@@ -200,7 +219,36 @@ var data = {
   }, {
     title: "Using Data",
     layers: [{
-      main: "Intervention Engine"
+      main: "Intervention Engine",
+      description: React.createElement(
+        "div",
+        null,
+        React.createElement(
+          "p",
+          null,
+          "An ",
+          React.createElement(
+            "strong",
+            null,
+            "Intervention Engine"
+          ),
+          " uses patient health projections and relevant recommendations to care plan in near-real time. Intervention services feed digital care plans with personal health content and metrics, and behave autonomously or inconjunction with medical providers."
+        ),
+        React.createElement(
+          "h2",
+          null,
+          "Poster"
+        ),
+        React.createElement(
+          "p",
+          null,
+          React.createElement(
+            "a",
+            { href: "https://www.goinvo.com/old/images/features/careplans/part3/intervention_engine_poster_final.pdf" },
+            "See GoInvo's Poster Here"
+          )
+        )
+      )
     }, {
       main: "Behavior Model, Predictive Analytics"
     }, {

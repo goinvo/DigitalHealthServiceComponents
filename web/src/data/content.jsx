@@ -90,11 +90,6 @@ const data = {
         },
         {
           main: "Insurance Coverage",
-          description: (
-            <div>
-              <p>Some content here.</p>
-            </div>
-          ),
         },
         {
           main: "Costs",
@@ -142,17 +137,25 @@ const data = {
         },
         {
           main: "Treatment Agent",
+          description: (
+            <div>
+              <p>
+                <strong>Treatment Agent</strong> provides evidence-driven,
+                standards of care for conditions (based on each diagnosis).
+              </p>
+            </div>
+          ),
         },
         {
           main: "Diagnosis Agent",
           description: (
             <div>
               <p>
-                <strong>Diagnosis Agent</strong> is a contract between the
-                patient and a service provider that states in clear, simple
-                language or graphics, how data will be used and accessed. The
-                pDUA is evidence for patients of how the service provider's will
-                use, or not use, their information.
+                <strong>Diagnosis Agent</strong> looks at health data, symptoms,
+                and patterns to identify specific conditions and diagnosis.
+                Working independently of the patient, or with the patient, or
+                with the entire care team, ratchets up the quality and accuracy
+                of the diagnosis.
               </p>
             </div>
           ),
@@ -190,6 +193,21 @@ const data = {
       layers: [
         {
           main: "Review of Systems",
+          description: (
+            <div>
+              <p>
+                <strong>Review of Systems (RoS)</strong> is a checklist and
+                catalog of a patient's body systems, collected by a series of
+                questions.A goal in healthcare is to have an accurate,
+                up-to-date, and in-depth personal and family history. An
+                always-evolving RoS aids in identifying signs and symptoms,
+                creating care plans, and learning about a patient. Seeing a
+                person's entire system information and dynamics help to provide
+                the right care, at the right time, at the right dose, in the
+                right setting.
+              </p>
+            </div>
+          ),
         },
         {
           main: "PRO Pump",
@@ -231,6 +249,23 @@ const data = {
       layers: [
         {
           main: "Intervention Engine",
+          description: (
+            <div>
+              <p>
+                An <strong>Intervention Engine</strong> uses patient health
+                projections and relevant recommendations to care plan in
+                near-real time. Intervention services feed digital care plans
+                with personal health content and metrics, and behave
+                autonomously or inconjunction with medical providers.
+              </p>
+              <h2>Poster</h2>
+              <p>
+                <a href="https://www.goinvo.com/old/images/features/careplans/part3/intervention_engine_poster_final.pdf">
+                  See GoInvo's Poster Here
+                </a>
+              </p>
+            </div>
+          ),
         },
         {
           main: "Behavior Model, Predictive Analytics",
