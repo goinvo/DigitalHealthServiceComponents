@@ -60,12 +60,14 @@ strong {
 .stack-container {
   width: var(--stack-container-width);
   position: absolute;
+  transition: 0.1s all;
 }
 .stack-container.fixed {
   position: fixed;
-  top: 30px;
+  top: 0;
 }
 .stack-container.fixed-bottom {
+  transform: none !important;
   position: absolute;
   bottom: 0;
   top: auto;
@@ -86,21 +88,21 @@ strong {
   content: "";
   position: absolute;
   left: 94px;
-  height: calc(var(--distance-layers-apart) - var(--inbetween-line-offset));
+  height: calc(var(--distance-layers-apart) - var(--inbetween-line-offset) - 5px);
   bottom: calc(-40px - var(--distance-layers-apart) + var(--inbetween-line-offset));
   width: 3px;
   z-index: 10;
   /* https://kovart.github.io/dashed-border-generator/ */
   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23CCCCCCFF' stroke-width='6' stroke-dasharray='0%2c10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
 }
-.layer-group .layer-container {
-  height: 40px;
+
+.layer-container {
+  height: 35px;
   position: relative;
 }
-.layer-group .layer-container:hover {
+.layer-container:hover {
   cursor: pointer;
 }
-
 .layer-container .layer {
   background: #fff;
   border: 3px solid var(--color-gray2);
@@ -154,7 +156,7 @@ strong {
   z-index: -1;
 }
 .layer-text-container .main {
-  font-size: 16px;
+  font-size: 15px;
   margin-bottom: 4px;
   transition: 0.2s color;
 }

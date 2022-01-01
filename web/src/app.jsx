@@ -76,7 +76,9 @@ const RootElement = () => {
             bottomFixed ? "fixed-bottom" : ""
           }`}
           ref={stackRef}
-          style={!bottomFixed ? { top: `${stackOffsetTop}px` } : {}}
+          style={
+            !bottomFixed ? { transform: `translateY(${stackOffsetTop}px)` } : {}
+          }
         >
           {data.stack.map((content, key) => {
             return (

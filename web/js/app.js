@@ -88,7 +88,7 @@ var RootElement = function RootElement() {
         {
           className: "stack-container " + (fixed ? "fixed" : "") + " " + (bottomFixed ? "fixed-bottom" : ""),
           ref: stackRef,
-          style: !bottomFixed ? { top: stackOffsetTop + "px" } : {}
+          style: !bottomFixed ? { transform: "translateY(" + stackOffsetTop + "px)" } : {}
         },
         data.stack.map(function (content, key) {
           return React.createElement(LayerGroup, {

@@ -223,9 +223,55 @@ const data = {
         },
         {
           main: "Consent",
+          description: (
+            <div>
+              <p>
+                A <strong>Consent</strong> process shows and tells the patient
+                about the purpose, benefits, and risks of the medical activity
+                they're about to engage in. To proceed in using the product or
+                completing the intervention, the patient needs to agree to
+                participating and understands the pros and cons of
+                participating.
+              </p>
+              <h2>Guide to Designing Consent</h2>
+              <p>
+                <a href="https://www.goinvo.com/vision/patient-centered-consent/Sage">
+                  https://www.goinvo.com/vision/patient-centered-consent/Sage
+                </a>
+              </p>
+              <h2>Bionetworks Consent Toolkit</h2>
+              <p>
+                <a href="https://sagebionetworks.org/tools_resources/elements-of-informed-consent/">
+                  https://sagebionetworks.org/tools_resources/elements-of-informed-consent/
+                </a>
+              </p>
+            </div>
+          ),
         },
         {
           main: "Access Controls",
+          description: (
+            <div>
+              <p>
+                <strong>Access Controls</strong> for a Patient Data Manager
+                shares data with anyone, as directed by the patient. The PDM
+                always needs a patient's permission before sharing data.
+              </p>
+              <p>
+                Patients can share data for research, so scientists can learn
+                more about humans and discover new treatments.
+              </p>
+              <p>
+                One can share data automatically during an emergency. First
+                responders would be able to see critical health information
+                about the patient.
+              </p>
+              <p>
+                Patients can review who has access to their data, and can stop
+                sharing at any time.
+              </p>
+            </div>
+          ),
         },
         {
           main: "Outside health services API",
@@ -272,6 +318,24 @@ const data = {
         },
         {
           main: "CDS",
+          description: (
+            <div>
+              <p>
+                <strong>Clinical Decision Support (CDS)</strong> services...
+                Tools for patients and clinicians that aid in decision-making
+                with diagnosis, treatment, and care planning. Models based on
+                personal information and peer-reviewed evidence of many-like
+                people, reveal options on how to diagnose or treat a condition
+                or warn of possible futures.
+              </p>
+              <h2>An example is the Mayo Clinic Statin CDS</h2>
+              <p>
+                <a href="https://statindecisionaid.mayoclinic.org/">
+                  https://statindecisionaid.mayoclinic.org/
+                </a>
+              </p>
+            </div>
+          ),
         },
         {
           main: "Health Score",
@@ -288,12 +352,45 @@ const data = {
       layers: [
         {
           main: "Patient Data Manager",
+          description: (
+            <div>
+              <p>
+                <strong>Patient Data Manager (PDM)</strong> is a digital service
+                working on behalf of a patient to continually find, retrieve,
+                add, edit, correct, and normalize data and construct a person's
+                longitudinal health record. Because a patient's data comes from
+                many places, the PDM takes it and puts it into the same place
+                (one, comprehensive health record).
+              </p>
+            </div>
+          ),
         },
         {
           main: "Manual Inputs",
+          description: (
+            <div>
+              <p>
+                <strong>Manual Inputs</strong> is required for any data in your
+                record. Mistakes happen. This is why you can correct and comment
+                on your data.
+              </p>
+            </div>
+          ),
         },
         {
           main: "Patient Data Receipts",
+          description: (
+            <div>
+              <p>
+                <strong>Patient Data Receipt (PDR)</strong> is a digital record,
+                a data record, of what happened at an encounter. Every clinical
+                visit, every reading from a wearable, and all activity is
+                digitally captured. The transaction between the service(s) and
+                that patient is recorded in a PDR, and sent to the patient and
+                legally required parties.
+              </p>
+            </div>
+          ),
         },
       ],
     },
