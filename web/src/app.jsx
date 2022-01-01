@@ -4,9 +4,13 @@ import data from "./data/content.js";
 const RootElement = () => {
   const [scroll, setScroll] = React.useState();
   const [fixed, setFixed] = React.useState();
+  const [bottomFixed, setBottomFixed] = React.useState();
   const [highlighted, setHighlighted] = React.useState();
+  const [stackOffsetTop, setStackOffsetTop] = React.useState(0);
 
+  const dhscRef = React.useRef();
   const stackRef = React.useRef();
+
   const descriptions = data.stack
     .reduce((acc, layerGroup) => {
       return [
@@ -25,9 +29,25 @@ const RootElement = () => {
 
   React.useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = stackRef.current.getBoundingClientRect().top;
-      setFixed(scrollPosition < 30);
+      const scrollPosition = dhscRef.current.getBoundingClientRect().top;
+      const percentOfDescriptionsScrolled = Math.min(
+        Math.max(
+          -scrollPosition /
+            (dhscRef.current.getBoundingClientRect().height -
+              window.innerHeight),
+          0
+        ),
+        1
+      );
+      const stackHeight = stackRef.current.getBoundingClientRect().height;
+
+      setFixed(scrollPosition < 0);
+      setBottomFixed(percentOfDescriptionsScrolled === 1);
       setScroll(window.scrollY);
+      setStackOffsetTop(
+        -(stackHeight - window.innerHeight) * percentOfDescriptionsScrolled
+      );
+
       let findHighlighted;
       descriptions.forEach((description) => {
         const descriptionScroll =
@@ -47,11 +67,19 @@ const RootElement = () => {
     };
   }, []);
 
+  console.log(stackOffsetTop);
+
   return (
     <div>
-      <div className="blue-bar">Placeholder box</div>
-      <div className="dhsc-container" ref={stackRef}>
-        <div className={`stack-container ${fixed ? "fixed" : ""}`}>
+      <div className="blue-bar" />
+      <div className="dhsc-container" ref={dhscRef}>
+        <div
+          className={`stack-container ${fixed ? "fixed" : ""} ${
+            bottomFixed ? "fixed-bottom" : ""
+          }`}
+          ref={stackRef}
+          style={!bottomFixed ? { top: `${stackOffsetTop}px` } : {}}
+        >
           {data.stack.map((content, key) => {
             return (
               <LayerGroup
@@ -82,6 +110,7 @@ const RootElement = () => {
           })}
         </div>
       </div>
+      <div className="blue-bar" />
     </div>
   );
 };

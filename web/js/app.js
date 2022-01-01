@@ -18,10 +18,22 @@ var RootElement = function RootElement() {
 
   var _React$useState5 = React.useState(),
       _React$useState6 = _slicedToArray(_React$useState5, 2),
-      highlighted = _React$useState6[0],
-      setHighlighted = _React$useState6[1];
+      bottomFixed = _React$useState6[0],
+      setBottomFixed = _React$useState6[1];
 
+  var _React$useState7 = React.useState(),
+      _React$useState8 = _slicedToArray(_React$useState7, 2),
+      highlighted = _React$useState8[0],
+      setHighlighted = _React$useState8[1];
+
+  var _React$useState9 = React.useState(0),
+      _React$useState10 = _slicedToArray(_React$useState9, 2),
+      stackOffsetTop = _React$useState10[0],
+      setStackOffsetTop = _React$useState10[1];
+
+  var dhscRef = React.useRef();
   var stackRef = React.useRef();
+
   var descriptions = data.stack.reduce(function (acc, layerGroup) {
     return [].concat(_toConsumableArray(acc), _toConsumableArray(layerGroup.layers.filter(function (layer) {
       return layer.description;
@@ -37,9 +49,15 @@ var RootElement = function RootElement() {
 
   React.useEffect(function () {
     var handleScroll = function handleScroll() {
-      var scrollPosition = stackRef.current.getBoundingClientRect().top;
-      setFixed(scrollPosition < 30);
+      var scrollPosition = dhscRef.current.getBoundingClientRect().top;
+      var percentOfDescriptionsScrolled = Math.min(Math.max(-scrollPosition / (dhscRef.current.getBoundingClientRect().height - window.innerHeight), 0), 1);
+      var stackHeight = stackRef.current.getBoundingClientRect().height;
+
+      setFixed(scrollPosition < 0);
+      setBottomFixed(percentOfDescriptionsScrolled === 1);
       setScroll(window.scrollY);
+      setStackOffsetTop(-(stackHeight - window.innerHeight) * percentOfDescriptionsScrolled);
+
       var findHighlighted = void 0;
       descriptions.forEach(function (description) {
         var descriptionScroll = description.ref.current.getBoundingClientRect().top;
@@ -58,20 +76,22 @@ var RootElement = function RootElement() {
     };
   }, []);
 
+  console.log(stackOffsetTop);
+
   return React.createElement(
     "div",
     null,
+    React.createElement("div", { className: "blue-bar" }),
     React.createElement(
       "div",
-      { className: "blue-bar" },
-      "Placeholder box"
-    ),
-    React.createElement(
-      "div",
-      { className: "dhsc-container", ref: stackRef },
+      { className: "dhsc-container", ref: dhscRef },
       React.createElement(
         "div",
-        { className: "stack-container " + (fixed ? "fixed" : "") },
+        {
+          className: "stack-container " + (fixed ? "fixed" : "") + " " + (bottomFixed ? "fixed-bottom" : ""),
+          ref: stackRef,
+          style: !bottomFixed ? { top: stackOffsetTop + "px" } : {}
+        },
         data.stack.map(function (content, key) {
           return React.createElement(LayerGroup, {
             layers: content.layers,
@@ -95,7 +115,8 @@ var RootElement = function RootElement() {
           );
         })
       )
-    )
+    ),
+    React.createElement("div", { className: "blue-bar" })
   );
 };
 
