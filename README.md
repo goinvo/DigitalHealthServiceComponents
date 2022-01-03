@@ -4,6 +4,9 @@ We need to see the major components of a digital health service from data to dat
 
 Much like the OSI model (https://en.wikipedia.org/wiki/OSI_model), the open source digital health service components is a stack of common elements and terms.
 
+In-progress whack-a-prototype:
+https://goinvo.github.io/DigitalHealthServiceComponents/
+
 The current Figma design:
 https://www.figma.com/file/9CFtzTP0IHgIvG67NoOVkL/Health-IT-Digital-Service-Components?node-id=817%3A461
 
