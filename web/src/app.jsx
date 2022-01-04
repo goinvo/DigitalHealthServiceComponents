@@ -72,16 +72,61 @@ const RootElement = () => {
 
   return (
     <div>
-      <div className="blue-bar" />
+      <div className="blue-bar">
+        <div className="intro-container">
+          <h1>Digital Health Connections Model</h1>
+        </div>
+      </div>
+      <div className="light-blue-bar">
+        <div className="intro-container">
+          <p>
+            The <strong>Digital Health Connections Model</strong> is a
+            representation of the system of services that can make up digital
+            health software.
+          </p>
+          <p>
+            Much like the{" "}
+            <a href="https://en.wikipedia.org/wiki/OSI_model">OSI model</a>, the
+            Digital Health Connections model is a stack of common services,
+            functions, elements, and terms.The model partitions the information
+            flow into 10 abstraction layers, from the common data elements to
+            the highest level of representation of information occurs, with the
+            Patient Health Manager.
+          </p>
+          <h2>Questions and issues:</h2>
+          <ul>
+            <li>
+              This is shown as a linear flow. However, it's not linear or
+              completely hierarchal. Do you have any suggestions on showing
+              non-linearity?
+            </li>
+            <li>
+              Trauma, surgery, and other medical disciplines may prescribe to
+              parts of this model. We need to show those disciplines in the
+              model.
+            </li>
+          </ul>
+          <p>
+            This is an{" "}
+            <a href="https://github.com/goinvo/DigitalHealthServiceComponents">
+              open source project
+            </a>
+            , licensed under the Apache 2.0 license.
+            <br />
+            Please email us feedback:{" "}
+            <a href="mailto:hello@goinvo.com">hello@goinvo.com</a>.
+          </p>
+        </div>
+      </div>
       <div className="dhsc-container" ref={dhscRef}>
         <div
           className={`stack-container ${fixed ? "fixed" : ""} ${
             bottomFixed ? "fixed-bottom" : ""
           }`}
           ref={stackRef}
-          style={
-            !bottomFixed ? { transform: `translateY(${stackOffsetTop}px)` } : {}
-          }
+          // style={
+          //   !bottomFixed ? { transform: `translateY(${stackOffsetTop}px)` } : {}
+          // }
         >
           {data.stack.map((content, key) => {
             return (

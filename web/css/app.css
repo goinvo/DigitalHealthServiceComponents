@@ -1,11 +1,15 @@
 html {
-  --primary: rgb(0, 183, 196);
+  --primary: rgb(0, 179, 202);
+  --primary-background: rgb(0, 216, 216);
   --primary-light: rgb(237, 249, 250);
   --primary-shadow: rgba(0, 183, 196, 0.2);
+  --primary-dark: rgb(0, 73, 122);
+  --color-black: #000;
   --color-gray1: #222;
   --color-gray2: #555;
   --color-gray3: #aaa;
   --color-gray4: #eee;
+  --color-white: #fff;
   --link: var(--primary);
   --stack-size: 90px;
   --distance-layers-apart: 70px;
@@ -18,13 +22,15 @@ body {
   font-family: "Nunito Sans", sans-serif;
 }
 
-p {
+p,
+li {
   line-height: normal;
   font-size: 16px;
   margin-bottom: 20px;
   font-weight: 300;
 }
-p:last-child {
+p:last-child,
+li:last-child {
   margin-bottom: 0;
 }
 
@@ -45,9 +51,50 @@ strong {
 }
 
 .blue-bar {
-  background-color: var(--primary);
-  height: 300px;
-  padding: 30px;
+  background: linear-gradient(135deg, var(--primary-background) 0%, var(--primary-dark) 100%);
+  padding: 60px 0 30px;
+}
+
+.light-blue-bar {
+  background-color: var(--primary-light);
+  padding: 40px 0;
+}
+
+.intro-container {
+  max-width: 1000px;
+  line-height: 1.5;
+  margin: 0 auto;
+}
+.intro-container p {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-gray1);
+}
+.intro-container h1 {
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--color-white);
+}
+.intro-container h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-gray1);
+}
+.intro-container ul {
+  list-style: disc;
+  margin-left: 25px;
+  margin-bottom: 15px;
+}
+.intro-container li {
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 10px;
+  color: var(--color-gray1);
+}
+.intro-container a {
+  color: var(--color-gray1);
+  font-weight: 600;
 }
 
 .dhsc-container {
@@ -156,6 +203,7 @@ strong {
   font-size: 15px;
   margin-bottom: 4px;
   transition: 0.2s color;
+  line-height: 18px;
 }
 .layer-text-container .subtext {
   font-size: 12px;

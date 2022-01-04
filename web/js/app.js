@@ -82,7 +82,90 @@ var RootElement = function RootElement() {
   return React.createElement(
     "div",
     null,
-    React.createElement("div", { className: "blue-bar" }),
+    React.createElement(
+      "div",
+      { className: "blue-bar" },
+      React.createElement(
+        "div",
+        { className: "intro-container" },
+        React.createElement(
+          "h1",
+          null,
+          "Digital Health Connections Model"
+        )
+      )
+    ),
+    React.createElement(
+      "div",
+      { className: "light-blue-bar" },
+      React.createElement(
+        "div",
+        { className: "intro-container" },
+        React.createElement(
+          "p",
+          null,
+          "The ",
+          React.createElement(
+            "strong",
+            null,
+            "Digital Health Connections Model"
+          ),
+          " is a representation of the system of services that can make up digital health software."
+        ),
+        React.createElement(
+          "p",
+          null,
+          "Much like the",
+          " ",
+          React.createElement(
+            "a",
+            { href: "https://en.wikipedia.org/wiki/OSI_model" },
+            "OSI model"
+          ),
+          ", the Digital Health Connections model is a stack of common services, functions, elements, and terms.The model partitions the information flow into 10 abstraction layers, from the common data elements to the highest level of representation of information occurs, with the Patient Health Manager."
+        ),
+        React.createElement(
+          "h2",
+          null,
+          "Questions and issues:"
+        ),
+        React.createElement(
+          "ul",
+          null,
+          React.createElement(
+            "li",
+            null,
+            "This is shown as a linear flow. However, it's not linear or completely hierarchal. Do you have any suggestions on showing non-linearity?"
+          ),
+          React.createElement(
+            "li",
+            null,
+            "Trauma, surgery, and other medical disciplines may prescribe to parts of this model. We need to show those disciplines in the model."
+          )
+        ),
+        React.createElement(
+          "p",
+          null,
+          "This is an",
+          " ",
+          React.createElement(
+            "a",
+            { href: "https://github.com/goinvo/DigitalHealthServiceComponents" },
+            "open source project"
+          ),
+          ", licensed under the Apache 2.0 license.",
+          React.createElement("br", null),
+          "Please email us feedback:",
+          " ",
+          React.createElement(
+            "a",
+            { href: "mailto:hello@goinvo.com" },
+            "hello@goinvo.com"
+          ),
+          "."
+        )
+      )
+    ),
     React.createElement(
       "div",
       { className: "dhsc-container", ref: dhscRef },
@@ -90,8 +173,10 @@ var RootElement = function RootElement() {
         "div",
         {
           className: "stack-container " + (fixed ? "fixed" : "") + " " + (bottomFixed ? "fixed-bottom" : ""),
-          ref: stackRef,
-          style: !bottomFixed ? { transform: "translateY(" + stackOffsetTop + "px)" } : {}
+          ref: stackRef
+          // style={
+          //   !bottomFixed ? { transform: `translateY(${stackOffsetTop}px)` } : {}
+          // }
         },
         data.stack.map(function (content, key) {
           return React.createElement(LayerGroup, {
