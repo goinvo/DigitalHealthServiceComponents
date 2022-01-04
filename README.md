@@ -7,20 +7,19 @@ Much like the OSI model (https://en.wikipedia.org/wiki/OSI_model), the open sour
 In-progress whack-a-prototype:
 https://goinvo.github.io/DigitalHealthServiceComponents/
 
+Terminology wiki:
+https://github.com/goinvo/DigitalHealthServiceComponents/wiki/Terminology
+1 line definition a high schooler can understand, followed by 2-3 sentences of details, ending with 1-3 real, visual examples + references.
+
+
+...
+
 The current Figma design:
 https://www.figma.com/file/9CFtzTP0IHgIvG67NoOVkL/Health-IT-Digital-Service-Components?node-id=817%3A461
 
 The web viewer and README can be found in:
 https://github.com/goinvo/DigitalHealthServiceComponents/tree/main/web
 
-Current questions/issues:
-Does it work for 80% of all healthcare?
-How do we incorporate trauma & surgery?
-This isn’t linear. How do we show that non-linearity?
-Need the builder perspective, the engineering POV.
-
-Note on terminology, since it's evolving:
-We're using "Patient Reported Data" (which is a superset of Patient Reported Outcomes).
 
 Please comment and give feedback.
 hello@goinvo.com
