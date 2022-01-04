@@ -34,3 +34,14 @@ This spins up a quick little server using the `http-server` package, and runs `b
 5. Head on over to `http://localhost:8080/` in your favorite browser and you should see the site running locally!
 
 6. Give a co-worker a compliment.
+
+## Deploy to GitHub Pages Preview
+
+GitHub Pages is currently set to preview from the `gh-pages` branch. To do this, you can run this crazy command:
+
+```
+git subtree push --prefix web origin gh-pages
+```
+
+Once you've run it, the preview can be seen here:
+[https://goinvo.github.io/DigitalHealthServiceComponents/](https://goinvo.github.io/DigitalHealthServiceComponents/)
