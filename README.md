@@ -9,6 +9,7 @@ https://goinvo.github.io/DigitalHealthServiceComponents/
 
 Terminology wiki:
 https://github.com/goinvo/DigitalHealthServiceComponents/wiki/Terminology
+
 1 line definition a high schooler can understand, followed by 2-3 sentences of details, ending with 1-3 real, visual examples + references.
 
 
