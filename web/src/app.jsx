@@ -119,15 +119,7 @@ const RootElement = () => {
         </div>
       </div>
       <div className="dhsc-container" ref={dhscRef}>
-        <div
-          className={`stack-container ${fixed ? "fixed" : ""} ${
-            bottomFixed ? "fixed-bottom" : ""
-          }`}
-          ref={stackRef}
-          // style={
-          //   !bottomFixed ? { transform: `translateY(${stackOffsetTop}px)` } : {}
-          // }
-        >
+        <div className={`stack-container`} ref={stackRef}>
           {data.stack.map((content, key) => {
             return (
               <LayerGroup
@@ -140,19 +132,19 @@ const RootElement = () => {
           })}
         </div>
         <div className="description-container">
-          {descriptions.map((description) => {
+          {data.stack.map((group, key) => {
             return (
-              <div
-                className={`layer-description ${
-                  highlighted !== undefined &&
-                  JSON.stringify(highlighted.element) ===
-                    JSON.stringify(description.element)
-                    ? "highlighted"
-                    : ""
-                }`}
-                ref={description.ref}
-              >
-                {description.element}
+              <div key={key}>
+                {group.title && (
+                  <div className="group-title">{group.title}</div>
+                )}
+                {group.layers.map((layer, key2) => {
+                  return (
+                    <div key2={key2} className={`layer-description`}>
+                      {layer.description}
+                    </div>
+                  );
+                })}
               </div>
             );
           })}

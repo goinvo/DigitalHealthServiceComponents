@@ -120,7 +120,7 @@ var data = {
         )
       )
     }, {
-      main: "Advice"
+      main: '"Advice"'
     }, {
       main: "Treatment Agent",
       description: React.createElement(
@@ -420,7 +420,32 @@ var data = {
     title: "Patient Data",
     icon: "/images/patient-data-icon.svg",
     layers: [{
-      main: "Standard Patient Health Record"
+      main: "Standard Patient Health Record",
+      description: React.createElement(
+        "div",
+        null,
+        React.createElement(
+          "p",
+          null,
+          React.createElement(
+            "strong",
+            null,
+            "Standard Patient Health Record"
+          ),
+          " is a nationally shared and consistent definition of health data (structure, terminology, content) for the US and planet. It's a specification that contains definitions for all critical patient information such as ID, emergency care, primary care, oncology care, with future extensions for representing human biology, behavior, environment, and social circumstances in code."
+        ),
+        React.createElement(
+          "p",
+          null,
+          "Reference:",
+          " ",
+          React.createElement(
+            "a",
+            { href: "http://standardhealthrecord.org/" },
+            "http://standardhealthrecord.org/"
+          )
+        )
+      )
     }, {
       main: "Financial Data"
     }, {

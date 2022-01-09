@@ -135,7 +135,7 @@ const data = {
           ),
         },
         {
-          main: "Advice",
+          main: '"Advice"',
         },
         {
           main: "Treatment Agent",
@@ -406,6 +406,25 @@ const data = {
       layers: [
         {
           main: "Standard Patient Health Record",
+          description: (
+            <div>
+              <p>
+                <strong>Standard Patient Health Record</strong> is a nationally
+                shared and consistent definition of health data (structure,
+                terminology, content) for the US and planet. It's a
+                specification that contains definitions for all critical patient
+                information such as ID, emergency care, primary care, oncology
+                care, with future extensions for representing human biology,
+                behavior, environment, and social circumstances in code.
+              </p>
+              <p>
+                Reference:{" "}
+                <a href="http://standardhealthrecord.org/">
+                  http://standardhealthrecord.org/
+                </a>
+              </p>
+            </div>
+          ),
         },
         {
           main: "Financial Data",

@@ -1,5 +1,5 @@
 html {
-  --primary: rgb(0, 179, 202);
+  --primary: #00b3ca;
   --primary-background: rgb(0, 216, 216);
   --primary-light: rgb(237, 249, 250);
   --primary-shadow: rgba(0, 183, 196, 0.2);
@@ -121,6 +121,22 @@ strong {
 
 .description-container {
   margin-left: calc(var(--stack-container-width) + 60px);
+}
+
+.group-title {
+  font-size: 24px;
+  margin-bottom: 30px;
+  margin-top: 100px;
+  background-color: var(--primary-dark);
+  color: var(--primary-light);
+  padding: 13px 20px 10px;
+  margin-left: -20px;
+  font-weight: bold;
+  border-radius: 4px;
+  display: inline-block;
+}
+.group-title:first-child {
+  margin-top: 0;
 }
 
 .layer-group {

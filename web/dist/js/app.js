@@ -171,13 +171,7 @@ var RootElement = function RootElement() {
       { className: "dhsc-container", ref: dhscRef },
       React.createElement(
         "div",
-        {
-          className: "stack-container " + (fixed ? "fixed" : "") + " " + (bottomFixed ? "fixed-bottom" : ""),
-          ref: stackRef
-          // style={
-          //   !bottomFixed ? { transform: `translateY(${stackOffsetTop}px)` } : {}
-          // }
-        },
+        { className: "stack-container", ref: stackRef },
         data.stack.map(function (content, key) {
           return React.createElement(LayerGroup, {
             content: content,
@@ -190,14 +184,22 @@ var RootElement = function RootElement() {
       React.createElement(
         "div",
         { className: "description-container" },
-        descriptions.map(function (description) {
+        data.stack.map(function (group, key) {
           return React.createElement(
             "div",
-            {
-              className: "layer-description " + (highlighted !== undefined && JSON.stringify(highlighted.element) === JSON.stringify(description.element) ? "highlighted" : ""),
-              ref: description.ref
-            },
-            description.element
+            { key: key },
+            group.title && React.createElement(
+              "div",
+              { className: "group-title" },
+              group.title
+            ),
+            group.layers.map(function (layer, key2) {
+              return React.createElement(
+                "div",
+                { key2: key2, className: "layer-description" },
+                layer.description
+              );
+            })
           );
         })
       )
