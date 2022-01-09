@@ -139,11 +139,13 @@ const RootElement = () => {
                   <div className="group-title">{group.title}</div>
                 )}
                 {group.layers.map((layer, key2) => {
-                  return (
-                    <div key2={key2} className={`layer-description`}>
-                      {layer.description}
-                    </div>
-                  );
+                  if (layer.description) {
+                    return (
+                      <div key2={key2} className={`layer-description`}>
+                        {layer.description}
+                      </div>
+                    );
+                  }
                 })}
               </div>
             );

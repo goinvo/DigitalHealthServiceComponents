@@ -194,11 +194,13 @@ var RootElement = function RootElement() {
               group.title
             ),
             group.layers.map(function (layer, key2) {
-              return React.createElement(
-                "div",
-                { key2: key2, className: "layer-description" },
-                layer.description
-              );
+              if (layer.description) {
+                return React.createElement(
+                  "div",
+                  { key2: key2, className: "layer-description" },
+                  layer.description
+                );
+              }
             })
           );
         })

@@ -122,6 +122,33 @@ var data = {
     }, {
       main: '"Advice"'
     }, {
+      main: "Care Plan",
+      description: React.createElement(
+        "div",
+        null,
+        React.createElement(
+          "p",
+          null,
+          React.createElement(
+            "strong",
+            null,
+            "Care Plan"
+          ),
+          " is a synthesis of all plans of care produced by the patient and their providers to managea person's health day to day. It serves as a continuous, conceptual framework shared by all of the care team members to guide the patient's care."
+        ),
+        React.createElement(
+          "p",
+          null,
+          "Reference:",
+          " ",
+          React.createElement(
+            "a",
+            { href: "https://www.goinvo.com/features/careplans/" },
+            "https://www.goinvo.com/features/careplans/"
+          )
+        )
+      )
+    }, {
       main: "Treatment Agent",
       description: React.createElement(
         "div",
@@ -193,7 +220,12 @@ var data = {
             null,
             "Review of Systems (RoS)"
           ),
-          " is a checklist and catalog of a patient's body systems, collected by a series of questions.A goal in healthcare is to have an accurate, up-to-date, and in-depth personal and family history. An always-evolving RoS aids in identifying signs and symptoms, creating care plans, and learning about a patient. Seeing a person's entire system information and dynamics help to provide the right care, at the right time, at the right dose, in the right setting."
+          " is a checklist and catalog of a patient's body systems, collected by a series of questions."
+        ),
+        React.createElement(
+          "p",
+          null,
+          "A goal in healthcare is to have an accurate, up-to-date, and in-depth personal and family history. An always-evolving RoS aids in identifying signs and symptoms, creating care plans, and learning about a patient. Seeing a person's entire system information and dynamics help to provide the right care, at the right time, at the right dose, in the right setting."
         )
       )
     }, {
@@ -204,7 +236,47 @@ var data = {
     icon: "/images/agreement-icon.svg",
     layers: [{
       main: "pDUA",
-      subtext: "Data Use Agreement"
+      subtext: "Patient Data Use Agreement",
+      description: React.createElement(
+        "div",
+        null,
+        React.createElement(
+          "p",
+          null,
+          React.createElement(
+            "strong",
+            null,
+            "Patient Data Use Agreement (pDUA)"
+          ),
+          " is a contract between the patient and a service provider that states in clear, simple language or graphics, how data will be used and accessed."
+        ),
+        React.createElement(
+          "p",
+          null,
+          "The pDUA is evidence for patients of how the service provider's will use, or not use, their information. More than just terms & conditions, the pDUA gives options for the terms of the agreement itself. It allows everyone to assess the trustworthiness and practices of a third party service. Options also include how data is transitioned, if the agreement is terminated. Patients need to be on the same legal altitude as healthcare services, apps, and hospitals. A binding data contract, governed by the patients, is critical to putting patients in control and protecting patients from corporate overreach."
+        ),
+        React.createElement(
+          "p",
+          null,
+          "References:",
+          " ",
+          React.createElement(
+            "a",
+            { href: "datauseagreement.org" },
+            "datauseagreement.org"
+          )
+        ),
+        React.createElement(
+          "p",
+          null,
+          "1 pager:\xA0",
+          React.createElement(
+            "a",
+            { href: "https://www.healthcareitnews.com/news/why-patients-and-providers-need-model-patient-data-use-agreement" },
+            "https://www.healthcareitnews.com/news/why-patients-and-providers-need-model-patient-data-use-agreement"
+          )
+        )
+      )
     }, {
       main: "Consent",
       description: React.createElement(
@@ -283,9 +355,37 @@ var data = {
       )
     }, {
       main: "Outside health services API",
-      subtext: "Integrate with Uber Health, Apple HealthKit, etc."
+      subtext: "Integrate with Uber Health, Apple HealthKit, etc.",
+      description: React.createElement(
+        "div",
+        null,
+        React.createElement(
+          "p",
+          null,
+          React.createElement(
+            "strong",
+            null,
+            "Outside Health Services API"
+          ),
+          " integrates with third party health services [Part of PDM]"
+        )
+      )
     }, {
-      main: "EHR, PHR API"
+      main: "EHR, PHR API",
+      description: React.createElement(
+        "div",
+        null,
+        React.createElement(
+          "p",
+          null,
+          React.createElement(
+            "strong",
+            null,
+            "EHR, PHR API"
+          ),
+          " forwards data to all stakeholders [Part of PDM, Patient Data Receipt]"
+        )
+      )
     }]
   }, {
     title: "Disclaimers",
