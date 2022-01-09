@@ -13,7 +13,7 @@ const Layer = ({ highlighted, content, zIndex, icon }) => {
       <div className="layer" />
       {icon && (
         <div className="icon-container">
-          <img className="icon" src={`/dist${icon}`} />
+          <img className="icon" src={`./dist${icon}`} />
         </div>
       )}
       {content.title && <div className="layer-title">{content.title}</div>}

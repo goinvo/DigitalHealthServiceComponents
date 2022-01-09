@@ -14,7 +14,7 @@ var Layer = function Layer(_ref) {
     icon && React.createElement(
       "div",
       { className: "icon-container" },
-      React.createElement("img", { className: "icon", src: "/dist" + icon })
+      React.createElement("img", { className: "icon", src: "./dist" + icon })
     ),
     content.title && React.createElement(
       "div",
