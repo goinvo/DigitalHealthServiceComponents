@@ -1,6 +1,7 @@
 var data = {
   stack: [{
     title: "BioMetric/results",
+    icon: "/images/biometric-icon.svg",
     layers: [{
       main: "Result Summary",
       description: React.createElement(
@@ -101,6 +102,7 @@ var data = {
     }]
   }, {
     title: "Actionable Step",
+    icon: "/images/actionable-step-icon.svg",
     layers: [{
       main: "Careplanning",
       description: React.createElement(
@@ -154,6 +156,7 @@ var data = {
     }]
   }, {
     title: "Health Literacy",
+    icon: "/images/health-literacy-icon.svg",
     layers: [{
       main: "Bioassay explained",
       subtext: "5th grade level, labs explanation"
@@ -198,6 +201,7 @@ var data = {
     }]
   }, {
     title: "Agreement",
+    icon: "/images/agreement-icon.svg",
     layers: [{
       main: "pDUA",
       subtext: "Data Use Agreement"
@@ -285,11 +289,13 @@ var data = {
     }]
   }, {
     title: "Disclaimers",
+    icon: "/images/disclaimers-icon.svg",
     layers: [{
       main: "Disclaimer"
     }]
   }, {
     title: "Using Data",
+    icon: "/images/using-data-icon.svg",
     layers: [{
       main: "Intervention Engine",
       description: React.createElement(
@@ -412,6 +418,7 @@ var data = {
     }]
   }, {
     title: "Patient Data",
+    icon: "/images/patient-data-icon.svg",
     layers: [{
       main: "Standard Patient Health Record"
     }, {

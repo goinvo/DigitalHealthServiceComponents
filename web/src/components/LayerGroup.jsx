@@ -2,13 +2,20 @@ import Layer from "./Layer.js";
 
 const LayerGroup = ({
   highlighted,
-  layers,
+  content,
   titleLayer,
   isLastChild = false,
 }) => {
+  const { layers } = content;
   return (
     <div className={`layer-group ${!isLastChild ? "has-line-to-next" : ""}`}>
-      {titleLayer && <Layer content={titleLayer} zIndex={layers.length + 1} />}
+      {titleLayer && (
+        <Layer
+          icon={content.icon}
+          content={titleLayer}
+          zIndex={layers.length + 1}
+        />
+      )}
       {layers.map((content, key) => {
         return (
           <Layer

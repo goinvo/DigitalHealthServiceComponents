@@ -180,7 +180,7 @@ var RootElement = function RootElement() {
         },
         data.stack.map(function (content, key) {
           return React.createElement(LayerGroup, {
-            layers: content.layers,
+            content: content,
             highlighted: highlighted,
             titleLayer: content.title && { title: content.title },
             isLastChild: key === data.stack.length - 1

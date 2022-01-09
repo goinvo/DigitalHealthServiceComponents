@@ -186,6 +186,22 @@ strong {
     transition: 0.2s all;
   }
 
+  .icon-container {
+    position: absolute;
+    left: 5px;
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    z-index: 100;
+    top: 3px;
+  }
+
+  img.icon {
+    width: 54px;
+  }
+
   &:hover,
   &.highlighted {
     .layer {

@@ -1,4 +1,4 @@
-const Layer = ({ highlighted, content, zIndex }) => {
+const Layer = ({ highlighted, content, zIndex, icon }) => {
   return (
     <div
       className={`layer-container ${
@@ -11,6 +11,11 @@ const Layer = ({ highlighted, content, zIndex }) => {
       style={{ zIndex }}
     >
       <div className="layer" />
+      {icon && (
+        <div className="icon-container">
+          <img className="icon" src={`/dist${icon}`} />
+        </div>
+      )}
       {content.title && <div className="layer-title">{content.title}</div>}
       {content.main && (
         <div className="layer-text-container">

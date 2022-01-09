@@ -160,6 +160,20 @@ strong {
   transform: rotate(-22.5deg) skewX(45deg) scaleY(0.7071) translate(30px, 20px);
   transition: 0.2s all;
 }
+.layer-container .icon-container {
+  position: absolute;
+  left: 5px;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  z-index: 100;
+  top: 3px;
+}
+.layer-container img.icon {
+  width: 54px;
+}
 .layer-container:hover .layer, .layer-container.highlighted .layer {
   background-color: var(--primary-light);
   border-color: var(--primary);

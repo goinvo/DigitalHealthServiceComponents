@@ -131,7 +131,7 @@ const RootElement = () => {
           {data.stack.map((content, key) => {
             return (
               <LayerGroup
-                layers={content.layers}
+                content={content}
                 highlighted={highlighted}
                 titleLayer={content.title && { title: content.title }}
                 isLastChild={key === data.stack.length - 1}

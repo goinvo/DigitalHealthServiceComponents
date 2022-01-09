@@ -2,6 +2,7 @@ const data = {
   stack: [
     {
       title: "BioMetric/results",
+      icon: "/images/biometric-icon.svg",
       layers: [
         {
           main: "Result Summary",
@@ -113,6 +114,7 @@ const data = {
     },
     {
       title: "Actionable Step",
+      icon: "/images/actionable-step-icon.svg",
       layers: [
         {
           main: "Careplanning",
@@ -164,6 +166,7 @@ const data = {
     },
     {
       title: "Health Literacy",
+      icon: "/images/health-literacy-icon.svg",
       layers: [
         {
           main: "Bioassay explained",
@@ -216,6 +219,7 @@ const data = {
     },
     {
       title: "Agreement",
+      icon: "/images/agreement-icon.svg",
       layers: [
         {
           main: "pDUA",
@@ -284,6 +288,7 @@ const data = {
     },
     {
       title: "Disclaimers",
+      icon: "/images/disclaimers-icon.svg",
       layers: [
         {
           main: "Disclaimer",
@@ -292,6 +297,7 @@ const data = {
     },
     {
       title: "Using Data",
+      icon: "/images/using-data-icon.svg",
       layers: [
         {
           main: "Intervention Engine",
@@ -396,6 +402,7 @@ const data = {
     },
     {
       title: "Patient Data",
+      icon: "/images/patient-data-icon.svg",
       layers: [
         {
           main: "Standard Patient Health Record",

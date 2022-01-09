@@ -1,7 +1,8 @@
 var Layer = function Layer(_ref) {
   var highlighted = _ref.highlighted,
       content = _ref.content,
-      zIndex = _ref.zIndex;
+      zIndex = _ref.zIndex,
+      icon = _ref.icon;
 
   return React.createElement(
     "div",
@@ -10,6 +11,11 @@ var Layer = function Layer(_ref) {
       style: { zIndex: zIndex }
     },
     React.createElement("div", { className: "layer" }),
+    icon && React.createElement(
+      "div",
+      { className: "icon-container" },
+      React.createElement("img", { className: "icon", src: "/dist" + icon })
+    ),
     content.title && React.createElement(
       "div",
       { className: "layer-title" },
