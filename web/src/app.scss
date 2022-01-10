@@ -135,6 +135,9 @@ strong {
     z-index: 10;
     /* https://kovart.github.io/dashed-border-generator/ */
     background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23CCCCCCFF' stroke-width='6' stroke-dasharray='0%2c10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+
+    opacity: 0;
+    animation: fadeIn 0.5s 0.5s ease-out forwards;
   }
 
   .dragonfly-container {
@@ -151,38 +154,82 @@ strong {
       margin: 2px;
     }
 
-    .left-text {
-      text-align: right;
-    }
-
     .left-text,
     .right-text {
       font-size: 20px;
       font-weight: 300;
-      color: var(--color-gray2);
+      color: rgb(151, 78, 78);
       padding: 0 10px 10px;
+      animation: lensUp 0.8s ease-out forwards;
+      text-align: center;
+    }
+
+    .left-text {
+      color: rgb(39, 39, 99);
     }
 
     .lens-left-blue {
       background-color: rgba(0, 0, 255, 0.2);
+      opacity: 0;
+      transform: translateY(50px);
+      animation: lensUp 0.8s 0.2s ease-out forwards;
     }
 
     .lens-right-red {
       background-color: rgba(255, 0, 0, 0.2);
+      opacity: 0;
+      transform: translateY(50px);
+      animation: lensUp 0.8s 0.2s ease-out forwards;
     }
 
     .lens-left-gray {
       border: 3px solid var(--color-gray3);
       background-color: rgba(0, 0, 0, 0.1);
-      transform: rotate(-8deg) translate(3px, -30px);
+      transform: translateY(50px);
+      animation: lensUpLeftGray 0.6s 0.6s ease-out forwards;
       z-index: -1;
+      opacity: 0;
     }
 
     .lens-right-gray {
       border: 3px solid var(--color-gray3);
       background-color: rgba(0, 0, 0, 0.1);
-      transform: rotate(8deg) translate(-3px, -30px);
+      transform: translateY(50px);
+      animation: lensUpRightGray 0.6s 0.6s ease-out forwards;
       z-index: -1;
+      opacity: 0;
+    }
+
+    @keyframes lensUp {
+      0% {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes lensUpLeftGray {
+      0% {
+        opacity: 0;
+        transform: rotate(-8deg) translate(3px, -30px);
+      }
+      100% {
+        opacity: 1;
+        transform: rotate(-8deg) translate(3px, -30px);
+      }
+    }
+    @keyframes lensUpRightGray {
+      0% {
+        opacity: 0;
+        transform: rotate(8deg) translate(-3px, -30px);
+      }
+      100% {
+        opacity: 1;
+        transform: rotate(8deg) translate(-3px, -30px);
+      }
     }
   }
 }
@@ -276,6 +323,13 @@ strong {
         border: 3px solid var(--color-black);
         margin: 4px;
       }
+    }
+  }
+
+  @for $i from 2 through 20 {
+    &:nth-child(#{$i}) {
+      opacity: 0;
+      animation: appearUp 0.3s #{($i - 1) / 6 + 0.4}s ease-out forwards;
     }
   }
 }
@@ -421,5 +475,36 @@ strong {
     top: 0;
     background-color: var(--color-gray4);
     transition: 0.2s all;
+  }
+}
+
+@keyframes appearUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes appearDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
