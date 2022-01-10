@@ -120,7 +120,16 @@ const RootElement = () => {
       </div>
       <div className="dhsc-container" ref={dhscRef}>
         <div className="stack-container" ref={stackRef}>
-          <div className="lenses-container"></div>
+          <div className="lenses-container">
+            <div className="dragonfly-container">
+              <div className="left-text">Clinician Health Manager</div>
+              <div className="right-text">Patient Health Manager</div>
+              <div className="lens lens-left-blue"></div>
+              <div className="lens lens-right-red"></div>
+              <div className="lens lens-left-gray"></div>
+              <div className="lens lens-right-gray"></div>
+            </div>
+          </div>
           {data.stack.map((content, key) => {
             return (
               <LayerGroup

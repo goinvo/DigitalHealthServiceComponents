@@ -172,7 +172,28 @@ var RootElement = function RootElement() {
       React.createElement(
         "div",
         { className: "stack-container", ref: stackRef },
-        React.createElement("div", { className: "lenses-container" }),
+        React.createElement(
+          "div",
+          { className: "lenses-container" },
+          React.createElement(
+            "div",
+            { className: "dragonfly-container" },
+            React.createElement(
+              "div",
+              { className: "left-text" },
+              "Clinician Health Manager"
+            ),
+            React.createElement(
+              "div",
+              { className: "right-text" },
+              "Patient Health Manager"
+            ),
+            React.createElement("div", { className: "lens lens-left-blue" }),
+            React.createElement("div", { className: "lens lens-right-red" }),
+            React.createElement("div", { className: "lens lens-left-gray" }),
+            React.createElement("div", { className: "lens lens-right-gray" })
+          )
+        ),
         data.stack.map(function (content, key) {
           return React.createElement(LayerGroup, {
             content: content,
