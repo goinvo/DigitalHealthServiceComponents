@@ -16,6 +16,11 @@ const LayerGroup = ({
           zIndex={layers.length + 1}
         />
       )}
+      {content.show2D && (
+        <div className="array">
+          <Layer className={"grid"} zIndex={layers.length + 1} />
+        </div>
+      )}
       {layers.map((content, key) => {
         return (
           <Layer

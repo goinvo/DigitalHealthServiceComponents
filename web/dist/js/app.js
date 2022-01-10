@@ -172,6 +172,7 @@ var RootElement = function RootElement() {
       React.createElement(
         "div",
         { className: "stack-container", ref: stackRef },
+        React.createElement("div", { className: "lenses-container" }),
         data.stack.map(function (content, key) {
           return React.createElement(LayerGroup, {
             content: content,

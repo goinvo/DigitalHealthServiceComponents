@@ -16,6 +16,11 @@ var LayerGroup = function LayerGroup(_ref) {
       content: titleLayer,
       zIndex: layers.length + 1
     }),
+    content.show2D && React.createElement(
+      "div",
+      { className: "array" },
+      React.createElement(Layer, { className: "grid", zIndex: layers.length + 1 })
+    ),
     layers.map(function (content, key) {
       return React.createElement(Layer, {
         highlighted: highlighted,

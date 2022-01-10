@@ -2,6 +2,7 @@ var data = {
   stack: [{
     title: "BioMetric/results",
     icon: "/images/biometric-icon.svg",
+    show2D: true,
     layers: [{
       main: "Result Summary",
       description: React.createElement(
