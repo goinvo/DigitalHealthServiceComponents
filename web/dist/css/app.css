@@ -1,7 +1,7 @@
 html {
   --primary: #00b3ca;
   --primary-background: rgb(0, 216, 216);
-  --primary-light: rgb(244, 251, 252);
+  --primary-light: rgb(241, 249, 250);
   --primary-shadow: rgba(0, 183, 196, 0.2);
   --primary-dark: rgb(0, 73, 122);
   --color-black: #000;
@@ -287,8 +287,10 @@ strong {
   background-color: var(--primary-light);
   border-color: var(--primary);
 }
+.layer-container:hover .layer-text-container:after, .layer-container.highlighted .layer-text-container:after {
+  background-color: var(--primary);
+}
 .layer-container:hover .layer-text-container .main, .layer-container.highlighted .layer-text-container .main {
-  font-weight: 400;
   color: var(--primary);
 }
 
@@ -312,6 +314,17 @@ strong {
   justify-content: center;
   font-weight: 300;
 }
+.layer-text-container:after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  height: 10px;
+  width: 10px;
+  top: 16px;
+  border-radius: 5px;
+  background-color: transparent;
+  transition: 0.2s background-color;
+}
 .layer-text-container:before {
   content: "";
   left: calc(-20px - var(--distance-labels-away));
@@ -324,7 +337,7 @@ strong {
 }
 .layer-text-container .main {
   font-size: 15px;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
   transition: 0.2s color;
   line-height: 18px;
 }
