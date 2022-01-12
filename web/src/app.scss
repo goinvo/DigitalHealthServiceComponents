@@ -16,10 +16,13 @@ html {
 
   --distance-layers-apart: 70px;
   --inbetween-line-offset: 34px;
-  --distance-labels-away: 40px;
+  --distance-labels-away: 20px;
 
-  --stack-container-width: 480px;
+  --stack-container-width: 460px;
   --lenses-line-length: 130px;
+
+  --max-width: 960px;
+  --max-single-column-width: 1300px;
 }
 
 body {
@@ -43,6 +46,10 @@ a {
   font-weight: 400;
 }
 
+h1 {
+  line-height: 1.2em;
+}
+
 h2 {
   font-size: 15px;
   font-weight: 300;
@@ -62,15 +69,16 @@ strong {
     var(--primary-background) 0%,
     var(--primary-dark) 100%
   );
-  padding: 50px 0 20px;
+  padding: 50px 30px 20px;
 }
+
 .light-blue-bar {
   background-color: var(--primary-light);
-  padding: 30px 0;
+  padding: 30px 30px;
 }
 
 .intro-container {
-  max-width: 1000px;
+  max-width: var(--max-width);
   line-height: 1.5;
   margin: 0 auto;
 
@@ -113,9 +121,10 @@ strong {
 }
 
 .dhsc-container {
-  max-width: 1000px;
+  max-width: var(--max-width);
   display: flex;
-  margin: 100px auto;
+  padding-top: 100px;
+  margin: 0 auto 100px;
   position: relative;
 }
 
@@ -144,11 +153,11 @@ strong {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     position: absolute;
-    left: -155px;
+    left: -141px;
 
     .lens {
       height: 50px;
-      width: 240px;
+      width: 220px;
       border-radius: 50%;
       border: 2px solid var(--color-gray1);
       margin: 2px;
@@ -436,6 +445,7 @@ strong {
   flex-direction: column;
   justify-content: center;
   font-weight: 300;
+  min-width: 160px;
 
   &:after {
     content: "";
@@ -523,5 +533,58 @@ strong {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media (max-width: 1300px) {
+  .grid-label {
+    display: none;
+  }
+
+  .lenses-container {
+    display: none;
+  }
+
+  .dhsc-container {
+    justify-content: center;
+    overflow: hidden;
+
+    .description-container {
+      display: none;
+    }
+
+    .stack-container {
+      position: relative;
+      flex: 1 1 390px;
+      max-width: 390px;
+      margin-left: 15px;
+    }
+  }
+
+  .layer-text-container {
+    max-width: calc(100vw - 200px + var(--distance-labels-away) - 60px);
+    min-width: 0;
+
+    .main {
+      font-size: 13px;
+      margin-bottom: 1px;
+      transition: 0.2s color;
+      line-height: 16px;
+    }
+
+    .subtext {
+      font-size: 11px;
+      margin-bottom: 5px;
+      color: var(--color-gray2);
+    }
+  }
+
+  .layer-container {
+    height: 40px;
+  }
+
+  .layer-title {
+    font-size: 13px;
+    top: 18px;
   }
 }
