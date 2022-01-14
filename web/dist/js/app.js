@@ -171,16 +171,32 @@ var RootElement = function RootElement() {
       { className: "dhsc-container", ref: dhscRef },
       React.createElement(
         "div",
-        {
-          className: "stack-container " + (fixed ? "fixed" : "") + " " + (bottomFixed ? "fixed-bottom" : ""),
-          ref: stackRef
-          // style={
-          //   !bottomFixed ? { transform: `translateY(${stackOffsetTop}px)` } : {}
-          // }
-        },
+        { className: "stack-container", ref: stackRef },
+        React.createElement(
+          "div",
+          { className: "lenses-container" },
+          React.createElement(
+            "div",
+            { className: "dragonfly-container" },
+            React.createElement(
+              "div",
+              { className: "left-text" },
+              "Clinician Health Manager"
+            ),
+            React.createElement(
+              "div",
+              { className: "right-text" },
+              "Patient Health Manager"
+            ),
+            React.createElement("div", { className: "lens lens-left-blue" }),
+            React.createElement("div", { className: "lens lens-right-red" }),
+            React.createElement("div", { className: "lens lens-left-gray" }),
+            React.createElement("div", { className: "lens lens-right-gray" })
+          )
+        ),
         data.stack.map(function (content, key) {
           return React.createElement(LayerGroup, {
-            layers: content.layers,
+            content: content,
             highlighted: highlighted,
             titleLayer: content.title && { title: content.title },
             isLastChild: key === data.stack.length - 1
@@ -190,14 +206,24 @@ var RootElement = function RootElement() {
       React.createElement(
         "div",
         { className: "description-container" },
-        descriptions.map(function (description) {
+        data.stack.map(function (group, key) {
           return React.createElement(
             "div",
-            {
-              className: "layer-description " + (highlighted !== undefined && JSON.stringify(highlighted.element) === JSON.stringify(description.element) ? "highlighted" : ""),
-              ref: description.ref
-            },
-            description.element
+            { key: key },
+            group.title && React.createElement(
+              "div",
+              { className: "group-title" },
+              group.title
+            ),
+            group.layers.map(function (layer, key2) {
+              if (layer.description) {
+                return React.createElement(
+                  "div",
+                  { key2: key2, className: "layer-description" },
+                  layer.description
+                );
+              }
+            })
           );
         })
       )

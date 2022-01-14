@@ -2,6 +2,8 @@ const data = {
   stack: [
     {
       title: "BioMetric/results",
+      icon: "/images/biometric-icon.svg",
+      show2D: true,
       layers: [
         {
           main: "Result Summary",
@@ -113,6 +115,7 @@ const data = {
     },
     {
       title: "Actionable Step",
+      icon: "/images/actionable-step-icon.svg",
       layers: [
         {
           main: "Careplanning",
@@ -133,7 +136,27 @@ const data = {
           ),
         },
         {
-          main: "Advice",
+          main: '"Advice"',
+        },
+        {
+          main: "Care Plan",
+          description: (
+            <div>
+              <p>
+                <strong>Care Plan</strong> is a synthesis of all plans of care
+                produced by the patient and their providers to managea person's
+                health day to day. It serves as a continuous, conceptual
+                framework shared by all of the care team members to guide the
+                patient's care.
+              </p>
+              <p>
+                Reference:{" "}
+                <a href="https://www.goinvo.com/features/careplans/">
+                  https://www.goinvo.com/features/careplans/
+                </a>
+              </p>
+            </div>
+          ),
         },
         {
           main: "Treatment Agent",
@@ -164,6 +187,7 @@ const data = {
     },
     {
       title: "Health Literacy",
+      icon: "/images/health-literacy-icon.svg",
       layers: [
         {
           main: "Bioassay explained",
@@ -198,13 +222,15 @@ const data = {
               <p>
                 <strong>Review of Systems (RoS)</strong> is a checklist and
                 catalog of a patient's body systems, collected by a series of
-                questions.A goal in healthcare is to have an accurate,
-                up-to-date, and in-depth personal and family history. An
-                always-evolving RoS aids in identifying signs and symptoms,
-                creating care plans, and learning about a patient. Seeing a
-                person's entire system information and dynamics help to provide
-                the right care, at the right time, at the right dose, in the
-                right setting.
+                questions.
+              </p>
+              <p>
+                A goal in healthcare is to have an accurate, up-to-date, and
+                in-depth personal and family history. An always-evolving RoS
+                aids in identifying signs and symptoms, creating care plans, and
+                learning about a patient. Seeing a person's entire system
+                information and dynamics help to provide the right care, at the
+                right time, at the right dose, in the right setting.
               </p>
             </div>
           ),
@@ -216,10 +242,43 @@ const data = {
     },
     {
       title: "Agreement",
+      icon: "/images/agreement-icon.svg",
       layers: [
         {
           main: "pDUA",
-          subtext: "Data Use Agreement",
+          subtext: "Patient Data Use Agreement",
+          description: (
+            <div>
+              <p>
+                <strong>Patient Data Use Agreement (pDUA)</strong> is a contract
+                between the patient and a service provider that states in clear,
+                simple language or graphics, how data will be used and accessed.
+              </p>
+              <p>
+                The pDUA is evidence for patients of how the service provider's
+                will use, or not use, their information. More than just terms
+                &amp; conditions, the pDUA gives options for the terms of the
+                agreement itself. It allows everyone to assess the
+                trustworthiness and practices of a third party service. Options
+                also include how data is transitioned, if the agreement is
+                terminated. Patients need to be on the same legal altitude as
+                healthcare services, apps, and hospitals. A binding data
+                contract, governed by the patients, is critical to putting
+                patients in control and protecting patients from corporate
+                overreach.
+              </p>
+              <p>
+                References:{" "}
+                <a href="datauseagreement.org">datauseagreement.org</a>
+              </p>
+              <p>
+                1 pager:&nbsp;
+                <a href="https://www.healthcareitnews.com/news/why-patients-and-providers-need-model-patient-data-use-agreement">
+                  https://www.healthcareitnews.com/news/why-patients-and-providers-need-model-patient-data-use-agreement
+                </a>
+              </p>
+            </div>
+          ),
         },
         {
           main: "Consent",
@@ -276,14 +335,31 @@ const data = {
         {
           main: "Outside health services API",
           subtext: "Integrate with Uber Health, Apple HealthKit, etc.",
+          description: (
+            <div>
+              <p>
+                <strong>Outside Health Services API</strong> integrates with
+                third party health services [Part of PDM]
+              </p>
+            </div>
+          ),
         },
         {
           main: "EHR, PHR API",
+          description: (
+            <div>
+              <p>
+                <strong>EHR, PHR API</strong> forwards data to all stakeholders
+                [Part of PDM, Patient Data Receipt]
+              </p>
+            </div>
+          ),
         },
       ],
     },
     {
       title: "Disclaimers",
+      icon: "/images/disclaimers-icon.svg",
       layers: [
         {
           main: "Disclaimer",
@@ -292,6 +368,7 @@ const data = {
     },
     {
       title: "Using Data",
+      icon: "/images/using-data-icon.svg",
       layers: [
         {
           main: "Intervention Engine",
@@ -396,9 +473,29 @@ const data = {
     },
     {
       title: "Patient Data",
+      icon: "/images/patient-data-icon.svg",
       layers: [
         {
           main: "Standard Patient Health Record",
+          description: (
+            <div>
+              <p>
+                <strong>Standard Patient Health Record</strong> is a nationally
+                shared and consistent definition of health data (structure,
+                terminology, content) for the US and planet. It's a
+                specification that contains definitions for all critical patient
+                information such as ID, emergency care, primary care, oncology
+                care, with future extensions for representing human biology,
+                behavior, environment, and social circumstances in code.
+              </p>
+              <p>
+                Reference:{" "}
+                <a href="http://standardhealthrecord.org/">
+                  http://standardhealthrecord.org/
+                </a>
+              </p>
+            </div>
+          ),
         },
         {
           main: "Financial Data",

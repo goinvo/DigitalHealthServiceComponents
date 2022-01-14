@@ -119,19 +119,21 @@ const RootElement = () => {
         </div>
       </div>
       <div className="dhsc-container" ref={dhscRef}>
-        <div
-          className={`stack-container ${fixed ? "fixed" : ""} ${
-            bottomFixed ? "fixed-bottom" : ""
-          }`}
-          ref={stackRef}
-          // style={
-          //   !bottomFixed ? { transform: `translateY(${stackOffsetTop}px)` } : {}
-          // }
-        >
+        <div className="stack-container" ref={stackRef}>
+          <div className="lenses-container">
+            <div className="dragonfly-container">
+              <div className="left-text">Clinician Health Manager</div>
+              <div className="right-text">Patient Health Manager</div>
+              <div className="lens lens-left-blue"></div>
+              <div className="lens lens-right-red"></div>
+              <div className="lens lens-left-gray"></div>
+              <div className="lens lens-right-gray"></div>
+            </div>
+          </div>
           {data.stack.map((content, key) => {
             return (
               <LayerGroup
-                layers={content.layers}
+                content={content}
                 highlighted={highlighted}
                 titleLayer={content.title && { title: content.title }}
                 isLastChild={key === data.stack.length - 1}
@@ -140,19 +142,21 @@ const RootElement = () => {
           })}
         </div>
         <div className="description-container">
-          {descriptions.map((description) => {
+          {data.stack.map((group, key) => {
             return (
-              <div
-                className={`layer-description ${
-                  highlighted !== undefined &&
-                  JSON.stringify(highlighted.element) ===
-                    JSON.stringify(description.element)
-                    ? "highlighted"
-                    : ""
-                }`}
-                ref={description.ref}
-              >
-                {description.element}
+              <div key={key}>
+                {group.title && (
+                  <div className="group-title">{group.title}</div>
+                )}
+                {group.layers.map((layer, key2) => {
+                  if (layer.description) {
+                    return (
+                      <div key2={key2} className={`layer-description`}>
+                        {layer.description}
+                      </div>
+                    );
+                  }
+                })}
               </div>
             );
           })}
