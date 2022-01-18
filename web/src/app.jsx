@@ -162,6 +162,24 @@ const RootElement = () => {
           })}
         </div>
       </div>
+      <div className="showcase">
+        <h2>Result Detail</h2>
+        <div className="showcase-text">
+          {data.stack[0].layers[0].description}
+        </div>
+        <div className="navigation">
+          <div className="nav-button nav-backward">
+            <div className="direction-text">Previous</div>
+            <div className="layer-name">Result Summary</div>
+          </div>
+          <div className="nav-button nav-forward">
+            <div className="direction-text">Next</div>
+            <div className="layer-name">
+              Slightly longer Financial Trade-offs
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="blue-bar" />
     </div>
   );
