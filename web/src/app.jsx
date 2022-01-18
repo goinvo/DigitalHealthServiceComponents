@@ -88,12 +88,14 @@ const RootElement = () => {
             Much like the{" "}
             <a href="https://en.wikipedia.org/wiki/OSI_model">OSI model</a>, the
             Digital Health Connections model is a stack of common services,
-            functions, elements, and terms.The model partitions the information
-            flow into 10 abstraction layers, from the common data elements to
+            functions, elements, and terms. The model partitions the information
+            flow into 11 abstraction layers, from the common data elements to
             the highest level of representation of information occurs, with the
             Patient Health Manager.
           </p>
-          <h2>Questions and issues:</h2>
+       {/*   
+       Place questions, issues in the actual GitHub issues list vs in the page.
+       <h2>Questions and issues:</h2>
           <ul>
             <li>
               This is shown as a linear flow. However, it's not linear or
@@ -105,7 +107,7 @@ const RootElement = () => {
               parts of this model. We need to show those disciplines in the
               model.
             </li>
-          </ul>
+          </ul>*/}
           <p>
             This is an{" "}
             <a href="https://github.com/goinvo/DigitalHealthServiceComponents">
