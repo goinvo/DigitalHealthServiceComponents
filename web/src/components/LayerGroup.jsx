@@ -4,7 +4,6 @@ const LayerGroup = ({
   highlighted,
   content,
   titleLayer,
-  setActive,
   isLastChild = false,
 }) => {
   const { layers } = content;
@@ -15,16 +14,11 @@ const LayerGroup = ({
           icon={content.icon}
           content={titleLayer}
           zIndex={layers.length + 1}
-          setActive={setActive}
         />
       )}
       {content.show2D && (
         <div className="array">
-          <Layer
-            className={"grid"}
-            zIndex={layers.length + 1}
-            setActive={setActive}
-          />
+          <Layer className={"grid"} zIndex={layers.length + 1} />
         </div>
       )}
       {layers.map((content, key) => {
@@ -33,7 +27,6 @@ const LayerGroup = ({
             highlighted={highlighted}
             content={content}
             zIndex={layers.length - key}
-            setActive={setActive}
           />
         );
       })}

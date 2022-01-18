@@ -10,15 +10,10 @@ https://goinvo.github.io/DigitalHealthServiceComponents/
 Terminology wiki:
 https://github.com/goinvo/DigitalHealthServiceComponents/wiki/Terminology
 
+1 line definition a high schooler can understand, followed by 2-3 sentences of details, ending with 1-3 real, visual examples + references.
+
 
 ...
-
-The lightweight **presentation** (as of Fri 14.Jan.22):
-https://docs.google.com/presentation/d/1yR5_c67QP3YNhGmZu9WDSYPeGPAYTKk7ZQwhZ7RUwVE/edit#slide=id.p
-
-...
-
-
 
 The current Figma design:
 https://www.figma.com/file/9CFtzTP0IHgIvG67NoOVkL/Health-IT-Digital-Service-Components?node-id=817%3A461

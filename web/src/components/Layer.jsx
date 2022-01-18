@@ -1,14 +1,7 @@
-const Layer = ({
-  highlighted,
-  content,
-  zIndex,
-  icon,
-  className,
-  setActive,
-}) => {
+const Layer = ({ highlighted, content, zIndex, icon, className }) => {
   return (
     <div
-      className={`layer-container no-highlights ${className} ${
+      className={`layer-container ${className} ${
         content &&
         highlighted &&
         JSON.stringify(content.description) ===
@@ -17,13 +10,6 @@ const Layer = ({
           : ""
       }`}
       style={{ zIndex }}
-      onClick={() => {
-        if (content && content.description) {
-          setActive(content.main);
-        } else {
-          setActive(undefined);
-        }
-      }}
     >
       {
         <div className="layer">

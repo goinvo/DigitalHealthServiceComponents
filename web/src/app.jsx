@@ -6,7 +6,6 @@ const RootElement = () => {
   const [fixed, setFixed] = React.useState();
   const [bottomFixed, setBottomFixed] = React.useState();
   const [highlighted, setHighlighted] = React.useState();
-  const [active, setActive] = React.useState();
   const [stackOffsetTop, setStackOffsetTop] = React.useState(0);
 
   const dhscRef = React.useRef();
@@ -18,41 +17,15 @@ const RootElement = () => {
         ...acc,
         ...layerGroup.layers
           .filter((layer) => layer.description)
-          .map((layer) => ({
-            title: layer.main,
-            description: layer.description,
-          })),
+          .map((layer) => layer.description),
       ];
     }, [])
-    .map((layer) => {
+    .map((element) => {
       return {
         ref: React.useRef(),
-        element: layer.description,
-        title: layer.title,
+        element,
       };
     });
-  const descriptionTitles = descriptions.map(
-    (description) => description.title
-  );
-
-  const activeLayer = active
-    ? descriptions.find((layer) => layer.title === active)
-    : undefined;
-
-  let currentLayerIndex;
-  let nextTitle;
-  let previousTitle;
-  if (activeLayer) {
-    currentLayerIndex = descriptionTitles.indexOf(activeLayer.title);
-    nextTitle =
-      currentLayerIndex < descriptionTitles.length
-        ? descriptionTitles[currentLayerIndex + 1]
-        : undefined;
-    previousTitle =
-      currentLayerIndex > 0
-        ? descriptionTitles[currentLayerIndex - 1]
-        : undefined;
-  }
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -96,8 +69,6 @@ const RootElement = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  console.log("active", active);
 
   return (
     <div>
@@ -168,7 +139,6 @@ const RootElement = () => {
                 highlighted={highlighted}
                 titleLayer={content.title && { title: content.title }}
                 isLastChild={key === data.stack.length - 1}
-                setActive={setActive}
               />
             );
           })}
@@ -192,46 +162,6 @@ const RootElement = () => {
               </div>
             );
           })}
-        </div>
-      </div>
-      <div className={`showcase ${active ? `show` : ``}`}>
-        <div
-          className="showcase-close no-highlight"
-          onClick={() => {
-            setActive(undefined);
-          }}
-        >
-          &times;
-        </div>
-        <div className="showcase-heading">
-          {activeLayer && activeLayer.title}
-        </div>
-        <div className="showcase-text">
-          {activeLayer && activeLayer.element}
-        </div>
-        <div className="navigation">
-          {previousTitle && (
-            <div
-              className="nav-button nav-backward"
-              onClick={() => {
-                setActive(previousTitle);
-              }}
-            >
-              <div className="direction-text">Previous</div>
-              <div className="layer-name">{previousTitle}</div>
-            </div>
-          )}
-          {nextTitle && (
-            <div
-              className="nav-button nav-forward"
-              onClick={() => {
-                setActive(nextTitle);
-              }}
-            >
-              <div className="direction-text">Next</div>
-              <div className="layer-name">{nextTitle}</div>
-            </div>
-          )}
         </div>
       </div>
       <div className="blue-bar" />
