@@ -671,6 +671,27 @@ strong.patient-health-manager {
   }
 
   .lenses-container {
+    margin-bottom: 80px;
+  }
+  .lenses-container .dragonfly-container {
+    left: 5px;
+    width: 363px;
+  }
+  .lenses-container .dragonfly-container .lens {
+    width: 160px;
+    height: 40px;
+  }
+  .lenses-container .dragonfly-container .left-text,
+.lenses-container .dragonfly-container .right-text {
+    font-size: 15px;
+    padding: 0 0 10px;
+  }
+  .lenses-container .dragonfly-container .lens-left-gray,
+.lenses-container .dragonfly-container .lens-right-gray {
+    position: relative;
+    top: 10px;
+  }
+  .lenses-container::after {
     display: none;
   }
 

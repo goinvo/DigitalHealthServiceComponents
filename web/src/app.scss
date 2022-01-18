@@ -681,7 +681,33 @@ strong {
   }
 
   .lenses-container {
-    display: none;
+    margin-bottom: 80px;
+
+    .dragonfly-container {
+      left: 5px;
+      width: 363px;
+
+      .lens {
+        width: 160px;
+        height: 40px;
+      }
+
+      .left-text,
+      .right-text {
+        font-size: 15px;
+        padding: 0 0 10px;
+      }
+
+      .lens-left-gray,
+      .lens-right-gray {
+        position: relative;
+        top: 10px;
+      }
+    }
+
+    &::after {
+      display: none;
+    }
   }
 
   .dhsc-container {
