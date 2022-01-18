@@ -3,13 +3,21 @@ var Layer = function Layer(_ref) {
       content = _ref.content,
       zIndex = _ref.zIndex,
       icon = _ref.icon,
-      className = _ref.className;
+      className = _ref.className,
+      setActive = _ref.setActive;
 
   return React.createElement(
     "div",
     {
-      className: "layer-container " + className + " " + (content && highlighted && JSON.stringify(content.description) === JSON.stringify(highlighted.element) ? "highlighted" : ""),
-      style: { zIndex: zIndex }
+      className: "layer-container no-highlights " + className + " " + (content && highlighted && JSON.stringify(content.description) === JSON.stringify(highlighted.element) ? "highlighted" : ""),
+      style: { zIndex: zIndex },
+      onClick: function onClick() {
+        if (content && content.description) {
+          setActive(content.main);
+        } else {
+          setActive(undefined);
+        }
+      }
     },
     React.createElement(
       "div",
