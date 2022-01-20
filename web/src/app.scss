@@ -12,6 +12,9 @@ html {
   --color-white: #fff;
   --link: var(--primary);
 
+  --color-purple: rgb(39, 39, 99);
+  --color-maroon: rgb(151, 78, 78);
+
   --stack-size: 90px;
 
   --distance-layers-apart: 70px;
@@ -59,17 +62,14 @@ h2 {
 
 strong {
   font-weight: 600;
-}
 
-.blue-bar {
-  // background-color: var(--primary);
-  // background: rgb(206, 252, 255);
-  background: linear-gradient(
-    135deg,
-    var(--primary-background) 0%,
-    var(--primary-dark) 100%
-  );
-  padding: 50px 30px 20px;
+  &.clinician-health-manager {
+    color: var(--color-purple);
+  }
+
+  &.patient-health-manager {
+    color: var(--color-maroon);
+  }
 }
 
 .light-blue-bar {
@@ -121,7 +121,7 @@ strong {
 .dhsc-container {
   max-width: var(--max-width);
   display: flex;
-  padding-top: 50px;
+  padding-top: 80px;
   margin: 0 auto 100px;
   position: relative;
 }
@@ -165,14 +165,14 @@ strong {
     .right-text {
       font-size: 20px;
       font-weight: 300;
-      color: rgb(151, 78, 78);
+      color: var(--color-maroon);
       padding: 0 10px 10px;
       animation: lensUp 0.8s ease-out forwards;
       text-align: center;
     }
 
     .left-text {
-      color: rgb(39, 39, 99);
+      color: var(--color-purple);
     }
 
     .lens-left-blue {
@@ -542,6 +542,7 @@ strong {
   .mobile-intro-container {
     display: block;
     padding: 40px;
+    font-size: 16px;
     background-color: var(--primary-light);
 
     .intro-container {
