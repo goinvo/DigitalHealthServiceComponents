@@ -2,6 +2,7 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
+import IntroContainer from "./components/IntroContainer.js";
 import LayerGroup from "./components/LayerGroup.js";
 import data from "./data/content.js";
 
@@ -87,7 +88,7 @@ var RootElement = function RootElement() {
       { className: "blue-bar" },
       React.createElement(
         "div",
-        { className: "intro-container" },
+        { className: "header-container" },
         React.createElement(
           "h1",
           null,
@@ -97,74 +98,8 @@ var RootElement = function RootElement() {
     ),
     React.createElement(
       "div",
-      { className: "light-blue-bar" },
-      React.createElement(
-        "div",
-        { className: "intro-container" },
-        React.createElement(
-          "p",
-          null,
-          "The ",
-          React.createElement(
-            "strong",
-            null,
-            "Digital Health Connections Model"
-          ),
-          " is a representation of the system of services that can make up digital health software."
-        ),
-        React.createElement(
-          "p",
-          null,
-          "Much like the",
-          " ",
-          React.createElement(
-            "a",
-            { href: "https://en.wikipedia.org/wiki/OSI_model" },
-            "OSI model"
-          ),
-          ", the Digital Health Connections model is a stack of common services, functions, elements, and terms.The model partitions the information flow into 10 abstraction layers, from the common data elements to the highest level of representation of information occurs, with the Patient Health Manager."
-        ),
-        React.createElement(
-          "h2",
-          null,
-          "Questions and issues:"
-        ),
-        React.createElement(
-          "ul",
-          null,
-          React.createElement(
-            "li",
-            null,
-            "This is shown as a linear flow. However, it's not linear or completely hierarchal. Do you have any suggestions on showing non-linearity?"
-          ),
-          React.createElement(
-            "li",
-            null,
-            "Trauma, surgery, and other medical disciplines may prescribe to parts of this model. We need to show those disciplines in the model."
-          )
-        ),
-        React.createElement(
-          "p",
-          null,
-          "This is an",
-          " ",
-          React.createElement(
-            "a",
-            { href: "https://github.com/goinvo/DigitalHealthServiceComponents" },
-            "open source project"
-          ),
-          ", licensed under the Apache 2.0 license.",
-          React.createElement("br", null),
-          "Please email us feedback:",
-          " ",
-          React.createElement(
-            "a",
-            { href: "mailto:hello@goinvo.com" },
-            "hello@goinvo.com"
-          ),
-          "."
-        )
-      )
+      { className: "mobile-intro-container" },
+      React.createElement(IntroContainer, null)
     ),
     React.createElement(
       "div",
@@ -206,6 +141,7 @@ var RootElement = function RootElement() {
       React.createElement(
         "div",
         { className: "description-container" },
+        React.createElement(IntroContainer, null),
         data.stack.map(function (group, key) {
           return React.createElement(
             "div",
