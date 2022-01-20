@@ -73,11 +73,6 @@ const RootElement = () => {
 
   return (
     <div>
-      <div className="blue-bar">
-        <div className="header-container">
-          <h1>Digital Health Connections Model</h1>
-        </div>
-      </div>
       <div className="mobile-intro-container">
         <IntroContainer />
       </div>
@@ -106,6 +101,13 @@ const RootElement = () => {
         </div>
         <div className="description-container">
           <IntroContainer />
+          {data.preStack.map((content, key) => {
+            return (
+              <div key={key} className={`layer-description`}>
+                {content}
+              </div>
+            );
+          })}
           {data.stack.map((group, key) => {
             return (
               <div key={key}>
@@ -115,7 +117,7 @@ const RootElement = () => {
                 {group.layers.map((layer, key2) => {
                   if (layer.description) {
                     return (
-                      <div key2={key2} className={`layer-description`}>
+                      <div key={key2} className={`layer-description`}>
                         {layer.description}
                       </div>
                     );

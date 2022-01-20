@@ -85,19 +85,6 @@ var RootElement = function RootElement() {
     null,
     React.createElement(
       "div",
-      { className: "blue-bar" },
-      React.createElement(
-        "div",
-        { className: "header-container" },
-        React.createElement(
-          "h1",
-          null,
-          "Digital Health Connections Model"
-        )
-      )
-    ),
-    React.createElement(
-      "div",
       { className: "mobile-intro-container" },
       React.createElement(IntroContainer, null)
     ),
@@ -142,6 +129,13 @@ var RootElement = function RootElement() {
         "div",
         { className: "description-container" },
         React.createElement(IntroContainer, null),
+        data.preStack.map(function (content, key) {
+          return React.createElement(
+            "div",
+            { key: key, className: "layer-description" },
+            content
+          );
+        }),
         data.stack.map(function (group, key) {
           return React.createElement(
             "div",
@@ -155,7 +149,7 @@ var RootElement = function RootElement() {
               if (layer.description) {
                 return React.createElement(
                   "div",
-                  { key2: key2, className: "layer-description" },
+                  { key: key2, className: "layer-description" },
                   layer.description
                 );
               }
