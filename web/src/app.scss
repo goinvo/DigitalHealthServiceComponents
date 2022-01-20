@@ -516,25 +516,44 @@ strong {
 
 .showcase {
   position: fixed;
-  z-index: 20px;
+  z-index: 20;
   height: 40vh;
   left: 15px;
   right: 15px;
   bottom: 15px;
   border-radius: 15px;
-  padding: 20px;
+  padding: 20px 20px 10px;
   background-color: var(--color-white);
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
+  transition: 0.2s transform, 0.2s opacity;
+  transform: translateY(30px);
+  opacity: 0;
+  pointer-events: none;
+  justify-content: space-between;
 
-  h2 {
+  &.show {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .showcase-close {
+    position: absolute;
+    color: var(--color-gray3);
+    top: 11px;
+    right: 15px;
+    font-size: 28px;
+  }
+
+  .showcase-heading {
     text-align: center;
     font-size: 22px;
     border-bottom: 2px solid var(--color-gray4);
-    padding-bottom: 15px;
-    padding-top: 5px;
+    padding: 5px 20px 15px;
     margin-bottom: 20px;
+    line-height: 28px;
   }
 
   p {
@@ -544,14 +563,17 @@ strong {
 
   .showcase-text {
     overflow: scroll;
+    flex: 1 1 100px;
   }
 
   .navigation {
     display: flex;
-    margin-top: 10px;
+    margin-top: 15px;
+    justify-content: space-between;
 
     .nav-button {
       flex: 1 1 50px;
+      max-width: 42%;
       position: relative;
 
       &:after {
@@ -564,14 +586,14 @@ strong {
         background-repeat: no-repeat;
         position: absolute;
         right: -18px;
-        top: 5px;
+        top: 2px;
         z-index: 2;
       }
     }
 
     .direction-text {
       color: var(--color-gray3);
-      margin-bottom: 5px;
+      margin-bottom: 1px;
       font-size: 12px;
       text-transform: uppercase;
     }
@@ -580,11 +602,15 @@ strong {
       color: var(--primary);
       font-size: 14px;
       line-height: 1.3em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     .nav-backward {
       text-align: left;
       margin-left: 10px;
+      margin-right: 20px;
 
       &:after {
         transform: rotate(180deg);
@@ -596,6 +622,7 @@ strong {
     .nav-forward {
       text-align: right;
       margin-right: 10px;
+      margin-left: 20px;
     }
   }
 }
@@ -704,4 +731,14 @@ strong {
     font-size: 13px;
     top: 18px;
   }
+}
+
+.no-highlights {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }

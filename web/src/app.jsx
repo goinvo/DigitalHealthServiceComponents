@@ -7,6 +7,7 @@ const RootElement = () => {
   const [fixed, setFixed] = React.useState();
   const [bottomFixed, setBottomFixed] = React.useState();
   const [highlighted, setHighlighted] = React.useState();
+  const [active, setActive] = React.useState();
   const [stackOffsetTop, setStackOffsetTop] = React.useState(0);
 
   const dhscRef = React.useRef();
@@ -18,15 +19,41 @@ const RootElement = () => {
         ...acc,
         ...layerGroup.layers
           .filter((layer) => layer.description)
-          .map((layer) => layer.description),
+          .map((layer) => ({
+            title: layer.main,
+            description: layer.description,
+          })),
       ];
     }, [])
-    .map((element) => {
+    .map((layer) => {
       return {
         ref: React.useRef(),
-        element,
+        element: layer.description,
+        title: layer.title,
       };
     });
+  const descriptionTitles = descriptions.map(
+    (description) => description.title
+  );
+
+  const activeLayer = active
+    ? descriptions.find((layer) => layer.title === active)
+    : undefined;
+
+  let currentLayerIndex;
+  let nextTitle;
+  let previousTitle;
+  if (activeLayer) {
+    currentLayerIndex = descriptionTitles.indexOf(activeLayer.title);
+    nextTitle =
+      currentLayerIndex < descriptionTitles.length
+        ? descriptionTitles[currentLayerIndex + 1]
+        : undefined;
+    previousTitle =
+      currentLayerIndex > 0
+        ? descriptionTitles[currentLayerIndex - 1]
+        : undefined;
+  }
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -71,6 +98,8 @@ const RootElement = () => {
     };
   }, []);
 
+  console.log("active", active);
+
   return (
     <div>
       <div className="mobile-intro-container">
@@ -95,6 +124,7 @@ const RootElement = () => {
                 highlighted={highlighted}
                 titleLayer={content.title && { title: content.title }}
                 isLastChild={key === data.stack.length - 1}
+                setActive={setActive}
               />
             );
           })}
@@ -128,22 +158,44 @@ const RootElement = () => {
           })}
         </div>
       </div>
-      <div className="showcase">
-        <h2>Result Detail</h2>
+      <div className={`showcase ${active ? `show` : ``}`}>
+        <div
+          className="showcase-close no-highlight"
+          onClick={() => {
+            setActive(undefined);
+          }}
+        >
+          &times;
+        </div>
+        <div className="showcase-heading">
+          {activeLayer && activeLayer.title}
+        </div>
         <div className="showcase-text">
-          {data.stack[0].layers[0].description}
+          {activeLayer && activeLayer.element}
         </div>
         <div className="navigation">
-          <div className="nav-button nav-backward">
-            <div className="direction-text">Previous</div>
-            <div className="layer-name">Result Summary</div>
-          </div>
-          <div className="nav-button nav-forward">
-            <div className="direction-text">Next</div>
-            <div className="layer-name">
-              Slightly longer Financial Trade-offs
+          {previousTitle && (
+            <div
+              className="nav-button nav-backward"
+              onClick={() => {
+                setActive(previousTitle);
+              }}
+            >
+              <div className="direction-text">Previous</div>
+              <div className="layer-name">{previousTitle}</div>
             </div>
-          </div>
+          )}
+          {nextTitle && (
+            <div
+              className="nav-button nav-forward"
+              onClick={() => {
+                setActive(nextTitle);
+              }}
+            >
+              <div className="direction-text">Next</div>
+              <div className="layer-name">{nextTitle}</div>
+            </div>
+          )}
         </div>
       </div>
       <div className="blue-bar" />

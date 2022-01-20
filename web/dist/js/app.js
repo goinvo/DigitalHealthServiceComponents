@@ -27,10 +27,15 @@ var RootElement = function RootElement() {
       highlighted = _React$useState8[0],
       setHighlighted = _React$useState8[1];
 
-  var _React$useState9 = React.useState(0),
+  var _React$useState9 = React.useState(),
       _React$useState10 = _slicedToArray(_React$useState9, 2),
-      stackOffsetTop = _React$useState10[0],
-      setStackOffsetTop = _React$useState10[1];
+      active = _React$useState10[0],
+      setActive = _React$useState10[1];
+
+  var _React$useState11 = React.useState(0),
+      _React$useState12 = _slicedToArray(_React$useState11, 2),
+      stackOffsetTop = _React$useState12[0],
+      setStackOffsetTop = _React$useState12[1];
 
   var dhscRef = React.useRef();
   var stackRef = React.useRef();
@@ -39,14 +44,34 @@ var RootElement = function RootElement() {
     return [].concat(_toConsumableArray(acc), _toConsumableArray(layerGroup.layers.filter(function (layer) {
       return layer.description;
     }).map(function (layer) {
-      return layer.description;
+      return {
+        title: layer.main,
+        description: layer.description
+      };
     })));
-  }, []).map(function (element) {
+  }, []).map(function (layer) {
     return {
       ref: React.useRef(),
-      element: element
+      element: layer.description,
+      title: layer.title
     };
   });
+  var descriptionTitles = descriptions.map(function (description) {
+    return description.title;
+  });
+
+  var activeLayer = active ? descriptions.find(function (layer) {
+    return layer.title === active;
+  }) : undefined;
+
+  var currentLayerIndex = void 0;
+  var nextTitle = void 0;
+  var previousTitle = void 0;
+  if (activeLayer) {
+    currentLayerIndex = descriptionTitles.indexOf(activeLayer.title);
+    nextTitle = currentLayerIndex < descriptionTitles.length ? descriptionTitles[currentLayerIndex + 1] : undefined;
+    previousTitle = currentLayerIndex > 0 ? descriptionTitles[currentLayerIndex - 1] : undefined;
+  }
 
   React.useEffect(function () {
     var handleScroll = function handleScroll() {
@@ -79,6 +104,8 @@ var RootElement = function RootElement() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  console.log("active", active);
 
   return React.createElement(
     "div",
@@ -121,7 +148,8 @@ var RootElement = function RootElement() {
             content: content,
             highlighted: highlighted,
             titleLayer: content.title && { title: content.title },
-            isLastChild: key === data.stack.length - 1
+            isLastChild: key === data.stack.length - 1,
+            setActive: setActive
           });
         })
       ),
@@ -160,23 +188,38 @@ var RootElement = function RootElement() {
     ),
     React.createElement(
       "div",
-      { className: "showcase" },
+      { className: "showcase " + (active ? "show" : "") },
       React.createElement(
-        "h2",
-        null,
-        "Result Detail"
+        "div",
+        {
+          className: "showcase-close no-highlight",
+          onClick: function onClick() {
+            setActive(undefined);
+          }
+        },
+        "\xD7"
+      ),
+      React.createElement(
+        "div",
+        { className: "showcase-heading" },
+        activeLayer && activeLayer.title
       ),
       React.createElement(
         "div",
         { className: "showcase-text" },
-        data.stack[0].layers[0].description
+        activeLayer && activeLayer.element
       ),
       React.createElement(
         "div",
         { className: "navigation" },
-        React.createElement(
+        previousTitle && React.createElement(
           "div",
-          { className: "nav-button nav-backward" },
+          {
+            className: "nav-button nav-backward",
+            onClick: function onClick() {
+              setActive(previousTitle);
+            }
+          },
           React.createElement(
             "div",
             { className: "direction-text" },
@@ -185,12 +228,17 @@ var RootElement = function RootElement() {
           React.createElement(
             "div",
             { className: "layer-name" },
-            "Result Summary"
+            previousTitle
           )
         ),
-        React.createElement(
+        nextTitle && React.createElement(
           "div",
-          { className: "nav-button nav-forward" },
+          {
+            className: "nav-button nav-forward",
+            onClick: function onClick() {
+              setActive(nextTitle);
+            }
+          },
           React.createElement(
             "div",
             { className: "direction-text" },
@@ -199,7 +247,7 @@ var RootElement = function RootElement() {
           React.createElement(
             "div",
             { className: "layer-name" },
-            "Slightly longer Financial Trade-offs"
+            nextTitle
           )
         )
       )
