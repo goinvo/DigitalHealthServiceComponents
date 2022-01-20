@@ -514,6 +514,92 @@ strong {
   }
 }
 
+.showcase {
+  position: fixed;
+  z-index: 20px;
+  height: 40vh;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 15px;
+  padding: 20px;
+  background-color: var(--color-white);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    text-align: center;
+    font-size: 22px;
+    border-bottom: 2px solid var(--color-gray4);
+    padding-bottom: 15px;
+    padding-top: 5px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.4em;
+  }
+
+  .showcase-text {
+    overflow: scroll;
+  }
+
+  .navigation {
+    display: flex;
+    margin-top: 10px;
+
+    .nav-button {
+      flex: 1 1 50px;
+      position: relative;
+
+      &:after {
+        content: "";
+        background-image: url("../images/arrow-right.png");
+        width: 8px;
+        height: 24px;
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: absolute;
+        right: -18px;
+        top: 5px;
+        z-index: 2;
+      }
+    }
+
+    .direction-text {
+      color: var(--color-gray3);
+      margin-bottom: 5px;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    .layer-name {
+      color: var(--primary);
+      font-size: 14px;
+      line-height: 1.3em;
+    }
+
+    .nav-backward {
+      text-align: left;
+      margin-left: 10px;
+
+      &:after {
+        transform: rotate(180deg);
+        right: auto;
+        left: -18px;
+      }
+    }
+
+    .nav-forward {
+      text-align: right;
+      margin-right: 10px;
+    }
+  }
+}
+
 @keyframes appearUp {
   0% {
     opacity: 0;
@@ -607,6 +693,11 @@ strong {
 
   .layer-container {
     height: 40px;
+
+    &:hover {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
   }
 
   .layer-title {

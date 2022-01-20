@@ -158,6 +158,52 @@ var RootElement = function RootElement() {
         })
       )
     ),
+    React.createElement(
+      "div",
+      { className: "showcase" },
+      React.createElement(
+        "h2",
+        null,
+        "Result Detail"
+      ),
+      React.createElement(
+        "div",
+        { className: "showcase-text" },
+        data.stack[0].layers[0].description
+      ),
+      React.createElement(
+        "div",
+        { className: "navigation" },
+        React.createElement(
+          "div",
+          { className: "nav-button nav-backward" },
+          React.createElement(
+            "div",
+            { className: "direction-text" },
+            "Previous"
+          ),
+          React.createElement(
+            "div",
+            { className: "layer-name" },
+            "Result Summary"
+          )
+        ),
+        React.createElement(
+          "div",
+          { className: "nav-button nav-forward" },
+          React.createElement(
+            "div",
+            { className: "direction-text" },
+            "Next"
+          ),
+          React.createElement(
+            "div",
+            { className: "layer-name" },
+            "Slightly longer Financial Trade-offs"
+          )
+        )
+      )
+    ),
     React.createElement("div", { className: "blue-bar" })
   );
 };
