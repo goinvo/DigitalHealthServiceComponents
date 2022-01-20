@@ -30,7 +30,10 @@ const Layer = ({ highlighted, content, zIndex, icon, className }) => {
       }
 
       {className && className === "grid" && (
-        <div className="grid-label">Health Summary</div>
+        <div>
+          <div className="grid-label-shm">Stakeholder Health Manager</div>
+          <div className="grid-label">Health Summary</div>
+        </div>
       )}
 
       {icon && (

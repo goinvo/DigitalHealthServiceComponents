@@ -30,8 +30,17 @@ var Layer = function Layer(_ref) {
     ),
     className && className === "grid" && React.createElement(
       "div",
-      { className: "grid-label" },
-      "Health Summary"
+      null,
+      React.createElement(
+        "div",
+        { className: "grid-label-shm" },
+        "Stakeholder Health Manager"
+      ),
+      React.createElement(
+        "div",
+        { className: "grid-label" },
+        "Health Summary"
+      )
     ),
     icon && React.createElement(
       "div",

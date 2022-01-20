@@ -348,7 +348,18 @@ strong {
   left: 300px;
   top: -30px;
   width: 300px;
+  font-size: 16px;
+  color: var(--color-gray1);
+  opacity: 0.9;
+}
+
+.grid-label-shm {
+  position: absolute;
+  left: -160px;
+  top: -70px;
+  width: 300px;
   font-size: 18px;
+  opacity: 0.9;
   color: var(--color-gray1);
 }
 
@@ -551,7 +562,8 @@ strong {
     }
   }
 
-  .grid-label {
+  .grid-label,
+  .grid-label-shm {
     display: none;
   }
 
