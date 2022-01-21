@@ -45,35 +45,7 @@ var data = {
             null,
             "Result Summary"
           ),
-          " is a contract between the patient and a service provider that states in clear, simple language or graphics, how data will be used and accessed. The pDUA is evidence for patients of how the service provider's will use, or not use, their information. More than just terms & conditions, the pDUA gives options for the terms of the agreement itself. It allows everyone to assess the trustworthiness and practices of a third party service. Options also include how data is transitioned, if the agreement is terminated. Patients need to be on the same legal altitude as healthcare services, apps, and hospitals. A binding data contract, governed by the patients, is critical to putting patients in control and protecting patients from corporate overreach."
-        ),
-        React.createElement(
-          "h2",
-          null,
-          "References:"
-        ),
-        React.createElement(
-          "p",
-          null,
-          React.createElement(
-            "a",
-            { href: "https://datauseagreement.org" },
-            "https://datauseagreement.org"
-          )
-        ),
-        React.createElement(
-          "h2",
-          null,
-          "1 pager:"
-        ),
-        React.createElement(
-          "p",
-          null,
-          React.createElement(
-            "a",
-            { href: "https://healthcareitnews.com/news/why-patients-and-providers-need-model-patient-data-use-agreement" },
-            "https://www.healthcareitnews.com/news/why-patients-and-providers-need-model-patient-data-use-agreement"
-          )
+          " is a simple outline of what happened in a medical visit or lab result."
         )
       )
     }, {
@@ -90,7 +62,7 @@ var data = {
             null,
             "Result Detail"
           ),
-          " is a contract between the patient and a service provider that states in clear, simple language or graphics, how data will be used and accessed. The pDUA is evidence for patients of how the service provider's will use, or not use, their information. More than just terms & conditions, the pDUA gives options for the terms of the agreement itself. It allows everyone to assess the trustworthiness and practices of a third party service. Options also include how data is transitioned, if the agreement is terminated. Patients need to be on the same legal altitude as healthcare services, apps, and hospitals. A binding data contract, governed by the patients, is critical to putting patients in control and protecting patients from corporate overreach."
+          " is the complete set of information of a medical visit or lab result. All the information should be listed with access to the raw data."
         )
       )
     }]
@@ -108,7 +80,7 @@ var data = {
             null,
             "Financial Trade-offs"
           ),
-          " is a contract between the patient and a service provider that states in clear, simple language or graphics, how data will be used and accessed. The pDUA is evidence for patients of how the service provider's will use, or not use, their information. More than just terms & conditions, the pDUA gives options for the terms of the agreement itself. It allows everyone to assess the trustworthiness and practices of a third party service. Options also include how data is transitioned, if the agreement is terminated. Patients need to be on the same legal altitude as healthcare services, apps, and hospitals. A binding data contract, governed by the patients, is critical to putting patients in control and protecting patients from corporate overreach."
+          " show the possible paths to different treatments, the outcomes, and different costs to the patient and to other parties."
         )
       )
     }, {
@@ -126,7 +98,7 @@ var data = {
             null,
             "Costs"
           ),
-          " is a contract between the patient and a service provider that states in clear, simple language or graphics, how data will be used and accessed. The pDUA is evidence for patients of how the service provider's will use, or not use, their information. More than just terms & conditions, the pDUA gives options for the terms of the agreement itself. It allows everyone to assess the trustworthiness and practices of a third party service. Options also include how data is transitioned, if the agreement is terminated."
+          " show exactly what the visit, exam, or service cost. Details include what the patient pays, what the insurance pays, discounts from hospitals/insurance, etc."
         )
       )
     }]
@@ -134,7 +106,7 @@ var data = {
     title: "Actionable Step",
     icon: "/images/actionable-step-icon.svg",
     layers: [{
-      main: "Careplanning",
+      main: "Advice",
       description: React.createElement(
         "div",
         null,
@@ -144,13 +116,11 @@ var data = {
           React.createElement(
             "strong",
             null,
-            "Careplanning"
+            "Advice"
           ),
-          " is a contract between the patient and a service provider that states in clear, simple language or graphics, how data will be used and accessed. The pDUA is evidence for patients of how the service provider's will use, or not use, their information. More than just terms & conditions, the pDUA gives options for the terms of the agreement itself. It allows everyone to assess the trustworthiness and practices of a third party service. Options also include how data is transitioned, if the agreement is terminated."
+          " is a personal recommendation on what to do next with your condition(s), based on your clinical results, overall life information, and data."
         )
       )
-    }, {
-      main: '"Advice"'
     }, {
       main: "Care Plan",
       description: React.createElement(
@@ -212,11 +182,25 @@ var data = {
       )
     }]
   }, {
-    title: "Health Literacy",
+    title: "Health Education",
     icon: "/images/health-literacy-icon.svg",
     layers: [{
       main: "Bioassay explained",
-      subtext: "5th grade level, labs explanation"
+      subtext: "5th grade level, labs explanation",
+      description: React.createElement(
+        "div",
+        null,
+        React.createElement(
+          "p",
+          null,
+          React.createElement(
+            "strong",
+            null,
+            "Bioassay Explained"
+          ),
+          " in 5th grade level, it shows and explains the bioassay results. [Note: how is this different from result summary?]"
+        )
+      )
     }, {
       main: "Biometric explained",
       subtext: "Device results explanation",
@@ -231,7 +215,40 @@ var data = {
             null,
             "Biometric Explained"
           ),
-          " is a contract between the patient and a service provider that states in clear, simple language or graphics, how data will be used and accessed. The pDUA is evidence for patients of how the service provider's will use, or not use, their information. More than just terms & conditions, the pDUA gives options for the terms of the agreement itself."
+          " is a summary of a patient's body measurements, physiological characteristics, and calculations, presented in an understandable story."
+        )
+      )
+    }, {
+      main: "Condition Health Edu",
+      subtext: "Health education for a particular condition",
+      description: React.createElement(
+        "div",
+        null,
+        React.createElement(
+          "p",
+          null,
+          React.createElement(
+            "strong",
+            null,
+            "Condition Health Edu"
+          ),
+          " is a graphical and text-based description of a particular condition (or conditions), which often includes condition definitions, how it impacts the patient, how the patient treats the condition, etc."
+        )
+      )
+    }, {
+      main: "Population Explained",
+      description: React.createElement(
+        "div",
+        null,
+        React.createElement(
+          "p",
+          null,
+          React.createElement(
+            "strong",
+            null,
+            "Population Explained"
+          ),
+          " puts the current conditions in context of a larger population and how it impacts a neighborhood, a town, city, or country."
         )
       )
     }]
@@ -259,7 +276,38 @@ var data = {
         )
       )
     }, {
-      main: "PRO Pump"
+      main: "PRDs",
+      subtext: "Patient-Reported Health Data",
+      description: React.createElement(
+        "div",
+        null,
+        React.createElement(
+          "p",
+          null,
+          React.createElement(
+            "strong",
+            null,
+            "Patient-Reported Health Data (PRDs)"
+          ),
+          " is any status of a patient\u2019s health coming directly from the patient, without any interpretation or interference."
+        ),
+        React.createElement(
+          "p",
+          null,
+          "The patient is most under used health sensor in the entire healthcare system. Patient feelings, pain, environment, symptoms, and experiences can be captured in short, structured data through low-burden methods (such as voice, multi-second reporting, sound snippets, etc). The PRO Pump is the PRO collection service, which is critical for closing the learning health system loop."
+        ),
+        React.createElement(
+          "p",
+          null,
+          "References:",
+          " ",
+          React.createElement(
+            "a",
+            { href: "https://www.goinvo.com/vision/open-pro/" },
+            "Open PRO Overview"
+          )
+        )
+      )
     }]
   }, {
     title: "Agreement",

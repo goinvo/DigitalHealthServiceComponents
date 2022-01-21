@@ -34,7 +34,8 @@ const data = {
           description: (
             <div>
               <p>
-                <strong>Result Summary</strong> is a simple outline of what happened in a medical visit or lab result.
+                <strong>Result Summary</strong> is a simple outline of what
+                happened in a medical visit or lab result.
               </p>
               {/*<h2>References:</h2>
               <p>
@@ -57,7 +58,9 @@ const data = {
           description: (
             <div>
               <p>
-                <strong>Result Detail</strong> is the complete set of information of a medical visit or lab result. All the information should be listed with access to the raw data.
+                <strong>Result Detail</strong> is the complete set of
+                information of a medical visit or lab result. All the
+                information should be listed with access to the raw data.
               </p>
             </div>
           ),
@@ -71,7 +74,9 @@ const data = {
           description: (
             <div>
               <p>
-                <strong>Financial Trade-offs</strong> show the possible paths to different treatments, the outcomes, and different costs to the patient and to other parties.
+                <strong>Financial Trade-offs</strong> show the possible paths to
+                different treatments, the outcomes, and different costs to the
+                patient and to other parties.
               </p>
             </div>
           ),
@@ -84,7 +89,9 @@ const data = {
           description: (
             <div>
               <p>
-                <strong>Costs</strong> show exactly what the visit, exam, or service cost. Details include what the patient pays, what the insurance pays, discounts from hospitals/insurance, etc.
+                <strong>Costs</strong> show exactly what the visit, exam, or
+                service cost. Details include what the patient pays, what the
+                insurance pays, discounts from hospitals/insurance, etc.
               </p>
             </div>
           ),
@@ -100,7 +107,9 @@ const data = {
           description: (
             <div>
               <p>
-                <strong>Advice</strong> is a personal recommendation on what to do next with your condition(s), based on your clinical results, overall life information, and data.
+                <strong>Advice</strong> is a personal recommendation on what to
+                do next with your condition(s), based on your clinical results,
+                overall life information, and data.
               </p>
             </div>
           ),
@@ -162,7 +171,9 @@ const data = {
           description: (
             <div>
               <p>
-                <strong>Bioassay Explained</strong> in 5th grade level, it shows and explains the bioassay results. [Note: how is this different from result summary?]
+                <strong>Bioassay Explained</strong> in 5th grade level, it shows
+                and explains the bioassay results. [Note: how is this different
+                from result summary?]
               </p>
             </div>
           ),
@@ -173,7 +184,9 @@ const data = {
           description: (
             <div>
               <p>
-                <strong>Biometric Explained</strong> is a summary of a patient's body measurements, physiological characteristics, and calculations, presented in an understandable story.
+                <strong>Biometric Explained</strong> is a summary of a patient's
+                body measurements, physiological characteristics, and
+                calculations, presented in an understandable story.
               </p>
             </div>
           ),
@@ -184,7 +197,10 @@ const data = {
           description: (
             <div>
               <p>
-                <strong>Condition Health Edu</strong> is a graphical and text-based description of a particular condition (or conditions), which often includes condition definitions, how it impacts the patient, how the patient treats the condition, etc.
+                <strong>Condition Health Edu</strong> is a graphical and
+                text-based description of a particular condition (or
+                conditions), which often includes condition definitions, how it
+                impacts the patient, how the patient treats the condition, etc.
               </p>
             </div>
           ),
@@ -194,7 +210,9 @@ const data = {
           description: (
             <div>
               <p>
-                <strong>Population Explained</strong> puts the current conditions in context of a larger population and how it impacts a neighborhood, a town, city, or country. 
+                <strong>Population Explained</strong> puts the current
+                conditions in context of a larger population and how it impacts
+                a neighborhood, a town, city, or country.
               </p>
             </div>
           ),
@@ -226,18 +244,28 @@ const data = {
         },
         {
           main: "PRDs",
-          subtext: "Patient-Reported Health Data"
+          subtext: "Patient-Reported Health Data",
           description: (
             <div>
               <p>
-                <strong>Patient-Reported Health Data (PRDs)</strong> is any status of a patient’s health coming directly from the patient, without any interpretation or interference.
+                <strong>Patient-Reported Health Data (PRDs)</strong> is any
+                status of a patient’s health coming directly from the patient,
+                without any interpretation or interference.
               </p>
               <p>
-                The patient is most under used health sensor in the entire healthcare system. Patient feelings, pain, environment, symptoms, and experiences can be captured in short, structured data through low-burden methods (such as voice, multi-second reporting, sound snippets, etc). The PRO Pump is the PRO collection service, which is critical for closing the learning health system loop.
+                The patient is most under used health sensor in the entire
+                healthcare system. Patient feelings, pain, environment,
+                symptoms, and experiences can be captured in short, structured
+                data through low-burden methods (such as voice, multi-second
+                reporting, sound snippets, etc). The PRO Pump is the PRO
+                collection service, which is critical for closing the learning
+                health system loop.
               </p>
-               <p>
+              <p>
                 References:{" "}
-                <a href="https://www.goinvo.com/vision/open-pro/">Open PRO Overview</a>
+                <a href="https://www.goinvo.com/vision/open-pro/">
+                  Open PRO Overview
+                </a>
               </p>
             </div>
           ),
