@@ -34,22 +34,9 @@ const data = {
           description: (
             <div>
               <p>
-                <strong>Result Summary</strong> is a contract between the
-                patient and a service provider that states in clear, simple
-                language or graphics, how data will be used and accessed. The
-                pDUA is evidence for patients of how the service provider's will
-                use, or not use, their information. More than just terms &
-                conditions, the pDUA gives options for the terms of the
-                agreement itself. It allows everyone to assess the
-                trustworthiness and practices of a third party service. Options
-                also include how data is transitioned, if the agreement is
-                terminated. Patients need to be on the same legal altitude as
-                healthcare services, apps, and hospitals. A binding data
-                contract, governed by the patients, is critical to putting
-                patients in control and protecting patients from corporate
-                overreach.
+                <strong>Result Summary</strong> is a simple outline of what happened in a medical visit or lab result.
               </p>
-              <h2>References:</h2>
+              {/*<h2>References:</h2>
               <p>
                 <a href="https://datauseagreement.org">
                   https://datauseagreement.org
@@ -60,7 +47,7 @@ const data = {
                 <a href="https://healthcareitnews.com/news/why-patients-and-providers-need-model-patient-data-use-agreement">
                   https://www.healthcareitnews.com/news/why-patients-and-providers-need-model-patient-data-use-agreement
                 </a>
-              </p>
+              </p>*/}
             </div>
           ),
         },
@@ -70,19 +57,7 @@ const data = {
           description: (
             <div>
               <p>
-                <strong>Result Detail</strong> is a contract between the patient
-                and a service provider that states in clear, simple language or
-                graphics, how data will be used and accessed. The pDUA is
-                evidence for patients of how the service provider's will use, or
-                not use, their information. More than just terms & conditions,
-                the pDUA gives options for the terms of the agreement itself. It
-                allows everyone to assess the trustworthiness and practices of a
-                third party service. Options also include how data is
-                transitioned, if the agreement is terminated. Patients need to
-                be on the same legal altitude as healthcare services, apps, and
-                hospitals. A binding data contract, governed by the patients, is
-                critical to putting patients in control and protecting patients
-                from corporate overreach.
+                <strong>Result Detail</strong> is the complete set of information of a medical visit or lab result. All the information should be listed with access to the raw data.
               </p>
             </div>
           ),
@@ -96,20 +71,7 @@ const data = {
           description: (
             <div>
               <p>
-                <strong>Financial Trade-offs</strong> is a contract between the
-                patient and a service provider that states in clear, simple
-                language or graphics, how data will be used and accessed. The
-                pDUA is evidence for patients of how the service provider's will
-                use, or not use, their information. More than just terms &
-                conditions, the pDUA gives options for the terms of the
-                agreement itself. It allows everyone to assess the
-                trustworthiness and practices of a third party service. Options
-                also include how data is transitioned, if the agreement is
-                terminated. Patients need to be on the same legal altitude as
-                healthcare services, apps, and hospitals. A binding data
-                contract, governed by the patients, is critical to putting
-                patients in control and protecting patients from corporate
-                overreach.
+                <strong>Financial Trade-offs</strong> show the possible paths to different treatments, the outcomes, and different costs to the patient and to other parties.
               </p>
             </div>
           ),
@@ -122,15 +84,7 @@ const data = {
           description: (
             <div>
               <p>
-                <strong>Costs</strong> is a contract between the patient and a
-                service provider that states in clear, simple language or
-                graphics, how data will be used and accessed. The pDUA is
-                evidence for patients of how the service provider's will use, or
-                not use, their information. More than just terms & conditions,
-                the pDUA gives options for the terms of the agreement itself. It
-                allows everyone to assess the trustworthiness and practices of a
-                third party service. Options also include how data is
-                transitioned, if the agreement is terminated.
+                <strong>Costs</strong> show exactly what the visit, exam, or service cost. Details include what the patient pays, what the insurance pays, discounts from hospitals/insurance, etc.
               </p>
             </div>
           ),
@@ -142,25 +96,14 @@ const data = {
       icon: "/images/actionable-step-icon.svg",
       layers: [
         {
-          main: "Careplanning",
+          main: "Advice",
           description: (
             <div>
               <p>
-                <strong>Careplanning</strong> is a contract between the patient
-                and a service provider that states in clear, simple language or
-                graphics, how data will be used and accessed. The pDUA is
-                evidence for patients of how the service provider's will use, or
-                not use, their information. More than just terms & conditions,
-                the pDUA gives options for the terms of the agreement itself. It
-                allows everyone to assess the trustworthiness and practices of a
-                third party service. Options also include how data is
-                transitioned, if the agreement is terminated.
+                <strong>Advice</strong> is a personal recommendation on what to do next with your condition(s), based on your clinical results, overall life information, and data.
               </p>
             </div>
           ),
-        },
-        {
-          main: '"Advice"',
         },
         {
           main: "Care Plan",
@@ -210,12 +153,19 @@ const data = {
       ],
     },
     {
-      title: "Health Literacy",
+      title: "Health Education",
       icon: "/images/health-literacy-icon.svg",
       layers: [
         {
           main: "Bioassay explained",
           subtext: "5th grade level, labs explanation",
+          description: (
+            <div>
+              <p>
+                <strong>Bioassay Explained</strong> in 5th grade level, it shows and explains the bioassay results. [Note: how is this different from result summary?]
+              </p>
+            </div>
+          ),
         },
         {
           main: "Biometric explained",
@@ -223,13 +173,28 @@ const data = {
           description: (
             <div>
               <p>
-                <strong>Biometric Explained</strong> is a contract between the
-                patient and a service provider that states in clear, simple
-                language or graphics, how data will be used and accessed. The
-                pDUA is evidence for patients of how the service provider's will
-                use, or not use, their information. More than just terms &
-                conditions, the pDUA gives options for the terms of the
-                agreement itself.
+                <strong>Biometric Explained</strong> is a summary of a patient's body measurements, physiological characteristics, and calculations, presented in an understandable story.
+              </p>
+            </div>
+          ),
+        },
+        {
+          main: "Condition Health Edu",
+          subtext: "Health education for a particular condition",
+          description: (
+            <div>
+              <p>
+                <strong>Condition Health Edu</strong> is a graphical and text-based description of a particular condition (or conditions), which often includes condition definitions, how it impacts the patient, how the patient treats the condition, etc.
+              </p>
+            </div>
+          ),
+        },
+        {
+          main: "Population Explained",
+          description: (
+            <div>
+              <p>
+                <strong>Population Explained</strong> puts the current conditions in context of a larger population and how it impacts a neighborhood, a town, city, or country. 
               </p>
             </div>
           ),
@@ -260,7 +225,22 @@ const data = {
           ),
         },
         {
-          main: "PRO Pump",
+          main: "PRDs",
+          subtext: "Patient-Reported Health Data"
+          description: (
+            <div>
+              <p>
+                <strong>Patient-Reported Health Data (PRDs)</strong> is any status of a patient’s health coming directly from the patient, without any interpretation or interference.
+              </p>
+              <p>
+                The patient is most under used health sensor in the entire healthcare system. Patient feelings, pain, environment, symptoms, and experiences can be captured in short, structured data through low-burden methods (such as voice, multi-second reporting, sound snippets, etc). The PRO Pump is the PRO collection service, which is critical for closing the learning health system loop.
+              </p>
+               <p>
+                References:{" "}
+                <a href="https://www.goinvo.com/vision/open-pro/">Open PRO Overview</a>
+              </p>
+            </div>
+          ),
         },
       ],
     },
