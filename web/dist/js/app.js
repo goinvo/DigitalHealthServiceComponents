@@ -212,7 +212,7 @@ var RootElement = function RootElement() {
       React.createElement(
         "div",
         { className: "navigation" },
-        previousTitle && React.createElement(
+        previousTitle ? React.createElement(
           "div",
           {
             className: "nav-button nav-backward",
@@ -230,7 +230,7 @@ var RootElement = function RootElement() {
             { className: "layer-name" },
             previousTitle
           )
-        ),
+        ) : React.createElement("div", null),
         nextTitle && React.createElement(
           "div",
           {

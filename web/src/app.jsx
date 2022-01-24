@@ -174,7 +174,7 @@ const RootElement = () => {
           {activeLayer && activeLayer.element}
         </div>
         <div className="navigation">
-          {previousTitle && (
+          {previousTitle ? (
             <div
               className="nav-button nav-backward"
               onClick={() => {
@@ -184,6 +184,8 @@ const RootElement = () => {
               <div className="direction-text">Previous</div>
               <div className="layer-name">{previousTitle}</div>
             </div>
+          ) : (
+            <div></div>
           )}
           {nextTitle && (
             <div
