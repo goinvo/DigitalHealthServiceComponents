@@ -1,27 +1,37 @@
 const data = {
   preStack: [
-    <div>
-      <p>
-        <strong className="clinician-health-manager">
-          Clinician Health Manager
-        </strong>{" "}
-        is the front-end service(s) on a clinician's mobile phone that
-        strengthens primary care delivery. It does so by supporting patient
-        education, connecting clinicians with patients and their families, and
-        tracking data.
-      </p>
-    </div>,
-    <div>
-      <p>
-        <strong className="patient-health-manager">
-          Patient Health Manager
-        </strong>{" "}
-        is the front-end service on an individual's mobile phone that guides
-        them to take actions for their health. This guidance includes providing
-        tailored education, involving family and clinical teams, and giving
-        daily health ownership to the individual.
-      </p>
-    </div>,
+    {
+      main: "Clinician Health Manager",
+      description: (
+        <div>
+          <p>
+            <strong className="clinician-health-manager">
+              Clinician Health Manager
+            </strong>{" "}
+            is the front-end service(s) on a clinician's mobile phone that
+            strengthens primary care delivery. It does so by supporting patient
+            education, connecting clinicians with patients and their families,
+            and tracking data.
+          </p>
+        </div>
+      ),
+    },
+    {
+      main: "Patient Health Manager",
+      description: (
+        <div>
+          <p>
+            <strong className="patient-health-manager">
+              Patient Health Manager
+            </strong>{" "}
+            is the front-end service on an individual's mobile phone that guides
+            them to take actions for their health. This guidance includes
+            providing tailored education, involving family and clinical teams,
+            and giving daily health ownership to the individual.
+          </p>
+        </div>
+      ),
+    },
   ],
   stack: [
     {

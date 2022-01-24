@@ -1,33 +1,39 @@
 var data = {
-  preStack: [React.createElement(
-    "div",
-    null,
-    React.createElement(
-      "p",
+  preStack: [{
+    main: "Clinician Health Manager",
+    description: React.createElement(
+      "div",
       null,
       React.createElement(
-        "strong",
-        { className: "clinician-health-manager" },
-        "Clinician Health Manager"
-      ),
-      " ",
-      "is the front-end service(s) on a clinician's mobile phone that strengthens primary care delivery. It does so by supporting patient education, connecting clinicians with patients and their families, and tracking data."
+        "p",
+        null,
+        React.createElement(
+          "strong",
+          { className: "clinician-health-manager" },
+          "Clinician Health Manager"
+        ),
+        " ",
+        "is the front-end service(s) on a clinician's mobile phone that strengthens primary care delivery. It does so by supporting patient education, connecting clinicians with patients and their families, and tracking data."
+      )
     )
-  ), React.createElement(
-    "div",
-    null,
-    React.createElement(
-      "p",
+  }, {
+    main: "Patient Health Manager",
+    description: React.createElement(
+      "div",
       null,
       React.createElement(
-        "strong",
-        { className: "patient-health-manager" },
-        "Patient Health Manager"
-      ),
-      " ",
-      "is the front-end service on an individual's mobile phone that guides them to take actions for their health. This guidance includes providing tailored education, involving family and clinical teams, and giving daily health ownership to the individual."
+        "p",
+        null,
+        React.createElement(
+          "strong",
+          { className: "patient-health-manager" },
+          "Patient Health Manager"
+        ),
+        " ",
+        "is the front-end service on an individual's mobile phone that guides them to take actions for their health. This guidance includes providing tailored education, involving family and clinical teams, and giving daily health ownership to the individual."
+      )
     )
-  )],
+  }],
   stack: [{
     title: "BioMetric/results",
     icon: "/images/biometric-icon.svg",
