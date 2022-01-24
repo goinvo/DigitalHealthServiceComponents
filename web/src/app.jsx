@@ -162,7 +162,7 @@ const RootElement = () => {
           </div>
           <div
             className="z-dashed-line"
-            style={{ ...(scroll > 200 && { width: "89px", left: "92px" }) }}
+            style={{ ...(scroll > 200 && { width: "85px", left: "96px" }) }}
           ></div>
           <div
             className="layers-container"

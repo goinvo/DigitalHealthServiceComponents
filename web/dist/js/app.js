@@ -190,7 +190,7 @@ var RootElement = function RootElement() {
         ),
         React.createElement("div", {
           className: "z-dashed-line",
-          style: Object.assign({}, scroll > 200 && { width: "89px", left: "92px" })
+          style: Object.assign({}, scroll > 200 && { width: "85px", left: "96px" })
         }),
         React.createElement(
           "div",
