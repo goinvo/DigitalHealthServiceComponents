@@ -252,12 +252,12 @@ const data = {
           ),
         },
         {
-          main: "PRDs",
-          subtext: "Patient-Reported Health Data",
+          main: "PGHD",
+          subtext: "Patient Generated Health Data",
           description: (
             <div>
               <p>
-                <strong>Patient-Reported Health Data (PRDs)</strong> is any
+                <strong>Patient Generated Health Data (PGHD)</strong> is any
                 status of a patient’s health coming directly from the patient,
                 without any interpretation or interference.
               </p>
@@ -266,7 +266,7 @@ const data = {
                 healthcare system. Patient feelings, pain, environment,
                 symptoms, and experiences can be captured in short, structured
                 data through low-burden methods (such as voice, multi-second
-                reporting, sound snippets, etc). The PRO Pump is the PRO
+                reporting, sound snippets, etc). The PGHD Pump is the PGHD
                 collection service, which is critical for closing the learning
                 health system loop.
               </p>
