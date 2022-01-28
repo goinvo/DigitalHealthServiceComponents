@@ -13,7 +13,7 @@ var data = {
           "Clinician Health Manager"
         ),
         " ",
-        "is the front-end service(s) on a clinician's mobile phone that strengthens primary care delivery. It does so by supporting patient education, connecting clinicians with patients and their families, and tracking data."
+        "is the front-end service(s) on a clinician's mobile phone (or laptop or computer-on-wheels) that strengthens primary care delivery. It does so by tracking data, supporting patient education, and connecting clinicians with patients and their families."
       )
     )
   }, {
@@ -30,7 +30,7 @@ var data = {
           "Patient Health Manager"
         ),
         " ",
-        "is the front-end service on an individual's mobile phone that guides them to take actions for their health. This guidance includes providing tailored education, involving family and clinical teams, and giving daily health ownership to the individual."
+        "is the front-end service on an individual's mobile phone (or other silicon) that guides them to take actions for their health. This guidance includes providing tailored education, involving family and clinical teams, and giving daily health ownership to the individual."
       )
     )
   }],
@@ -282,8 +282,8 @@ var data = {
         )
       )
     }, {
-      main: "PRDs",
-      subtext: "Patient-Reported Health Data",
+      main: "PGHD",
+      subtext: "Patient Generated Health Data",
       description: React.createElement(
         "div",
         null,
@@ -293,14 +293,14 @@ var data = {
           React.createElement(
             "strong",
             null,
-            "Patient-Reported Health Data (PRDs)"
+            "Patient Generated Health Data (PGHD)"
           ),
           " is any status of a patient\u2019s health coming directly from the patient, without any interpretation or interference."
         ),
         React.createElement(
           "p",
           null,
-          "The patient is most under used health sensor in the entire healthcare system. Patient feelings, pain, environment, symptoms, and experiences can be captured in short, structured data through low-burden methods (such as voice, multi-second reporting, sound snippets, etc). The PRO Pump is the PRO collection service, which is critical for closing the learning health system loop."
+          "The patient is most under used health sensor in the entire healthcare system. Patient feelings, pain, environment, symptoms, and experiences can be captured in short, structured data through low-burden methods (such as voice, multi-second reporting, sound snippets, etc). The PGHD Pump is the PGHD collection service, which is critical for closing the learning health system loop."
         ),
         React.createElement(
           "p",
