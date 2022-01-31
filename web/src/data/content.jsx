@@ -253,11 +253,11 @@ const data = {
         },
         {
           main: "PGHD",
-          subtext: "Patient Generated Health Data",
+          subtext: "Patient Generated Data",
           description: (
             <div>
               <p>
-                <strong>Patient Generated Health Data (PGHD)</strong> is any
+                <strong>Patient Generated Data (PGD)</strong> is any
                 status of a patient’s health coming directly from the patient,
                 without any interpretation or interference.
               </p>
@@ -266,9 +266,12 @@ const data = {
                 healthcare system. Patient feelings, pain, environment,
                 symptoms, and experiences can be captured in short, structured
                 data through low-burden methods (such as voice, multi-second
-                reporting, sound snippets, etc). The PGHD Pump is the PGHD
+                reporting, sound snippets, etc). Any life data is health data. The PGD Pump is the data
                 collection service, which is critical for closing the learning
-                health system loop.
+                health system loop. Data quality and provenance will be shown in the Health Manager. 
+                </p>
+              <p>
+                Previous terms: Patient Generated Health Data, Patient Reported Outcomes, Patient-Reported Health Data...
               </p>
               <p>
                 References:{" "}
@@ -457,6 +460,20 @@ const data = {
         },
         {
           main: "Health Score",
+          description: (
+            <div>
+              <p>
+                <strong>A Health Score</strong> is a data-driven summary of the determinants of health (DOH) to aid health decision making at the individual, and population level.
+              </p>
+              <h2>Draft Health Score concept and references</h2>
+              <p>
+              Reference:{" "}
+                <a href="https://github.com/goinvo/DeterminantsofHealthScore/blob/master/documentation/Determinants_of_Health_Score_Summary.pdf">
+                  Health Score on Github
+                </a>
+              </p>
+            </div>
+          ),
         },
         {
           main: "Population Insights",
