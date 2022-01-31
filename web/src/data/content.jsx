@@ -252,7 +252,7 @@ const data = {
           ),
         },
         {
-          main: "PGHD",
+          main: "PGD",
           subtext: "Patient Generated Data",
           description: (
             <div>
