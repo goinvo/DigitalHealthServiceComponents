@@ -282,8 +282,8 @@ var data = {
         )
       )
     }, {
-      main: "PGHD",
-      subtext: "Patient Generated Health Data",
+      main: "PGD",
+      subtext: "Patient Generated Data",
       description: React.createElement(
         "div",
         null,
@@ -293,14 +293,19 @@ var data = {
           React.createElement(
             "strong",
             null,
-            "Patient Generated Health Data (PGHD)"
+            "Patient Generated Data (PGD)"
           ),
           " is any status of a patient\u2019s health coming directly from the patient, without any interpretation or interference."
         ),
         React.createElement(
           "p",
           null,
-          "The patient is most under used health sensor in the entire healthcare system. Patient feelings, pain, environment, symptoms, and experiences can be captured in short, structured data through low-burden methods (such as voice, multi-second reporting, sound snippets, etc). The PGHD Pump is the PGHD collection service, which is critical for closing the learning health system loop."
+          "The patient is most under used health sensor in the entire healthcare system. Patient feelings, pain, environment, symptoms, and experiences can be captured in short, structured data through low-burden methods (such as voice, multi-second reporting, sound snippets, etc). Any life data is health data. The PGD Pump is the data collection service, which is critical for closing the learning health system loop. Data quality and provenance will be shown in the Health Manager."
+        ),
+        React.createElement(
+          "p",
+          null,
+          "Previous terms: Patient Generated Health Data, Patient Reported Outcomes, Patient-Reported Health Data..."
         ),
         React.createElement(
           "p",
@@ -544,7 +549,37 @@ var data = {
         )
       )
     }, {
-      main: "Health Score"
+      main: "Health Score",
+      description: React.createElement(
+        "div",
+        null,
+        React.createElement(
+          "p",
+          null,
+          React.createElement(
+            "strong",
+            null,
+            "A Health Score"
+          ),
+          " is a data-driven summary of the determinants of health (DOH) to aid health decision making at the individual, and population level."
+        ),
+        React.createElement(
+          "h2",
+          null,
+          "Draft Health Score concept and references"
+        ),
+        React.createElement(
+          "p",
+          null,
+          "Reference:",
+          " ",
+          React.createElement(
+            "a",
+            { href: "https://github.com/goinvo/DeterminantsofHealthScore/blob/master/documentation/Determinants_of_Health_Score_Summary.pdf" },
+            "Health Score on Github"
+          )
+        )
+      )
     }, {
       main: "Population Insights"
     }, {
