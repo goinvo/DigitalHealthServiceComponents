@@ -651,7 +651,7 @@ var data = {
             null,
             "Standard Patient Health Record"
           ),
-          " is a nationally shared and consistent definition of health data (structure, terminology, content) for the US and planet. It's a specification that contains definitions for all critical patient information such as ID, emergency care, primary care, oncology care, with future extensions for representing human biology, behavior, environment, and social circumstances in code."
+          " is a digital \"twin\" of the patient in code, based on a nationally shared and consistent definition of health data (structure, terminology, content) for the US and planet. It is the gold source data for a patient's health. The standard patient health record specification contains definitions for all critical patient information such as ID, emergency care, primary care, oncology care, with future extensions for representing human biology, behavior, environment, and social circumstances in code."
         ),
         React.createElement(
           "p",
@@ -684,6 +684,51 @@ var data = {
       main: "Standard Primary Care Core Data"
     }, {
       main: "Life data"
+    }, {
+      main: "Common Data Elements",
+      description: React.createElement(
+        "div",
+        null,
+        React.createElement(
+          "p",
+          null,
+          React.createElement(
+            "strong",
+            null,
+            "Common Data Elements"
+          ),
+          " are human and machine-readable definitions (key terms or concepts) of health data elements used to describe human biology, activity, and scenarios. A data element is like an attribute, which then maps to a value or set of values."
+        ),
+        React.createElement(
+          "p",
+          null,
+          "Reference:",
+          " ",
+          React.createElement(
+            "a",
+            { href: "http://standardhealthrecord.org/" },
+            "http://standardhealthrecord.org/"
+          )
+        ),
+        React.createElement(
+          "p",
+          null,
+          React.createElement(
+            "a",
+            { href: "https://cde.nlm.nih.gov/home" },
+            "NIH Common Data Elements"
+          )
+        ),
+        React.createElement(
+          "p",
+          null,
+          React.createElement(
+            "a",
+            { href: "https://www.healthit.gov/isa/united-states-core-data-interoperability-uscdi" },
+            "United States Core Data for Interoperability (USCDI)"
+          )
+        )
+      )
     }]
   }]
 };
