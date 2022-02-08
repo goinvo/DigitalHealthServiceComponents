@@ -586,7 +586,7 @@ const data = {
           description: (
             <div>
               <p>
-                <strong>Common Data Elements</strong> Human and machine-readable definitions (key terms or concepts) of health data elements used to describe human biology, activity, and scenarios. A data element is like an attribute, which then maps to a value or set of values.
+                <strong>Common Data Elements</strong> are human and machine-readable definitions (key terms or concepts) of health data elements used to describe human biology, activity, and scenarios. A data element is like an attribute, which then maps to a value or set of values.
               </p>
               <p>
                 Reference:{" "}
@@ -599,6 +599,13 @@ const data = {
                 NIH Common Data Elements
                 </a>
               </p>
+                <p>
+                <a href="https://www.healthit.gov/isa/united-states-core-data-interoperability-uscdi">
+                  United States Core Data for Interoperability (USCDI) 
+                </a>
+              </p>
+              </div>
+            )
         },
       ],
     },
