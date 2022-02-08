@@ -581,6 +581,25 @@ const data = {
         {
           main: "Life data",
         },
+        {
+          main: "Common Data Elements",
+          description: (
+            <div>
+              <p>
+                <strong>Common Data Elements</strong> Human and machine-readable definitions (key terms or concepts) of health data elements used to describe human biology, activity, and scenarios. A data element is like an attribute, which then maps to a value or set of values.
+              </p>
+              <p>
+                Reference:{" "}
+                <a href="http://standardhealthrecord.org/">
+                  http://standardhealthrecord.org/
+                </a>
+              </p>
+               <p> 
+                <a href="https://cde.nlm.nih.gov/home">
+                NIH Common Data Elements
+                </a>
+              </p>
+        },
       ],
     },
   ],
