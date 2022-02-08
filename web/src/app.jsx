@@ -13,7 +13,7 @@ const RootElement = () => {
   const dhscRef = React.useRef();
   const stackRef = React.useRef();
 
-  const descriptions = data.stack
+  let descriptions = data.stack
     .reduce((acc, layerGroup) => {
       return [
         ...acc,
@@ -32,9 +32,27 @@ const RootElement = () => {
         title: layer.title,
       };
     });
-  const descriptionTitles = descriptions.map(
-    (description) => description.title
-  );
+  let descriptionTitles = descriptions.map((description) => description.title);
+
+  // Add pre-stack items
+  descriptionTitles = [
+    "Clinician Health Manager",
+    "Patient Health Manager",
+    ...descriptionTitles,
+  ];
+  descriptions = [
+    {
+      ref: React.useRef(),
+      element: data.preStack[0].description,
+      title: data.preStack[0].main,
+    },
+    {
+      ref: React.useRef(),
+      element: data.preStack[1].description,
+      title: data.preStack[1].main,
+    },
+    ...descriptions,
+  ];
 
   const activeLayer = active
     ? descriptions.find((layer) => layer.title === active)
@@ -43,6 +61,9 @@ const RootElement = () => {
   let currentLayerIndex;
   let nextTitle;
   let previousTitle;
+
+  console.log(activeLayer);
+
   if (activeLayer) {
     currentLayerIndex = descriptionTitles.indexOf(activeLayer.title);
     nextTitle =
@@ -109,32 +130,63 @@ const RootElement = () => {
         <div className="stack-container" ref={stackRef}>
           <div className="lenses-container">
             <div className="dragonfly-container">
-              <div className="left-text">Clinician Health Manager</div>
-              <div className="right-text">Patient Health Manager</div>
-              <div className="lens lens-left-blue"></div>
-              <div className="lens lens-right-red"></div>
-              <div className="lens lens-left-gray"></div>
-              <div className="lens lens-right-gray"></div>
+              <div
+                className="left-text"
+                onClick={() => setActive("Clinician Health Manager")}
+              >
+                Clinician Health Manager
+              </div>
+              <div
+                className="right-text"
+                onClick={() => setActive("Patient Health Manager")}
+              >
+                Patient Health Manager
+              </div>
+              <div
+                className="lens lens-left-blue"
+                onClick={() => setActive("Clinician Health Manager")}
+              ></div>
+              <div
+                className="lens lens-right-red"
+                onClick={() => setActive("Patient Health Manager")}
+              ></div>
+              <div
+                className="lens lens-left-gray"
+                onClick={() => setActive("Clinician Health Manager")}
+              ></div>
+              <div
+                className="lens lens-right-gray"
+                onClick={() => setActive("Patient Health Manager")}
+              ></div>
             </div>
           </div>
-          {data.stack.map((content, key) => {
-            return (
-              <LayerGroup
-                content={content}
-                highlighted={highlighted}
-                titleLayer={content.title && { title: content.title }}
-                isLastChild={key === data.stack.length - 1}
-                setActive={setActive}
-              />
-            );
-          })}
+          <div
+            className="z-dashed-line"
+            style={{ ...(scroll > 200 && { width: "85px", left: "96px" }) }}
+          ></div>
+          <div
+            className="layers-container"
+            style={{ ...(scroll > 200 && { transform: "none" }) }}
+          >
+            {data.stack.map((content, key) => {
+              return (
+                <LayerGroup
+                  content={content}
+                  highlighted={highlighted}
+                  titleLayer={content.title && { title: content.title }}
+                  isLastChild={key === data.stack.length - 1}
+                  setActive={setActive}
+                />
+              );
+            })}
+          </div>
         </div>
         <div className="description-container">
           <IntroContainer />
           {data.preStack.map((content, key) => {
             return (
               <div key={key} className={`layer-description`}>
-                {content}
+                {content.description}
               </div>
             );
           })}
@@ -174,7 +226,7 @@ const RootElement = () => {
           {activeLayer && activeLayer.element}
         </div>
         <div className="navigation">
-          {previousTitle && (
+          {previousTitle ? (
             <div
               className="nav-button nav-backward"
               onClick={() => {
@@ -184,6 +236,8 @@ const RootElement = () => {
               <div className="direction-text">Previous</div>
               <div className="layer-name">{previousTitle}</div>
             </div>
+          ) : (
+            <div></div>
           )}
           {nextTitle && (
             <div

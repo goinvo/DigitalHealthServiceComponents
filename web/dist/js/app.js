@@ -60,6 +60,18 @@ var RootElement = function RootElement() {
     return description.title;
   });
 
+  // Add pre-stack items
+  descriptionTitles = ["Clinician Health Manager", "Patient Health Manager"].concat(_toConsumableArray(descriptionTitles));
+  descriptions = [{
+    ref: React.useRef(),
+    element: data.preStack[0].description,
+    title: data.preStack[0].main
+  }, {
+    ref: React.useRef(),
+    element: data.preStack[1].description,
+    title: data.preStack[1].main
+  }].concat(_toConsumableArray(descriptions));
+
   var activeLayer = active ? descriptions.find(function (layer) {
     return layer.title === active;
   }) : undefined;
@@ -67,6 +79,9 @@ var RootElement = function RootElement() {
   var currentLayerIndex = void 0;
   var nextTitle = void 0;
   var previousTitle = void 0;
+
+  console.log(activeLayer);
+
   if (activeLayer) {
     currentLayerIndex = descriptionTitles.indexOf(activeLayer.title);
     nextTitle = currentLayerIndex < descriptionTitles.length ? descriptionTitles[currentLayerIndex + 1] : undefined;
@@ -129,29 +144,70 @@ var RootElement = function RootElement() {
             { className: "dragonfly-container" },
             React.createElement(
               "div",
-              { className: "left-text" },
+              {
+                className: "left-text",
+                onClick: function onClick() {
+                  return setActive("Clinician Health Manager");
+                }
+              },
               "Clinician Health Manager"
             ),
             React.createElement(
               "div",
-              { className: "right-text" },
+              {
+                className: "right-text",
+                onClick: function onClick() {
+                  return setActive("Patient Health Manager");
+                }
+              },
               "Patient Health Manager"
             ),
-            React.createElement("div", { className: "lens lens-left-blue" }),
-            React.createElement("div", { className: "lens lens-right-red" }),
-            React.createElement("div", { className: "lens lens-left-gray" }),
-            React.createElement("div", { className: "lens lens-right-gray" })
+            React.createElement("div", {
+              className: "lens lens-left-blue",
+              onClick: function onClick() {
+                return setActive("Clinician Health Manager");
+              }
+            }),
+            React.createElement("div", {
+              className: "lens lens-right-red",
+              onClick: function onClick() {
+                return setActive("Patient Health Manager");
+              }
+            }),
+            React.createElement("div", {
+              className: "lens lens-left-gray",
+              onClick: function onClick() {
+                return setActive("Clinician Health Manager");
+              }
+            }),
+            React.createElement("div", {
+              className: "lens lens-right-gray",
+              onClick: function onClick() {
+                return setActive("Patient Health Manager");
+              }
+            })
           )
         ),
-        data.stack.map(function (content, key) {
-          return React.createElement(LayerGroup, {
-            content: content,
-            highlighted: highlighted,
-            titleLayer: content.title && { title: content.title },
-            isLastChild: key === data.stack.length - 1,
-            setActive: setActive
-          });
-        })
+        React.createElement("div", {
+          className: "z-dashed-line",
+          style: Object.assign({}, scroll > 200 && { width: "85px", left: "96px" })
+        }),
+        React.createElement(
+          "div",
+          {
+            className: "layers-container",
+            style: Object.assign({}, scroll > 200 && { transform: "none" })
+          },
+          data.stack.map(function (content, key) {
+            return React.createElement(LayerGroup, {
+              content: content,
+              highlighted: highlighted,
+              titleLayer: content.title && { title: content.title },
+              isLastChild: key === data.stack.length - 1,
+              setActive: setActive
+            });
+          })
+        )
       ),
       React.createElement(
         "div",
@@ -161,7 +217,7 @@ var RootElement = function RootElement() {
           return React.createElement(
             "div",
             { key: key, className: "layer-description" },
-            content
+            content.description
           );
         }),
         data.stack.map(function (group, key) {
@@ -212,7 +268,7 @@ var RootElement = function RootElement() {
       React.createElement(
         "div",
         { className: "navigation" },
-        previousTitle && React.createElement(
+        previousTitle ? React.createElement(
           "div",
           {
             className: "nav-button nav-backward",
@@ -230,7 +286,7 @@ var RootElement = function RootElement() {
             { className: "layer-name" },
             previousTitle
           )
-        ),
+        ) : React.createElement("div", null),
         nextTitle && React.createElement(
           "div",
           {

@@ -1,33 +1,39 @@
 var data = {
-  preStack: [React.createElement(
-    "div",
-    null,
-    React.createElement(
-      "p",
+  preStack: [{
+    main: "Clinician Health Manager",
+    description: React.createElement(
+      "div",
       null,
       React.createElement(
-        "strong",
-        { className: "clinician-health-manager" },
-        "Clinician Health Manager"
-      ),
-      " ",
-      "is the front-end service(s) on a clinician's mobile phone that strengthens primary care delivery. It does so by supporting patient education, connecting clinicians with patients and their families, and tracking data."
+        "p",
+        null,
+        React.createElement(
+          "strong",
+          { className: "clinician-health-manager" },
+          "Clinician Health Manager"
+        ),
+        " ",
+        "is the front-end service(s) on a clinician's mobile phone (or laptop or computer-on-wheels) that strengthens primary care delivery. It does so by tracking data, supporting patient education, and connecting clinicians with patients and their families."
+      )
     )
-  ), React.createElement(
-    "div",
-    null,
-    React.createElement(
-      "p",
+  }, {
+    main: "Patient Health Manager",
+    description: React.createElement(
+      "div",
       null,
       React.createElement(
-        "strong",
-        { className: "patient-health-manager" },
-        "Patient Health Manager"
-      ),
-      " ",
-      "is the front-end service on an individual's mobile phone that guides them to take actions for their health. This guidance includes providing tailored education, involving family and clinical teams, and giving daily health ownership to the individual."
+        "p",
+        null,
+        React.createElement(
+          "strong",
+          { className: "patient-health-manager" },
+          "Patient Health Manager"
+        ),
+        " ",
+        "is the front-end service on an individual's mobile phone (or other silicon) that guides them to take actions for their health. This guidance includes providing tailored education, involving family and clinical teams, and giving daily health ownership to the individual."
+      )
     )
-  )],
+  }],
   stack: [{
     title: "BioMetric/results",
     icon: "/images/biometric-icon.svg",
@@ -276,8 +282,8 @@ var data = {
         )
       )
     }, {
-      main: "PRDs",
-      subtext: "Patient-Reported Health Data",
+      main: "PGD",
+      subtext: "Patient Generated Data",
       description: React.createElement(
         "div",
         null,
@@ -287,14 +293,19 @@ var data = {
           React.createElement(
             "strong",
             null,
-            "Patient-Reported Health Data (PRDs)"
+            "Patient Generated Data (PGD)"
           ),
           " is any status of a patient\u2019s health coming directly from the patient, without any interpretation or interference."
         ),
         React.createElement(
           "p",
           null,
-          "The patient is most under used health sensor in the entire healthcare system. Patient feelings, pain, environment, symptoms, and experiences can be captured in short, structured data through low-burden methods (such as voice, multi-second reporting, sound snippets, etc). The PRO Pump is the PRO collection service, which is critical for closing the learning health system loop."
+          "The patient is most under used health sensor in the entire healthcare system. Patient feelings, pain, environment, symptoms, and experiences can be captured in short, structured data through low-burden methods (such as voice, multi-second reporting, sound snippets, etc). Any life data is health data. The PGD Pump is the data collection service, which is critical for closing the learning health system loop. Data quality and provenance will be shown in the Health Manager."
+        ),
+        React.createElement(
+          "p",
+          null,
+          "Previous terms: Patient Generated Health Data, Patient Reported Outcomes, Patient-Reported Health Data..."
         ),
         React.createElement(
           "p",
@@ -538,7 +549,37 @@ var data = {
         )
       )
     }, {
-      main: "Health Score"
+      main: "Health Score",
+      description: React.createElement(
+        "div",
+        null,
+        React.createElement(
+          "p",
+          null,
+          React.createElement(
+            "strong",
+            null,
+            "A Health Score"
+          ),
+          " is a data-driven summary of the determinants of health (DOH) to aid health decision making at the individual, and population level."
+        ),
+        React.createElement(
+          "h2",
+          null,
+          "Draft Health Score concept and references"
+        ),
+        React.createElement(
+          "p",
+          null,
+          "Reference:",
+          " ",
+          React.createElement(
+            "a",
+            { href: "https://github.com/goinvo/DeterminantsofHealthScore/blob/master/documentation/Determinants_of_Health_Score_Summary.pdf" },
+            "Health Score on Github"
+          )
+        )
+      )
     }, {
       main: "Population Insights"
     }, {

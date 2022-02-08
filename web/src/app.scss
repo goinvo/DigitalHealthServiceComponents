@@ -179,6 +179,7 @@ strong {
       background-color: rgba(0, 0, 255, 0.2);
       opacity: 0;
       transform: translateY(50px);
+      z-index: 2;
       animation: lensUp 0.8s 0.2s ease-out forwards;
     }
 
@@ -186,6 +187,7 @@ strong {
       background-color: rgba(255, 0, 0, 0.2);
       opacity: 0;
       transform: translateY(50px);
+      z-index: 2;
       animation: lensUp 0.8s 0.2s ease-out forwards;
     }
 
@@ -194,7 +196,6 @@ strong {
       background-color: rgba(0, 0, 0, 0.1);
       transform: translateY(50px);
       animation: lensUpLeftGray 0.6s 0.6s ease-out forwards;
-      z-index: -1;
       opacity: 0;
     }
 
@@ -203,7 +204,6 @@ strong {
       background-color: rgba(0, 0, 0, 0.1);
       transform: translateY(50px);
       animation: lensUpRightGray 0.6s 0.6s ease-out forwards;
-      z-index: -1;
       opacity: 0;
     }
 
@@ -517,7 +517,7 @@ strong {
 .showcase {
   position: fixed;
   z-index: 20;
-  height: 40vh;
+  height: 35vh;
   left: 15px;
   right: 15px;
   bottom: 15px;
@@ -573,7 +573,7 @@ strong {
 
     .nav-button {
       flex: 1 1 50px;
-      max-width: 42%;
+      max-width: 48%;
       position: relative;
 
       &:after {
@@ -610,7 +610,7 @@ strong {
     .nav-backward {
       text-align: left;
       margin-left: 10px;
-      margin-right: 20px;
+      margin-right: 10px;
 
       &:after {
         transform: rotate(180deg);
@@ -622,7 +622,7 @@ strong {
     .nav-forward {
       text-align: right;
       margin-right: 10px;
-      margin-left: 20px;
+      margin-left: 10px;
     }
   }
 }
@@ -708,6 +708,44 @@ strong {
     &::after {
       display: none;
     }
+  }
+
+  .z-dashed-line {
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23CCCCCCFF' stroke-width='6' stroke-dasharray='0%2c10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+    height: 3px;
+    position: absolute;
+    left: 180px;
+    width: 0;
+    top: 123px;
+    transition: 0.3s all;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: -3px;
+      height: 40px;
+      top: 0;
+      width: 3px;
+      z-index: 10;
+      /* https://kovart.github.io/dashed-border-generator/ */
+      background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23CCCCCCFF' stroke-width='6' stroke-dasharray='0%2c10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      right: 0;
+      height: 46px;
+      bottom: 0;
+      width: 3px;
+      z-index: 10;
+      /* https://kovart.github.io/dashed-border-generator/ */
+      background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23CCCCCCFF' stroke-width='6' stroke-dasharray='0%2c10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+    }
+  }
+
+  .layers-container {
+    transform: translate(83px, 0);
+    transition: 0.3s all;
   }
 
   .dhsc-container {

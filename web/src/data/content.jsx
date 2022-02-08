@@ -1,27 +1,36 @@
 const data = {
   preStack: [
-    <div>
-      <p>
-        <strong className="clinician-health-manager">
-          Clinician Health Manager
-        </strong>{" "}
-        is the front-end service(s) on a clinician's mobile phone that
-        strengthens primary care delivery. It does so by supporting patient
-        education, connecting clinicians with patients and their families, and
-        tracking data.
-      </p>
-    </div>,
-    <div>
-      <p>
-        <strong className="patient-health-manager">
-          Patient Health Manager
-        </strong>{" "}
-        is the front-end service on an individual's mobile phone that guides
-        them to take actions for their health. This guidance includes providing
-        tailored education, involving family and clinical teams, and giving
-        daily health ownership to the individual.
-      </p>
-    </div>,
+    {
+      main: "Clinician Health Manager",
+      description: (
+        <div>
+          <p>
+            <strong className="clinician-health-manager">
+              Clinician Health Manager
+            </strong>{" "}
+            is the front-end service(s) on a clinician's mobile phone (or laptop or computer-on-wheels) that
+            strengthens primary care delivery. It does so by tracking data, supporting patient
+            education, and connecting clinicians with patients and their families.
+          </p>
+        </div>
+      ),
+    },
+    {
+      main: "Patient Health Manager",
+      description: (
+        <div>
+          <p>
+            <strong className="patient-health-manager">
+              Patient Health Manager
+            </strong>{" "}
+            is the front-end service on an individual's mobile phone (or other silicon) that guides
+            them to take actions for their health. This guidance includes
+            providing tailored education, involving family and clinical teams,
+            and giving daily health ownership to the individual.
+          </p>
+        </div>
+      ),
+    },
   ],
   stack: [
     {
@@ -243,12 +252,12 @@ const data = {
           ),
         },
         {
-          main: "PRDs",
-          subtext: "Patient-Reported Health Data",
+          main: "PGD",
+          subtext: "Patient Generated Data",
           description: (
             <div>
               <p>
-                <strong>Patient-Reported Health Data (PRDs)</strong> is any
+                <strong>Patient Generated Data (PGD)</strong> is any
                 status of a patient’s health coming directly from the patient,
                 without any interpretation or interference.
               </p>
@@ -257,9 +266,12 @@ const data = {
                 healthcare system. Patient feelings, pain, environment,
                 symptoms, and experiences can be captured in short, structured
                 data through low-burden methods (such as voice, multi-second
-                reporting, sound snippets, etc). The PRO Pump is the PRO
+                reporting, sound snippets, etc). Any life data is health data. The PGD Pump is the data
                 collection service, which is critical for closing the learning
-                health system loop.
+                health system loop. Data quality and provenance will be shown in the Health Manager. 
+                </p>
+              <p>
+                Previous terms: Patient Generated Health Data, Patient Reported Outcomes, Patient-Reported Health Data...
               </p>
               <p>
                 References:{" "}
@@ -448,6 +460,20 @@ const data = {
         },
         {
           main: "Health Score",
+          description: (
+            <div>
+              <p>
+                <strong>A Health Score</strong> is a data-driven summary of the determinants of health (DOH) to aid health decision making at the individual, and population level.
+              </p>
+              <h2>Draft Health Score concept and references</h2>
+              <p>
+              Reference:{" "}
+                <a href="https://github.com/goinvo/DeterminantsofHealthScore/blob/master/documentation/Determinants_of_Health_Score_Summary.pdf">
+                  Health Score on Github
+                </a>
+              </p>
+            </div>
+          ),
         },
         {
           main: "Population Insights",
