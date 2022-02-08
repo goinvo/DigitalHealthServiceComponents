@@ -512,13 +512,11 @@ const data = {
           description: (
             <div>
               <p>
-                <strong>Standard Patient Health Record</strong> is a nationally
-                shared and consistent definition of health data (structure,
-                terminology, content) for the US and planet. It's a
-                specification that contains definitions for all critical patient
-                information such as ID, emergency care, primary care, oncology
-                care, with future extensions for representing human biology,
-                behavior, environment, and social circumstances in code.
+                <strong>Standard Patient Health Record</strong> is a digital "twin" of the patient in code,
+                based on a nationally shared and consistent definition of health data
+                 (structure, terminology, content) for the US and planet.
+                  It is the gold source data for a patient's health.
+                   The standard patient health record specification contains definitions for all critical patient information such as ID, emergency care, primary care, oncology care, with future extensions for representing human biology, behavior, environment, and social circumstances in code.
               </p>
               <p>
                 Reference:{" "}
