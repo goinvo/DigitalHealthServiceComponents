@@ -37,11 +37,7 @@ This spins up a quick little server using the `http-server` package, and runs `b
 
 ## Deploy to GitHub Pages Preview
 
-GitHub Pages is currently set to preview from the `gh-pages` branch. To do this, you can run this crazy command:
+GitHub Pages is currently set to preview the content in the `docs` folder. Just push to master!
 
-```
-git subtree push --prefix web origin gh-pages
-```
-
-Once you've run it, the preview can be seen here:
+Once you've pushed, check [the build status](https://github.com/goinvo/DigitalHealthServiceComponents/actions), and after a few minutes, you should be able to preview it on:
 [https://goinvo.github.io/DigitalHealthServiceComponents/](https://goinvo.github.io/DigitalHealthServiceComponents/)
