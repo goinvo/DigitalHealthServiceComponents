@@ -86,48 +86,54 @@ const RootElement = () => {
         : undefined;
   }
 
-  // React.useEffect(() => {
-  //   const handleScroll = () => {
-  //     const scrollPosition = dhscRef.current.getBoundingClientRect().top;
-  //     const percentOfDescriptionsScrolled = Math.min(
-  //       Math.max(
-  //         -scrollPosition /
-  //           (dhscRef.current.getBoundingClientRect().height -
-  //             window.innerHeight),
-  //         0
-  //       ),
-  //       1
-  //     );
-  //     const stackHeight = stackRef.current.getBoundingClientRect().height;
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = dhscRef.current.getBoundingClientRect().top;
+      const percentOfDescriptionsScrolled = Math.min(
+        Math.max(
+          -scrollPosition /
+            (dhscRef.current.getBoundingClientRect().height -
+              window.innerHeight),
+          0
+        ),
+        1
+      );
+      const stackHeight = stackRef.current.getBoundingClientRect().height;
 
-  //     setFixed(scrollPosition < 0);
-  //     setBottomFixed(percentOfDescriptionsScrolled === 1);
-  //     setScroll(window.scrollY);
-  //     setStackOffsetTop(
-  //       -(stackHeight - window.innerHeight) * percentOfDescriptionsScrolled
-  //     );
+      setFixed(scrollPosition < 0);
+      setBottomFixed(percentOfDescriptionsScrolled === 1);
+      setScroll(window.scrollY);
+      setStackOffsetTop(
+        -(stackHeight - window.innerHeight) * percentOfDescriptionsScrolled
+      );
 
-  //     let findHighlighted;
-  //     descriptions.forEach((description) => {
-  //       const descriptionScroll =
-  //         description.ref.current.getBoundingClientRect().top;
-  //       if (descriptionScroll < 300 && descriptionScroll > 0) {
-  //         findHighlighted = description;
-  //       }
-  //     });
-  //     if (findHighlighted) {
-  //       setHighlighted(findHighlighted);
-  //     }
+      let findHighlighted;
+      descriptions.forEach((description) => {
+        const descriptionScroll =
+          description.ref.current.getBoundingClientRect().top;
+        if (descriptionScroll < 300 && descriptionScroll > 0) {
+          findHighlighted = description;
+        }
+      });
+      if (findHighlighted) {
+        setHighlighted(findHighlighted);
+      }
 
-  //     window.requestAnimationFrame(handleScroll);
-  //   };
+      window.requestAnimationFrame(handleScroll);
+    };
 
-  //   window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const maybeSetActive = (section) => {
+    if (window.innerWidth < 1300) {
+      setActive(section);
+    }
+  };
 
   return (
     <div>
@@ -140,31 +146,31 @@ const RootElement = () => {
             <div className="dragonfly-container">
               <div
                 className="left-text"
-                onClick={() => setActive("Clinician Health Manager")}
+                onClick={() => maybeSetActive("Clinician Health Manager")}
               >
                 Clinician Health Manager
               </div>
               <div
                 className="right-text"
-                onClick={() => setActive("Patient Health Manager")}
+                onClick={() => maybeSetActive("Patient Health Manager")}
               >
                 Patient Health Manager
               </div>
               <div
                 className="lens lens-left-blue"
-                onClick={() => setActive("Clinician Health Manager")}
+                onClick={() => maybeSetActive("Clinician Health Manager")}
               ></div>
               <div
                 className="lens lens-right-red"
-                onClick={() => setActive("Patient Health Manager")}
+                onClick={() => maybeSetActive("Patient Health Manager")}
               ></div>
               <div
                 className="lens lens-left-gray"
-                onClick={() => setActive("Clinician Health Manager")}
+                onClick={() => maybeSetActive("Clinician Health Manager")}
               ></div>
               <div
                 className="lens lens-right-gray"
-                onClick={() => setActive("Patient Health Manager")}
+                onClick={() => maybeSetActive("Patient Health Manager")}
               ></div>
             </div>
           </div>

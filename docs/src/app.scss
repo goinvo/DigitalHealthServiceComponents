@@ -2,7 +2,7 @@ html {
   --primary: #00b3ca;
   --primary-background: rgb(0, 216, 216);
   --primary-light: rgb(241, 249, 250);
-  --primary-shadow: rgba(0, 183, 196, 0.2);
+  --primary-shadow: rgba(0, 183, 196, 0.1);
   --primary-dark: rgb(0, 73, 122);
   --color-black: #000;
   --color-gray1: #222;
@@ -176,19 +176,19 @@ strong {
     }
 
     .lens-left-blue {
-      background-color: rgba(0, 0, 255, 0.2);
+      background-color: rgba(0, 0, 255, 0.1);
       opacity: 0;
       transform: translateY(50px);
       z-index: 2;
-      animation: lensUp 0.8s 0.2s ease-out forwards;
+      animation: lensUp 0.8s 0.1s ease-out forwards;
     }
 
     .lens-right-red {
-      background-color: rgba(255, 0, 0, 0.2);
+      background-color: rgba(255, 0, 0, 0.1);
       opacity: 0;
       transform: translateY(50px);
       z-index: 2;
-      animation: lensUp 0.8s 0.2s ease-out forwards;
+      animation: lensUp 0.8s 0.1s ease-out forwards;
     }
 
     .lens-left-gray {
@@ -367,9 +367,12 @@ strong {
 .layer-container {
   height: 35px;
   position: relative;
-  transition: 0.4s all;
+  transition: 0.1s all;
 
   &:hover {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
     &:before {
       content: "";
       position: absolute;
@@ -392,7 +395,7 @@ strong {
     // box-shadow: -10px 10px 15px rgba(0, 0, 0, 0.1);
     transform: rotate(-22.5deg) skewX(45deg) scaleY(0.7071)
       translate(30px, 20px);
-    transition: 0.2s all;
+    transition: 0.1s all;
     outline: 10px solid transparent;
   }
 
@@ -462,7 +465,7 @@ strong {
     top: 16px;
     border-radius: 5px;
     background-color: transparent;
-    transition: 0.2s background-color;
+    transition: 0.1s background-color;
   }
 
   &:before {
@@ -479,7 +482,7 @@ strong {
   .main {
     font-size: 15px;
     margin-bottom: 2px;
-    transition: 0.2s color;
+    transition: 0.1s color;
     line-height: 18px;
   }
 
@@ -492,7 +495,7 @@ strong {
 
 .layer-description {
   position: relative;
-  transition: 0.2s all;
+  transition: 0.1s all;
   margin-bottom: 40px;
 
   &.highlighted:before {
@@ -507,7 +510,7 @@ strong {
     left: -20px;
     top: 0;
     background-color: var(--color-gray4);
-    transition: 0.2s all;
+    transition: 0.1s all;
   }
 }
 
@@ -521,10 +524,10 @@ strong {
   border-radius: 15px;
   padding: 20px 20px 10px;
   background-color: var(--color-white);
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  transition: 0.2s transform, 0.2s opacity;
+  transition: 0.1s transform, 0.1s opacity;
   transform: translateY(30px);
   opacity: 0;
   pointer-events: none;
@@ -768,7 +771,7 @@ strong {
     .main {
       font-size: 13px;
       margin-bottom: 1px;
-      transition: 0.2s color;
+      transition: 0.1s color;
       line-height: 16px;
     }
 

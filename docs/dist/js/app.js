@@ -98,48 +98,43 @@ var RootElement = function RootElement() {
     previousTitle = currentLayerIndex > 0 ? descriptionTitles[currentLayerIndex - 1] : undefined;
   }
 
-  // React.useEffect(() => {
-  //   const handleScroll = () => {
-  //     const scrollPosition = dhscRef.current.getBoundingClientRect().top;
-  //     const percentOfDescriptionsScrolled = Math.min(
-  //       Math.max(
-  //         -scrollPosition /
-  //           (dhscRef.current.getBoundingClientRect().height -
-  //             window.innerHeight),
-  //         0
-  //       ),
-  //       1
-  //     );
-  //     const stackHeight = stackRef.current.getBoundingClientRect().height;
+  React.useEffect(function () {
+    var handleScroll = function handleScroll() {
+      var scrollPosition = dhscRef.current.getBoundingClientRect().top;
+      var percentOfDescriptionsScrolled = Math.min(Math.max(-scrollPosition / (dhscRef.current.getBoundingClientRect().height - window.innerHeight), 0), 1);
+      var stackHeight = stackRef.current.getBoundingClientRect().height;
 
-  //     setFixed(scrollPosition < 0);
-  //     setBottomFixed(percentOfDescriptionsScrolled === 1);
-  //     setScroll(window.scrollY);
-  //     setStackOffsetTop(
-  //       -(stackHeight - window.innerHeight) * percentOfDescriptionsScrolled
-  //     );
+      setFixed(scrollPosition < 0);
+      setBottomFixed(percentOfDescriptionsScrolled === 1);
+      setScroll(window.scrollY);
+      setStackOffsetTop(-(stackHeight - window.innerHeight) * percentOfDescriptionsScrolled);
 
-  //     let findHighlighted;
-  //     descriptions.forEach((description) => {
-  //       const descriptionScroll =
-  //         description.ref.current.getBoundingClientRect().top;
-  //       if (descriptionScroll < 300 && descriptionScroll > 0) {
-  //         findHighlighted = description;
-  //       }
-  //     });
-  //     if (findHighlighted) {
-  //       setHighlighted(findHighlighted);
-  //     }
+      var findHighlighted = void 0;
+      descriptions.forEach(function (description) {
+        var descriptionScroll = description.ref.current.getBoundingClientRect().top;
+        if (descriptionScroll < 300 && descriptionScroll > 0) {
+          findHighlighted = description;
+        }
+      });
+      if (findHighlighted) {
+        setHighlighted(findHighlighted);
+      }
 
-  //     window.requestAnimationFrame(handleScroll);
-  //   };
+      window.requestAnimationFrame(handleScroll);
+    };
 
-  //   window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
+    return function () {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  var maybeSetActive = function maybeSetActive(section) {
+    if (window.innerWidth < 1300) {
+      setActive(section);
+    }
+  };
 
   return React.createElement(
     "div",
@@ -166,7 +161,7 @@ var RootElement = function RootElement() {
               {
                 className: "left-text",
                 onClick: function onClick() {
-                  return setActive("Clinician Health Manager");
+                  return maybeSetActive("Clinician Health Manager");
                 }
               },
               "Clinician Health Manager"
@@ -176,7 +171,7 @@ var RootElement = function RootElement() {
               {
                 className: "right-text",
                 onClick: function onClick() {
-                  return setActive("Patient Health Manager");
+                  return maybeSetActive("Patient Health Manager");
                 }
               },
               "Patient Health Manager"
@@ -184,25 +179,25 @@ var RootElement = function RootElement() {
             React.createElement("div", {
               className: "lens lens-left-blue",
               onClick: function onClick() {
-                return setActive("Clinician Health Manager");
+                return maybeSetActive("Clinician Health Manager");
               }
             }),
             React.createElement("div", {
               className: "lens lens-right-red",
               onClick: function onClick() {
-                return setActive("Patient Health Manager");
+                return maybeSetActive("Patient Health Manager");
               }
             }),
             React.createElement("div", {
               className: "lens lens-left-gray",
               onClick: function onClick() {
-                return setActive("Clinician Health Manager");
+                return maybeSetActive("Clinician Health Manager");
               }
             }),
             React.createElement("div", {
               className: "lens lens-right-gray",
               onClick: function onClick() {
-                return setActive("Patient Health Manager");
+                return maybeSetActive("Patient Health Manager");
               }
             })
           )
