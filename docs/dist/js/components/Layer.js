@@ -9,7 +9,7 @@ var Layer = function Layer(_ref) {
   return React.createElement(
     "div",
     {
-      className: "layer-container no-highlights " + className + " " + (content && highlighted && JSON.stringify(content.description) === JSON.stringify(highlighted.element) ? "highlighted" : ""),
+      className: "layer-container no-highlights " + (className ? className : "") + "\n      " + (content && highlighted && JSON.stringify(content.description) === JSON.stringify(highlighted.element) ? "highlighted" : "") + " " + (content && content.isCommonDataElements ? "dont-grow" : ""),
       style: { zIndex: zIndex },
       onClick: function onClick() {
         if (window.innerWidth < 960 && content && content.description) {
@@ -19,7 +19,7 @@ var Layer = function Layer(_ref) {
         }
       }
     },
-    React.createElement(
+    content && !content.isCommonDataElements && React.createElement(
       "div",
       { className: "layer" },
       className === "grid" && React.createElement(
@@ -55,12 +55,12 @@ var Layer = function Layer(_ref) {
       { className: "icon-container" },
       React.createElement("img", { className: "icon", src: "./dist" + icon })
     ),
-    content && content.title && React.createElement(
+    content && !content.isCommonDataElements && content.title && React.createElement(
       "div",
       { className: "layer-title" },
       content.title
     ),
-    content && content.main && React.createElement(
+    content && !content.isCommonDataElements && content.main && React.createElement(
       "div",
       { className: "layer-text-container" },
       React.createElement(
@@ -72,6 +72,27 @@ var Layer = function Layer(_ref) {
         "div",
         { className: "subtext" },
         content.subtext
+      )
+    ),
+    content && content.isCommonDataElements && React.createElement(
+      "div",
+      { className: "common-data-elements" },
+      React.createElement("div", { className: "has-line-to-next" }),
+      React.createElement("div", { className: "layer" }),
+      React.createElement("div", { className: "layer-dotted" }),
+      React.createElement(
+        "div",
+        { className: "layer-text-container" },
+        React.createElement(
+          "div",
+          { className: "main" },
+          content.main
+        ),
+        React.createElement(
+          "div",
+          { className: "subtext" },
+          content.subtext
+        )
       )
     )
   );

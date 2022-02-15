@@ -8,14 +8,15 @@ const Layer = ({
 }) => {
   return (
     <div
-      className={`layer-container no-highlights ${className} ${
+      className={`layer-container no-highlights ${className ? className : ""}
+      ${
         content &&
         highlighted &&
         JSON.stringify(content.description) ===
           JSON.stringify(highlighted.element)
           ? "highlighted"
           : ""
-      }`}
+      } ${content && content.isCommonDataElements ? "dont-grow" : ""}`}
       style={{ zIndex }}
       onClick={() => {
         if (window.innerWidth < 960 && content && content.description) {
@@ -25,7 +26,7 @@ const Layer = ({
         }
       }}
     >
-      {
+      {content && !content.isCommonDataElements && (
         <div className="layer">
           {className === "grid" && (
             <div className="grid-container">
@@ -41,7 +42,7 @@ const Layer = ({
             </div>
           )}
         </div>
-      }
+      )}
 
       {className && className === "grid" && (
         <div>
@@ -56,14 +57,27 @@ const Layer = ({
         </div>
       )}
 
-      {content && content.title && (
+      {content && !content.isCommonDataElements && content.title && (
         <div className="layer-title">{content.title}</div>
       )}
 
-      {content && content.main && (
+      {content && !content.isCommonDataElements && content.main && (
         <div className="layer-text-container">
           <div className="main">{content.main}</div>
           <div className="subtext">{content.subtext}</div>
+        </div>
+      )}
+
+      {/* Special case for common data elements */}
+      {content && content.isCommonDataElements && (
+        <div className="common-data-elements">
+          <div className="has-line-to-next" />
+          <div className="layer" />
+          <div className="layer-dotted" />
+          <div className="layer-text-container">
+            <div className="main">{content.main}</div>
+            <div className="subtext">{content.subtext}</div>
+          </div>
         </div>
       )}
     </div>

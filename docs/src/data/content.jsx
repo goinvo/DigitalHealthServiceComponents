@@ -592,6 +592,7 @@ const data = {
         },
         {
           main: "Common Data Elements",
+          isCommonDataElements: true,
           description: (
             <div>
               <p>

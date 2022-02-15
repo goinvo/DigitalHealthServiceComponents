@@ -686,6 +686,7 @@ var data = {
       main: "Life data"
     }, {
       main: "Common Data Elements",
+      isCommonDataElements: true,
       description: React.createElement(
         "div",
         null,
