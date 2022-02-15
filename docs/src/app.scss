@@ -288,6 +288,7 @@ strong {
       color: var(--primary);
     }
   }
+
   &.has-line-to-next:after {
     content: "";
     position: absolute;
@@ -369,10 +370,6 @@ strong {
   transition: 0.4s all;
 
   &:hover {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    cursor: pointer;
-
     &:before {
       content: "";
       position: absolute;

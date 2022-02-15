@@ -396,11 +396,6 @@ strong.patient-health-manager {
   position: relative;
   transition: 0.4s all;
 }
-.layer-container:hover {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  cursor: pointer;
-}
 .layer-container:hover:before {
   content: "";
   position: absolute;

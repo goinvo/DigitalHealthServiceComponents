@@ -40,6 +40,18 @@ var RootElement = function RootElement() {
   var dhscRef = React.useRef();
   var stackRef = React.useRef();
 
+  React.useEffect(function () {
+    // If the popup is active and the window is resized to be a desktop size
+    // we should go ahead and remove the popup.
+    var adjustActive = function adjustActive() {
+      setActive(undefined);
+    };
+    window.addEventListener("resize", adjustActive);
+    return function () {
+      window.removeEventListener("resize", adjustActive);
+    };
+  }, []);
+
   var descriptions = data.stack.reduce(function (acc, layerGroup) {
     return [].concat(_toConsumableArray(acc), _toConsumableArray(layerGroup.layers.filter(function (layer) {
       return layer.description;
@@ -80,47 +92,54 @@ var RootElement = function RootElement() {
   var nextTitle = void 0;
   var previousTitle = void 0;
 
-  console.log(activeLayer);
-
   if (activeLayer) {
     currentLayerIndex = descriptionTitles.indexOf(activeLayer.title);
     nextTitle = currentLayerIndex < descriptionTitles.length ? descriptionTitles[currentLayerIndex + 1] : undefined;
     previousTitle = currentLayerIndex > 0 ? descriptionTitles[currentLayerIndex - 1] : undefined;
   }
 
-  React.useEffect(function () {
-    var handleScroll = function handleScroll() {
-      var scrollPosition = dhscRef.current.getBoundingClientRect().top;
-      var percentOfDescriptionsScrolled = Math.min(Math.max(-scrollPosition / (dhscRef.current.getBoundingClientRect().height - window.innerHeight), 0), 1);
-      var stackHeight = stackRef.current.getBoundingClientRect().height;
+  // React.useEffect(() => {
+  //   const handleScroll = () => {
+  //     const scrollPosition = dhscRef.current.getBoundingClientRect().top;
+  //     const percentOfDescriptionsScrolled = Math.min(
+  //       Math.max(
+  //         -scrollPosition /
+  //           (dhscRef.current.getBoundingClientRect().height -
+  //             window.innerHeight),
+  //         0
+  //       ),
+  //       1
+  //     );
+  //     const stackHeight = stackRef.current.getBoundingClientRect().height;
 
-      setFixed(scrollPosition < 0);
-      setBottomFixed(percentOfDescriptionsScrolled === 1);
-      setScroll(window.scrollY);
-      setStackOffsetTop(-(stackHeight - window.innerHeight) * percentOfDescriptionsScrolled);
+  //     setFixed(scrollPosition < 0);
+  //     setBottomFixed(percentOfDescriptionsScrolled === 1);
+  //     setScroll(window.scrollY);
+  //     setStackOffsetTop(
+  //       -(stackHeight - window.innerHeight) * percentOfDescriptionsScrolled
+  //     );
 
-      var findHighlighted = void 0;
-      descriptions.forEach(function (description) {
-        var descriptionScroll = description.ref.current.getBoundingClientRect().top;
-        if (descriptionScroll < 300 && descriptionScroll > 0) {
-          findHighlighted = description;
-        }
-      });
-      if (findHighlighted) {
-        setHighlighted(findHighlighted);
-      }
+  //     let findHighlighted;
+  //     descriptions.forEach((description) => {
+  //       const descriptionScroll =
+  //         description.ref.current.getBoundingClientRect().top;
+  //       if (descriptionScroll < 300 && descriptionScroll > 0) {
+  //         findHighlighted = description;
+  //       }
+  //     });
+  //     if (findHighlighted) {
+  //       setHighlighted(findHighlighted);
+  //     }
 
-      window.requestAnimationFrame(handleScroll);
-    };
+  //     window.requestAnimationFrame(handleScroll);
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
+  //   window.addEventListener("scroll", handleScroll);
 
-    return function () {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  console.log("active", active);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   return React.createElement(
     "div",

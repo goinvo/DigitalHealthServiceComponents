@@ -18,7 +18,7 @@ const Layer = ({
       }`}
       style={{ zIndex }}
       onClick={() => {
-        if (content && content.description) {
+        if (window.innerWidth < 1300 && content && content.description) {
           setActive(content.main);
         } else {
           setActive(undefined);
