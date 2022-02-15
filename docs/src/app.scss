@@ -21,11 +21,10 @@ html {
   --inbetween-line-offset: 34px;
   --distance-labels-away: 20px;
 
-  --stack-container-width: 460px;
+  --stack-container-width: 440px;
   --lenses-line-length: 130px;
 
-  --max-width: 960px;
-  --max-single-column-width: 1300px;
+  --max-width: 1300px;
 }
 
 body {
@@ -47,6 +46,13 @@ li {
 a {
   color: var(--link);
   font-weight: 400;
+
+  white-space: pre-wrap; /* CSS3 */
+  white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
+  word-break: break-word;
 }
 
 h1 {
@@ -121,7 +127,7 @@ strong {
 .dhsc-container {
   max-width: var(--max-width);
   display: flex;
-  padding-top: 80px;
+  padding: 80px 30px 80px;
   margin: 0 auto 100px;
   position: relative;
 }
@@ -242,8 +248,9 @@ strong {
 }
 
 .stack-container {
-  width: var(--stack-container-width);
-  position: absolute;
+  min-width: calc(var(--stack-container-width) + 30px);
+  // position: absolute;
+  margin-left: 170px;
 
   &.fixed {
     position: fixed;
@@ -259,7 +266,9 @@ strong {
 }
 
 .description-container {
-  margin-left: calc(var(--stack-container-width) + 60px);
+  flex: 1 1 100px;
+  margin-left: 40px;
+  //margin-left: calc(var(--stack-container-width) + 240px);
 }
 
 .group-title {
@@ -365,7 +374,7 @@ strong {
 }
 
 .layer-container {
-  height: 35px;
+  height: 40px;
   position: relative;
   transition: 0.1s all;
 
@@ -662,7 +671,7 @@ strong {
   }
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 960px) {
   .mobile-intro-container {
     display: block;
     padding: 40px;

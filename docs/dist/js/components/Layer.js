@@ -12,7 +12,7 @@ var Layer = function Layer(_ref) {
       className: "layer-container no-highlights " + className + " " + (content && highlighted && JSON.stringify(content.description) === JSON.stringify(highlighted.element) ? "highlighted" : ""),
       style: { zIndex: zIndex },
       onClick: function onClick() {
-        if (window.innerWidth < 1300 && content && content.description) {
+        if (window.innerWidth < 960 && content && content.description) {
           setActive(content.main);
         } else {
           setActive(undefined);

@@ -358,7 +358,7 @@ var data = {
         React.createElement(
           "p",
           null,
-          "1 pager:\xA0",
+          "1\xA0pager:\xA0",
           React.createElement(
             "a",
             { href: "https://www.healthcareitnews.com/news/why-patients-and-providers-need-model-patient-data-use-agreement" },

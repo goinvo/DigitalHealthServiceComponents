@@ -8,9 +8,10 @@ const data = {
             <strong className="clinician-health-manager">
               Clinician Health Manager
             </strong>{" "}
-            is the front-end service(s) on a clinician's mobile phone (or laptop or computer-on-wheels) that
-            strengthens primary care delivery. It does so by tracking data, supporting patient
-            education, and connecting clinicians with patients and their families.
+            is the front-end service(s) on a clinician's mobile phone (or laptop
+            or computer-on-wheels) that strengthens primary care delivery. It
+            does so by tracking data, supporting patient education, and
+            connecting clinicians with patients and their families.
           </p>
         </div>
       ),
@@ -23,10 +24,10 @@ const data = {
             <strong className="patient-health-manager">
               Patient Health Manager
             </strong>{" "}
-            is the front-end service on an individual's mobile phone (or other silicon) that guides
-            them to take actions for their health. This guidance includes
-            providing tailored education, involving family and clinical teams,
-            and giving daily health ownership to the individual.
+            is the front-end service on an individual's mobile phone (or other
+            silicon) that guides them to take actions for their health. This
+            guidance includes providing tailored education, involving family and
+            clinical teams, and giving daily health ownership to the individual.
           </p>
         </div>
       ),
@@ -257,21 +258,23 @@ const data = {
           description: (
             <div>
               <p>
-                <strong>Patient Generated Data (PGD)</strong> is any
-                status of a patient’s health coming directly from the patient,
-                without any interpretation or interference.
+                <strong>Patient Generated Data (PGD)</strong> is any status of a
+                patient’s health coming directly from the patient, without any
+                interpretation or interference.
               </p>
               <p>
                 The patient is most under used health sensor in the entire
                 healthcare system. Patient feelings, pain, environment,
                 symptoms, and experiences can be captured in short, structured
                 data through low-burden methods (such as voice, multi-second
-                reporting, sound snippets, etc). Any life data is health data. The PGD Pump is the data
-                collection service, which is critical for closing the learning
-                health system loop. Data quality and provenance will be shown in the Health Manager. 
-                </p>
+                reporting, sound snippets, etc). Any life data is health data.
+                The PGD Pump is the data collection service, which is critical
+                for closing the learning health system loop. Data quality and
+                provenance will be shown in the Health Manager.
+              </p>
               <p>
-                Previous terms: Patient Generated Health Data, Patient Reported Outcomes, Patient-Reported Health Data...
+                Previous terms: Patient Generated Health Data, Patient Reported
+                Outcomes, Patient-Reported Health Data...
               </p>
               <p>
                 References:{" "}
@@ -316,7 +319,7 @@ const data = {
                 <a href="datauseagreement.org">datauseagreement.org</a>
               </p>
               <p>
-                1 pager:&nbsp;
+                1&nbsp;pager:&nbsp;
                 <a href="https://www.healthcareitnews.com/news/why-patients-and-providers-need-model-patient-data-use-agreement">
                   https://www.healthcareitnews.com/news/why-patients-and-providers-need-model-patient-data-use-agreement
                 </a>
@@ -463,11 +466,13 @@ const data = {
           description: (
             <div>
               <p>
-                <strong>A Health Score</strong> is a data-driven summary of the determinants of health (DOH) to aid health decision making at the individual, and population level.
+                <strong>A Health Score</strong> is a data-driven summary of the
+                determinants of health (DOH) to aid health decision making at
+                the individual, and population level.
               </p>
               <h2>Draft Health Score concept and references</h2>
               <p>
-              Reference:{" "}
+                Reference:{" "}
                 <a href="https://github.com/goinvo/DeterminantsofHealthScore/blob/master/documentation/Determinants_of_Health_Score_Summary.pdf">
                   Health Score on Github
                 </a>
@@ -538,11 +543,15 @@ const data = {
           description: (
             <div>
               <p>
-                <strong>Standard Patient Health Record</strong> is a digital "twin" of the patient in code,
-                based on a nationally shared and consistent definition of health data
-                 (structure, terminology, content) for the US and planet.
-                  It is the gold source data for a patient's health.
-                   The standard patient health record specification contains definitions for all critical patient information such as ID, emergency care, primary care, oncology care, with future extensions for representing human biology, behavior, environment, and social circumstances in code.
+                <strong>Standard Patient Health Record</strong> is a digital
+                "twin" of the patient in code, based on a nationally shared and
+                consistent definition of health data (structure, terminology,
+                content) for the US and planet. It is the gold source data for a
+                patient's health. The standard patient health record
+                specification contains definitions for all critical patient
+                information such as ID, emergency care, primary care, oncology
+                care, with future extensions for representing human biology,
+                behavior, environment, and social circumstances in code.
               </p>
               <p>
                 Reference:{" "}
@@ -586,7 +595,11 @@ const data = {
           description: (
             <div>
               <p>
-                <strong>Common Data Elements</strong> are human and machine-readable definitions (key terms or concepts) of health data elements used to describe human biology, activity, and scenarios. A data element is like an attribute, which then maps to a value or set of values.
+                <strong>Common Data Elements</strong> are human and
+                machine-readable definitions (key terms or concepts) of health
+                data elements used to describe human biology, activity, and
+                scenarios. A data element is like an attribute, which then maps
+                to a value or set of values.
               </p>
               <p>
                 Reference:{" "}
@@ -594,18 +607,18 @@ const data = {
                   http://standardhealthrecord.org/
                 </a>
               </p>
-               <p> 
+              <p>
                 <a href="https://cde.nlm.nih.gov/home">
-                NIH Common Data Elements
+                  NIH Common Data Elements
                 </a>
               </p>
-                <p>
+              <p>
                 <a href="https://www.healthit.gov/isa/united-states-core-data-interoperability-uscdi">
-                  United States Core Data for Interoperability (USCDI) 
+                  United States Core Data for Interoperability (USCDI)
                 </a>
               </p>
-              </div>
-            )
+            </div>
+          ),
         },
       ],
     },

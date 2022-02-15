@@ -131,7 +131,7 @@ var RootElement = function RootElement() {
   }, []);
 
   var maybeSetActive = function maybeSetActive(section) {
-    if (window.innerWidth < 1300) {
+    if (window.innerWidth < 960) {
       setActive(section);
     }
   };
