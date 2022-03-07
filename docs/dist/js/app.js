@@ -152,12 +152,9 @@ var RootElement = function RootElement() {
     }
   }
 
-  console.log(data.stack);
-
-  console.log({ isUserControlled: isUserControlled });
-
   var maybeSetActive = function maybeSetActive(section) {
     setIsUserControlled(true);
+    console.log("hey");
     if (window.innerWidth < 960) {
       _setActive(section);
     }
@@ -245,9 +242,9 @@ var RootElement = function RootElement() {
               highlighted: highlighted,
               titleLayer: content.title && { title: content.title },
               isLastChild: key === data.stack.length - 1,
-              setActive: function setActive() {
+              setActive: function setActive(layer) {
                 setIsUserControlled(true);
-                _setActive();
+                _setActive(layer);
               }
             });
           })

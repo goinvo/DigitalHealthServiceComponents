@@ -150,12 +150,9 @@ const RootElement = () => {
     }
   }
 
-  console.log(data.stack);
-
-  console.log({ isUserControlled });
-
   const maybeSetActive = (section) => {
     setIsUserControlled(true);
+    console.log("hey");
     if (window.innerWidth < 960) {
       setActive(section);
     }
@@ -215,9 +212,9 @@ const RootElement = () => {
                   highlighted={highlighted}
                   titleLayer={content.title && { title: content.title }}
                   isLastChild={key === data.stack.length - 1}
-                  setActive={() => {
+                  setActive={(layer) => {
                     setIsUserControlled(true);
-                    setActive();
+                    setActive(layer);
                   }}
                 />
               );
