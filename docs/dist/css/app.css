@@ -385,7 +385,7 @@ strong.patient-health-manager {
 
 .grid-label {
   position: absolute;
-  left: 300px;
+  left: 200px;
   top: -30px;
   width: 300px;
   font-size: 16px;
@@ -776,7 +776,7 @@ strong.patient-health-manager {
     position: relative;
     flex: 1 1 390px;
     max-width: 390px;
-    margin-left: 15px;
+    margin-left: 105px;
   }
 
   .layer-text-container {

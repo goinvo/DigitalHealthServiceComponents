@@ -11,31 +11,27 @@ var RootElement = function RootElement() {
       _React$useState2 = _slicedToArray(_React$useState, 2),
       scroll = _React$useState2[0],
       setScroll = _React$useState2[1];
+  // const [fixed, setFixed] = React.useState();
+  // const [bottomFixed, setBottomFixed] = React.useState();
+
 
   var _React$useState3 = React.useState(),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
-      fixed = _React$useState4[0],
-      setFixed = _React$useState4[1];
+      highlighted = _React$useState4[0],
+      setHighlighted = _React$useState4[1];
+
+  // const [stackOffsets, setStackOffsets] =
 
   var _React$useState5 = React.useState(),
       _React$useState6 = _slicedToArray(_React$useState5, 2),
-      bottomFixed = _React$useState6[0],
-      setBottomFixed = _React$useState6[1];
+      active = _React$useState6[0],
+      _setActive = _React$useState6[1];
 
-  var _React$useState7 = React.useState(),
+  var _React$useState7 = React.useState(false),
       _React$useState8 = _slicedToArray(_React$useState7, 2),
-      highlighted = _React$useState8[0],
-      setHighlighted = _React$useState8[1];
-
-  var _React$useState9 = React.useState(),
-      _React$useState10 = _slicedToArray(_React$useState9, 2),
-      active = _React$useState10[0],
-      setActive = _React$useState10[1];
-
-  var _React$useState11 = React.useState(0),
-      _React$useState12 = _slicedToArray(_React$useState11, 2),
-      stackOffsetTop = _React$useState12[0],
-      setStackOffsetTop = _React$useState12[1];
+      isUserControlled = _React$useState8[0],
+      setIsUserControlled = _React$useState8[1];
+  // const [stackOffsetTop, setStackOffsetTop] = React.useState(0);
 
   var dhscRef = React.useRef();
   var stackRef = React.useRef();
@@ -44,7 +40,7 @@ var RootElement = function RootElement() {
     // If the popup is active and the window is resized to be a desktop size
     // we should go ahead and remove the popup.
     var adjustActive = function adjustActive() {
-      setActive(undefined);
+      _setActive(undefined);
     };
     window.addEventListener("resize", adjustActive);
     return function () {
@@ -99,28 +95,46 @@ var RootElement = function RootElement() {
   }
 
   React.useEffect(function () {
+    // const handleScroll = () => {
+    //   const scrollPosition = dhscRef.current.getBoundingClientRect().top;
+    //   const percentOfDescriptionsScrolled = Math.min(
+    //     Math.max(
+    //       -scrollPosition /
+    //         (dhscRef.current.getBoundingClientRect().height -
+    //           window.innerHeight),
+    //       0
+    //     ),
+    //     1
+    //   );
+    //   const stackHeight = stackRef.current.getBoundingClientRect().height;
+
+    //   setFixed(scrollPosition < 0);
+    //   setBottomFixed(percentOfDescriptionsScrolled === 1);
+    //   setScroll(window.scrollY);
+    //   setStackOffsetTop(
+    //     -(stackHeight - window.innerHeight) * percentOfDescriptionsScrolled
+    //   );
+
+    //   let findHighlighted;
+    //   descriptions.forEach((description) => {
+    //     const descriptionScroll =
+    //       description.ref.current.getBoundingClientRect().top;
+    //     if (descriptionScroll < 300 && descriptionScroll > 0) {
+    //       findHighlighted = description;
+    //     }
+    //   });
+    //   if (findHighlighted) {
+    //     setHighlighted(findHighlighted);
+    //   }
+
+    //   window.requestAnimationFrame(handleScroll);
+    // };
+
     var handleScroll = function handleScroll() {
-      var scrollPosition = dhscRef.current.getBoundingClientRect().top;
-      var percentOfDescriptionsScrolled = Math.min(Math.max(-scrollPosition / (dhscRef.current.getBoundingClientRect().height - window.innerHeight), 0), 1);
-      var stackHeight = stackRef.current.getBoundingClientRect().height;
-
-      setFixed(scrollPosition < 0);
-      setBottomFixed(percentOfDescriptionsScrolled === 1);
+      console.log(window.scrollY);
+      // This line below gets the height. From this, we should be able to calculate which one is the 'closest'
+      console.log(data.stack[2].layers[1].layerRef.current.getBoundingClientRect().top);
       setScroll(window.scrollY);
-      setStackOffsetTop(-(stackHeight - window.innerHeight) * percentOfDescriptionsScrolled);
-
-      var findHighlighted = void 0;
-      descriptions.forEach(function (description) {
-        var descriptionScroll = description.ref.current.getBoundingClientRect().top;
-        if (descriptionScroll < 300 && descriptionScroll > 0) {
-          findHighlighted = description;
-        }
-      });
-      if (findHighlighted) {
-        setHighlighted(findHighlighted);
-      }
-
-      window.requestAnimationFrame(handleScroll);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -130,9 +144,22 @@ var RootElement = function RootElement() {
     };
   }, []);
 
+  for (var groupId in data.stack) {
+    for (var layerId in data.stack[groupId].layers) {
+      var layer = data.stack[groupId].layers[layerId];
+      data.stack[groupId].layers[layerId].layerRef = React.useRef();
+      data.stack[groupId].layers[layerId].descriptionRef = React.useRef();
+    }
+  }
+
+  console.log(data.stack);
+
+  console.log({ isUserControlled: isUserControlled });
+
   var maybeSetActive = function maybeSetActive(section) {
+    setIsUserControlled(true);
     if (window.innerWidth < 960) {
-      setActive(section);
+      _setActive(section);
     }
   };
 
@@ -218,7 +245,10 @@ var RootElement = function RootElement() {
               highlighted: highlighted,
               titleLayer: content.title && { title: content.title },
               isLastChild: key === data.stack.length - 1,
-              setActive: setActive
+              setActive: function setActive() {
+                setIsUserControlled(true);
+                _setActive();
+              }
             });
           })
         )
@@ -247,7 +277,11 @@ var RootElement = function RootElement() {
               if (layer.description) {
                 return React.createElement(
                   "div",
-                  { key: key2, className: "layer-description" },
+                  {
+                    key: key2,
+                    className: "layer-description",
+                    ref: layer.descriptionRef
+                  },
                   layer.description
                 );
               }
@@ -264,7 +298,7 @@ var RootElement = function RootElement() {
         {
           className: "showcase-close no-highlight",
           onClick: function onClick() {
-            setActive(undefined);
+            _setActive(undefined);
           }
         },
         "\xD7"
@@ -287,7 +321,7 @@ var RootElement = function RootElement() {
           {
             className: "nav-button nav-backward",
             onClick: function onClick() {
-              setActive(previousTitle);
+              _setActive(previousTitle);
             }
           },
           React.createElement(
@@ -306,7 +340,7 @@ var RootElement = function RootElement() {
           {
             className: "nav-button nav-forward",
             onClick: function onClick() {
-              setActive(nextTitle);
+              _setActive(nextTitle);
             }
           },
           React.createElement(

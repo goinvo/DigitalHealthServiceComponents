@@ -27,11 +27,11 @@ const LayerGroup = ({
           />
         </div>
       )}
-      {layers.map((content, key) => {
+      {layers.map((layerContent, key) => {
         return (
           <Layer
             highlighted={highlighted}
-            content={content}
+            content={layerContent}
             zIndex={layers.length - key}
             setActive={setActive}
           />

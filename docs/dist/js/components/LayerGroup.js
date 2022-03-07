@@ -27,10 +27,10 @@ var LayerGroup = function LayerGroup(_ref) {
         setActive: setActive
       })
     ),
-    layers.map(function (content, key) {
+    layers.map(function (layerContent, key) {
       return React.createElement(Layer, {
         highlighted: highlighted,
-        content: content,
+        content: layerContent,
         zIndex: layers.length - key,
         setActive: setActive
       });

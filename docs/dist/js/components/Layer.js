@@ -9,6 +9,7 @@ var Layer = function Layer(_ref) {
   return React.createElement(
     "div",
     {
+      ref: content && content.layerRef,
       className: "layer-container no-highlights " + (className ? className : "") + "\n      " + (content && highlighted && JSON.stringify(content.description) === JSON.stringify(highlighted.element) ? "highlighted" : "") + " " + (content && content.isCommonDataElements ? "dont-grow" : ""),
       style: { zIndex: zIndex },
       onClick: function onClick() {

@@ -8,6 +8,7 @@ const Layer = ({
 }) => {
   return (
     <div
+      ref={content && content.layerRef}
       className={`layer-container no-highlights ${className ? className : ""}
       ${
         content &&
