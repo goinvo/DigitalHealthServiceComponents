@@ -162,7 +162,11 @@ const RootElement = () => {
           initialDescriptionTops[closestToHighlightPoint.main];
         const alignPoint =
           closestToHighlightPoint.layerRef.current.getBoundingClientRect().top;
-        const shift = alignPoint - relevantDescriptionTop + window.scrollY;
+        let shift = alignPoint - relevantDescriptionTop + window.scrollY;
+        if (window.scrollY < 150) {
+          const percentage = window.scrollY / 150;
+          shift = window.scrollY * (1 - percentage) + shift * percentage;
+        }
         setDescriptionContainerOffset(-shift);
       }
 

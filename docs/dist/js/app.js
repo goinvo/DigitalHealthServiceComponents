@@ -169,6 +169,10 @@ var RootElement = function RootElement() {
         var relevantDescriptionTop = initialDescriptionTops[closestToHighlightPoint.main];
         var alignPoint = closestToHighlightPoint.layerRef.current.getBoundingClientRect().top;
         var shift = alignPoint - relevantDescriptionTop + window.scrollY;
+        if (window.scrollY < 150) {
+          var percentage = window.scrollY / 150;
+          shift = window.scrollY * (1 - percentage) + shift * percentage;
+        }
         setDescriptionContainerOffset(-shift);
       }
 
