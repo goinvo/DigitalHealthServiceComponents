@@ -4,13 +4,11 @@ import data from "./data/content.js";
 
 const RootElement = () => {
   const [scroll, setScroll] = React.useState();
-  // const [fixed, setFixed] = React.useState();
-  // const [bottomFixed, setBottomFixed] = React.useState();
   const [highlighted, setHighlighted] = React.useState();
-
-  // const [stackOffsets, setStackOffsets] =
-
+  const [descriptionContainerOffset, setDescriptionContainerOffset] =
+    React.useState(0);
   const [active, setActive] = React.useState();
+  const [initialDescriptionTops, setInitialDescriptionTops] = React.useState();
   const [isUserControlled, setIsUserControlled] = React.useState(false);
   // const [stackOffsetTop, setStackOffsetTop] = React.useState(0);
 
@@ -91,6 +89,20 @@ const RootElement = () => {
   }
 
   React.useEffect(() => {
+    const descriptionTops = {};
+    const allLayers = data.stack.reduce((acc, layerGroup) => {
+      return [...acc, ...layerGroup.layers];
+    }, []);
+    allLayers.forEach((layer) => {
+      if (layer.descriptionRef.current) {
+        descriptionTops[layer.main] =
+          layer.descriptionRef.current.getBoundingClientRect().top;
+      }
+    });
+    setInitialDescriptionTops(descriptionTops);
+  }, []);
+
+  React.useEffect(() => {
     // const handleScroll = () => {
     //   const scrollPosition = dhscRef.current.getBoundingClientRect().top;
     //   const percentOfDescriptionsScrolled = Math.min(
@@ -126,13 +138,38 @@ const RootElement = () => {
     //   window.requestAnimationFrame(handleScroll);
     // };
 
+    const highlightPoint = 300;
+
     const handleScroll = () => {
-      console.log(window.scrollY);
-      // This line below gets the height. From this, we should be able to calculate which one is the 'closest'
-      console.log(
-        data.stack[2].layers[1].layerRef.current.getBoundingClientRect().top
-      );
+      const allLayers = data.stack.reduce((acc, layerGroup) => {
+        return [...acc, ...layerGroup.layers];
+      }, []);
+      let closestToHighlightPoint = allLayers[0];
+      let currentlyClosest = 99999;
+      for (let i in allLayers) {
+        const layer = allLayers[i];
+        const distance = Math.abs(
+          layer.layerRef.current.getBoundingClientRect().top - highlightPoint
+        );
+        if (distance < currentlyClosest) {
+          currentlyClosest = distance;
+          closestToHighlightPoint = layer;
+        }
+      }
+
+      if (closestToHighlightPoint.descriptionRef.current) {
+        const relevantDescriptionTop =
+          initialDescriptionTops[closestToHighlightPoint.main];
+        const alignPoint =
+          closestToHighlightPoint.layerRef.current.getBoundingClientRect().top;
+        const shift = alignPoint - relevantDescriptionTop + window.scrollY;
+        setDescriptionContainerOffset(-shift);
+      }
+
+      setHighlighted(closestToHighlightPoint);
       setScroll(window.scrollY);
+
+      // window.requestAnimationFrame(handleScroll);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -140,7 +177,7 @@ const RootElement = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [highlighted]);
 
   for (let groupId in data.stack) {
     for (let layerId in data.stack[groupId].layers) {
@@ -152,7 +189,6 @@ const RootElement = () => {
 
   const maybeSetActive = (section) => {
     setIsUserControlled(true);
-    console.log("hey");
     if (window.innerWidth < 960) {
       setActive(section);
     }
@@ -221,7 +257,10 @@ const RootElement = () => {
             })}
           </div>
         </div>
-        <div className="description-container">
+        <div
+          className="description-container"
+          style={{ top: `${-descriptionContainerOffset}px` }}
+        >
           <IntroContainer />
           {data.preStack.map((content, key) => {
             return (

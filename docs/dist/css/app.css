@@ -244,6 +244,8 @@ strong.patient-health-manager {
 .description-container {
   flex: 1 1 100px;
   margin-left: 40px;
+  position: relative;
+  transition: 0.1s all;
 }
 
 .group-title {

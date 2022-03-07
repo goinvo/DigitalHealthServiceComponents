@@ -10,7 +10,7 @@ var Layer = function Layer(_ref) {
     "div",
     {
       ref: content && content.layerRef,
-      className: "layer-container no-highlights " + (className ? className : "") + "\n      " + (content && highlighted && JSON.stringify(content.description) === JSON.stringify(highlighted.element) ? "highlighted" : "") + " " + (content && content.isCommonDataElements ? "dont-grow" : ""),
+      className: "layer-container no-highlights " + (className ? className : "") + "\n      " + (content && highlighted && highlighted.main === content.main ? "highlighted" : "") + " " + (content && content.isCommonDataElements ? "dont-grow" : ""),
       style: { zIndex: zIndex },
       onClick: function onClick() {
         if (window.innerWidth < 960 && content && content.description) {
