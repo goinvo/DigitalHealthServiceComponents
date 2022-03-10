@@ -6,6 +6,13 @@ import IntroContainer from "./components/IntroContainer.js";
 import LayerGroup from "./components/LayerGroup.js";
 import data from "./data/content.js";
 
+// bypass auto scrolling.
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+window.scrollTo(0);
+
 var RootElement = function RootElement() {
   var _React$useState = React.useState(),
       _React$useState2 = _slicedToArray(_React$useState, 2),
