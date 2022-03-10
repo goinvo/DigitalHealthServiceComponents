@@ -7,8 +7,6 @@ if ("scrollRestoration" in history) {
   history.scrollRestoration = "manual";
 }
 
-window.scrollTo(0);
-
 const RootElement = () => {
   const [scroll, setScroll] = React.useState();
   const [highlighted, setHighlighted] = React.useState();

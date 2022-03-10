@@ -11,8 +11,6 @@ if ("scrollRestoration" in history) {
   history.scrollRestoration = "manual";
 }
 
-window.scrollTo(0);
-
 var RootElement = function RootElement() {
   var _React$useState = React.useState(),
       _React$useState2 = _slicedToArray(_React$useState, 2),
