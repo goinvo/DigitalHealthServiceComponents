@@ -11,10 +11,7 @@ const Layer = ({
       ref={content && content.layerRef}
       className={`layer-container no-highlights ${className ? className : ""}
       ${
-        content &&
-        highlighted &&
-        JSON.stringify(content.description) ===
-          JSON.stringify(highlighted.element)
+        content && highlighted && highlighted.main === content.main
           ? "highlighted"
           : ""
       } ${content && content.isCommonDataElements ? "dont-grow" : ""}`}

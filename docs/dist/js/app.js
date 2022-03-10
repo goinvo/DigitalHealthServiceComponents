@@ -11,26 +11,31 @@ var RootElement = function RootElement() {
       _React$useState2 = _slicedToArray(_React$useState, 2),
       scroll = _React$useState2[0],
       setScroll = _React$useState2[1];
-  // const [fixed, setFixed] = React.useState();
-  // const [bottomFixed, setBottomFixed] = React.useState();
-
 
   var _React$useState3 = React.useState(),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
       highlighted = _React$useState4[0],
       setHighlighted = _React$useState4[1];
 
-  // const [stackOffsets, setStackOffsets] =
-
-  var _React$useState5 = React.useState(),
+  var _React$useState5 = React.useState(0),
       _React$useState6 = _slicedToArray(_React$useState5, 2),
-      active = _React$useState6[0],
-      _setActive = _React$useState6[1];
+      descriptionContainerOffset = _React$useState6[0],
+      setDescriptionContainerOffset = _React$useState6[1];
 
-  var _React$useState7 = React.useState(false),
+  var _React$useState7 = React.useState(),
       _React$useState8 = _slicedToArray(_React$useState7, 2),
-      isUserControlled = _React$useState8[0],
-      setIsUserControlled = _React$useState8[1];
+      active = _React$useState8[0],
+      _setActive = _React$useState8[1];
+
+  var _React$useState9 = React.useState(),
+      _React$useState10 = _slicedToArray(_React$useState9, 2),
+      initialDescriptionTops = _React$useState10[0],
+      setInitialDescriptionTops = _React$useState10[1];
+
+  var _React$useState11 = React.useState(false),
+      _React$useState12 = _slicedToArray(_React$useState11, 2),
+      isUserControlled = _React$useState12[0],
+      setIsUserControlled = _React$useState12[1];
   // const [stackOffsetTop, setStackOffsetTop] = React.useState(0);
 
   var dhscRef = React.useRef();
@@ -95,6 +100,19 @@ var RootElement = function RootElement() {
   }
 
   React.useEffect(function () {
+    var descriptionTops = {};
+    var allLayers = data.stack.reduce(function (acc, layerGroup) {
+      return [].concat(_toConsumableArray(acc), _toConsumableArray(layerGroup.layers));
+    }, []);
+    allLayers.forEach(function (layer) {
+      if (layer.descriptionRef.current) {
+        descriptionTops[layer.main] = layer.descriptionRef.current.getBoundingClientRect().top;
+      }
+    });
+    setInitialDescriptionTops(descriptionTops);
+  }, []);
+
+  React.useEffect(function () {
     // const handleScroll = () => {
     //   const scrollPosition = dhscRef.current.getBoundingClientRect().top;
     //   const percentOfDescriptionsScrolled = Math.min(
@@ -130,11 +148,38 @@ var RootElement = function RootElement() {
     //   window.requestAnimationFrame(handleScroll);
     // };
 
+    var highlightPoint = 300;
+
     var handleScroll = function handleScroll() {
-      console.log(window.scrollY);
-      // This line below gets the height. From this, we should be able to calculate which one is the 'closest'
-      console.log(data.stack[2].layers[1].layerRef.current.getBoundingClientRect().top);
+      var allLayers = data.stack.reduce(function (acc, layerGroup) {
+        return [].concat(_toConsumableArray(acc), _toConsumableArray(layerGroup.layers));
+      }, []);
+      var closestToHighlightPoint = allLayers[0];
+      var currentlyClosest = 99999;
+      for (var i in allLayers) {
+        var layer = allLayers[i];
+        var distance = Math.abs(layer.layerRef.current.getBoundingClientRect().top - highlightPoint);
+        if (distance < currentlyClosest) {
+          currentlyClosest = distance;
+          closestToHighlightPoint = layer;
+        }
+      }
+
+      if (closestToHighlightPoint.descriptionRef.current) {
+        var relevantDescriptionTop = initialDescriptionTops[closestToHighlightPoint.main];
+        var alignPoint = closestToHighlightPoint.layerRef.current.getBoundingClientRect().top;
+        var shift = alignPoint - relevantDescriptionTop + window.scrollY;
+        if (window.scrollY < 150) {
+          var percentage = window.scrollY / 150;
+          shift = window.scrollY * (1 - percentage) + shift * percentage;
+        }
+        setDescriptionContainerOffset(-shift);
+      }
+
+      setHighlighted(closestToHighlightPoint);
       setScroll(window.scrollY);
+
+      // window.requestAnimationFrame(handleScroll);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -142,7 +187,7 @@ var RootElement = function RootElement() {
     return function () {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [highlighted]);
 
   for (var groupId in data.stack) {
     for (var layerId in data.stack[groupId].layers) {
@@ -154,7 +199,6 @@ var RootElement = function RootElement() {
 
   var maybeSetActive = function maybeSetActive(section) {
     setIsUserControlled(true);
-    console.log("hey");
     if (window.innerWidth < 960) {
       _setActive(section);
     }
@@ -252,7 +296,10 @@ var RootElement = function RootElement() {
       ),
       React.createElement(
         "div",
-        { className: "description-container" },
+        {
+          className: "description-container",
+          style: { top: -descriptionContainerOffset + "px" }
+        },
         React.createElement(IntroContainer, null),
         data.preStack.map(function (content, key) {
           return React.createElement(
