@@ -2,6 +2,11 @@ import IntroContainer from "./components/IntroContainer.js";
 import LayerGroup from "./components/LayerGroup.js";
 import data from "./data/content.js";
 
+// bypass auto scrolling.
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
 const RootElement = () => {
   const [scroll, setScroll] = React.useState();
   const [highlighted, setHighlighted] = React.useState();
