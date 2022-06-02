@@ -351,7 +351,7 @@ var data = {
           " ",
           React.createElement(
             "a",
-            { href: "datauseagreement.org" },
+            { href: "https://datauseagreement.org" },
             "datauseagreement.org"
           )
         ),
